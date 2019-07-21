@@ -1,0 +1,18 @@
+version: "2.4"
+services:
+  pick_spellchecker:
+    env_file: .env
+    build: .
+    volumes:
+      - ./isx-pick-spellchecker.cabal:/home/x/src/isx-pick-spellchecker.cabal
+      - ./lib:/home/x/src/lib
+      - ./src:/home/x/src/src
+      - ./test:/home/x/src/test
+    networks:
+      pick:
+        aliases:
+          - spellchecker.pick.proc.isoxya.pavouk.tech
+networks:
+  pick:
+    external: true
+    name: isx_pick

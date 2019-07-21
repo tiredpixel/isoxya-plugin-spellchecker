@@ -1,0 +1,160 @@
+cabal-version:          2.4
+name:                   isx-pick-spellchecker
+version:                0.0
+synopsis:               Isoxya Pickax Spellchecker
+license:                BSD-3-Clause
+license-file:           LICENSE
+author:                 Pavouk OÜ
+maintainer:             en@pavouk.tech
+build-type:             Simple
+extra-source-files:     README.md
+--------------------------------------------------------------------------------
+-- HACK: snap-extras 0.12.2.0 incompatible with snap 1.1.1.0
+library snap-extras
+    exposed-modules:
+        Snap.Extras.CoreUtils
+        Snap.Extras.JSON
+    build-depends:
+        base                            ==  4.12.*,
+        aeson,
+        bytestring,
+        safe,
+        snap-core
+    hs-source-dirs:
+        lib/snap-extras/src
+    default-language:   Haskell2010
+--------------------------------------------------------------------------------
+library pvk-com
+    exposed-modules:
+        PVK.Com.API.Aeson
+        PVK.Com.API.Req
+        PVK.Com.API.Res
+        PVK.Com.API.Resource.CommonError
+        PVK.Com.API.Resource.ISXPick
+        PVK.Com.API.Resource.ISXPickSnap
+        PVK.Com.API.Zone.Common.Error
+    other-modules:
+        PVK.Com.API.Ext.URI
+        Prelude
+    build-depends:
+        base-noprelude                  ==  4.12.*,
+        relude,
+        --
+        aeson,
+        base64-bytestring,
+        network-uri,
+        snap-core,
+        snap-extras,
+        unordered-containers
+    hs-source-dirs:
+        lib/pvk-com/src
+    default-language:   Haskell2010
+    default-extensions:
+        OverloadedStrings
+    ghc-options:
+        -Wall
+
+library isx-pick-spellchecker-int
+    exposed-modules:
+        ISX.Pick.Spellchecker.Route
+        ISX.Pick.Spellchecker.Zone.Common.Apex
+    other-modules:
+        ISX.Pick.Spellchecker.Resource.Common
+        Prelude
+    build-depends:
+        base-noprelude                  ==  4.12.*,
+        relude,
+        --
+        pvk-com,
+        --
+        aeson,
+        containers,
+        snap-core,
+        snap-extras,
+        time
+    hs-source-dirs:
+        src
+    default-language:   Haskell2010
+    default-extensions:
+        OverloadedStrings
+    ghc-options:
+        -Wall
+--------------------------------------------------------------------------------
+executable isx-pick-spellchecker
+    main-is:            Main.hs
+    other-modules:
+        Prelude
+    build-depends:
+        base-noprelude                  ==  4.12.*,
+        relude,
+        --
+        pvk-com,
+        isx-pick-spellchecker-int,
+        --
+        snap-server
+    hs-source-dirs:
+        src/ISX/Pick/Spellchecker/Bin
+    default-language:   Haskell2010
+    default-extensions:
+        OverloadedStrings
+    ghc-options:
+        -Wall
+        -threaded
+--------------------------------------------------------------------------------
+library pvk-com-test
+    exposed-modules:
+        PVK.Com.API.Test
+    other-modules:
+        Prelude
+    build-depends:
+        base-noprelude                  ==  4.12.*,
+        relude,
+        --
+        hspec                           ==  2.*,
+        --
+        pvk-com,
+        --
+        aeson,
+        base64-bytestring,
+        bytestring,
+        http-link-header,
+        lens,
+        lens-aeson,
+        snap-core
+    hs-source-dirs:
+        lib/pvk-com/test
+    default-language:   Haskell2010
+    default-extensions:
+        OverloadedStrings
+    ghc-options:
+        -Wall
+
+test-suite isx-pick-spellchecker-test
+    type:               exitcode-stdio-1.0
+    main-is:            Spec.hs
+    other-modules:
+        ISX.Pick.Spellchecker.Zone.Common.ApexSpec
+        ISX.Test
+        Prelude
+    build-depends:
+        base-noprelude                  ==  4.12.*,
+        relude,
+        --
+        hlint                           ==  2.1.17,
+        hspec                           ==  2.*,
+        --
+        pvk-com-test,
+        isx-pick-spellchecker-int,
+        --
+        containers
+    hs-source-dirs:
+        test
+    build-tool-depends:
+        hspec-discover:hspec-discover   ==  2.*
+    default-language:   Haskell2010
+    default-extensions:
+        OverloadedStrings
+    ghc-options:
+        -Wall
+        -threaded
+--------------------------------------------------------------------------------
