@@ -58,11 +58,19 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  MIT
 * base64-bytestring
     License:  BSD3
+* basement
+    License:  BSD3
 * bifunctors
     License:  BSD3
 * binary
     License:  BSD3
 * blaze-builder
+    License:  BSD3
+* blaze-html
+    License:  BSD3
+* blaze-markup
+    License:  BSD3
+* byteable
     License:  BSD3
 * bytestring
     License:  BSD3
@@ -76,6 +84,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  MIT
 * case-insensitive
     License:  BSD3
+* cereal
+    License:  BSD3
+* cipher-aes
+    License:  BSD3
+* clientsession
+    License:  MIT
 * clock
     License:  BSD3
 * cmdargs
@@ -86,6 +100,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  BSD3
 * conduit
     License:  MIT
+* configurator
+    License:  BSD3
 * containers
     License:  BSD3
 * contravariant
@@ -94,6 +110,18 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  MIT
 * cpphs
     License:  LGPL
+* cprng-aes
+    License:  BSD3
+* crypto-api
+    License:  BSD3
+* crypto-cipher-types
+    License:  BSD3
+* crypto-random
+    License:  BSD3
+* cryptohash
+    License:  BSD3
+* cryptonite
+    License:  BSD3
 * data-default
     License:  BSD3
 * data-default-class
@@ -106,7 +134,15 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  BSD3
 * deepseq
     License:  BSD3
+* digestive-functors
+    License:  BSD3
+* digestive-functors-heist
+    License:  BSD3
+* digestive-functors-snap
+    License:  BSD3
 * directory
+    License:  BSD3
+* directory-tree
     License:  BSD3
 * distributive
     License:  BSD3
@@ -114,11 +150,15 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  BSD3
 * double-conversion
     License:  BSD3
+* entropy
+    License:  BSD3
 * errors
     License:  BSD3
 * exceptions
     License:  BSD3
 * extra
+    License:  BSD3
+* fail
     License:  BSD3
 * filepath
     License:  BSD3
@@ -145,6 +185,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 * haskell-src-exts
     License:  BSD3
 * haskell-src-exts-util
+    License:  BSD3
+* haskell-src-meta
+    License:  BSD3
+* heist
     License:  BSD3
 * hlint
     License:  BSD3
@@ -176,6 +220,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  BSD3
 * io-streams-haproxy
     License:  BSD3
+* jmacro
+    License:  BSD3
 * kan-extensions
     License:  BSD3
 * lens
@@ -188,11 +234,19 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  BSD3
 * lifted-base
     License:  BSD3
+* map-syntax
+    License:  BSD3
+* math-functions
+    License:  BSD2
+* memory
+    License:  BSD3
 * monad-control
     License:  BSD3
 * mono-traversable
     License:  MIT
 * mtl
+    License:  BSD3
+* mwc-random
     License:  BSD3
 * network
     License:  BSD3
@@ -204,7 +258,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  BSD3
 * parallel
     License:  BSD3
+* parseargs
+    License:  BSD3
 * parsec
+    License:  BSD3
+* pcre-light
     License:  BSD3
 * polyparse
     License:  LGPL
@@ -215,6 +273,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 * process
     License:  BSD3
 * profunctors
+    License:  BSD3
+* pwstore-fast
     License:  BSD3
 * quickcheck-io
     License:  MIT
@@ -240,13 +300,21 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  BSD3
 * scientific
     License:  BSD3
+* securemem
+    License:  BSD3
 * semigroupoids
     License:  BSD3
 * semigroups
     License:  BSD3
 * setenv
     License:  MIT
+* skein
+    License:  BSD3
+* snap
+    License:  BSD3
 * snap-core
+    License:  BSD3
+* snap-extras
     License:  BSD3
 * snap-server
     License:  BSD3
@@ -270,6 +338,16 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  BSD3
 * th-abstraction
     License:  ISC
+* th-expand-syns
+    License:  BSD3
+* th-lift
+    License:  BSD3
+* th-lift-instances
+    License:  BSD3
+* th-orphans
+    License:  BSD3
+* th-reify-many
+    License:  BSD3
 * time
     License:  BSD3
 * time-compat
@@ -296,9 +374,15 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  BSD3
 * vector-algorithms
     License:  BSD3
+* vector-th-unbox
+    License:  BSD3
 * void
     License:  BSD3
+* wl-pprint-text
+    License:  BSD3
 * xhtml
+    License:  BSD3
+* xmlhtml
     License:  BSD3
 * yaml
     License:  BSD3

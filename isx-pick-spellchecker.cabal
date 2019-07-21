@@ -9,21 +9,6 @@ maintainer:             en@pavouk.tech
 build-type:             Simple
 extra-source-files:     README.md
 --------------------------------------------------------------------------------
--- HACK: snap-extras 0.12.2.0 incompatible with snap 1.1.1.0
-library snap-extras
-    exposed-modules:
-        Snap.Extras.CoreUtils
-        Snap.Extras.JSON
-    build-depends:
-        base                            ==  4.12.*,
-        aeson,
-        bytestring,
-        safe,
-        snap-core
-    hs-source-dirs:
-        lib/snap-extras/src
-    default-language:   Haskell2010
---------------------------------------------------------------------------------
 library pvk-com
     exposed-modules:
         PVK.Com.API.Aeson
