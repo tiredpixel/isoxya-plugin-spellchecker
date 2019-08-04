@@ -30,7 +30,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ================================================================================
 * Cabal
     License:  BSD3
+* HTTP
+    License:  BSD3
 * HUnit
+    License:  BSD3
+* HandsomeSoup
     License:  BSD3
 * QuickCheck
     License:  BSD3
@@ -210,6 +214,17 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  PublicDomain
 * http-types
     License:  BSD3
+* hxt
+    License:  MIT
+* hxt-charproperties
+    License:  MIT
+* hxt-http
+    License:  MIT
+* hxt-regex-xmlschema
+    License:  MIT
+* hxt-unicode
+    Synopsis: Unicode en-/decoding functions for utf8, iso-latin-* and other
+    License:  MIT
 * integer-gmp
     License:  BSD3
 * integer-logarithms

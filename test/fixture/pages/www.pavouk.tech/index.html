@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+
+<head>
+<title>Pavouk &#8211; Internet Data Processor &amp; Web Crawler</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="stylesheet" href="https://www.pavouk.tech/wp-content/cache/minify/a5ff7.css" media="all" />
+
+<link rel='stylesheet' id='font-css'  href='https://fonts.googleapis.com/css?family=Lato%7CNunito+Sans' type='text/css' media='all' />
+<link rel="stylesheet" href="https://www.pavouk.tech/wp-content/cache/minify/5bf6f.css" media="all" />
+
+
+
+<script src="https://www.pavouk.tech/wp-content/cache/minify/def07.js"></script>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var vars = {"templateUrl":"https:\/\/www.pavouk.tech\/wp-content\/themes\/pv-www-theme-2.1.1"};
+/* ]]> */
+</script>
+<script src="https://www.pavouk.tech/wp-content/cache/minify/804e6.js"></script>
+
+<link rel="canonical" href="https://www.pavouk.tech/" />
+<link rel='shortlink' href='https://www.pavouk.tech/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.pavouk.tech/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.pavouk.tech%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.pavouk.tech/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.pavouk.tech%2F&#038;format=xml" />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-image: url("https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/pexels/astronomy-constellation-dark-1341279-1920.jpg"); background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
+</style>
+	
+<meta name="viewport"                content='width=device-width, initial-scale=1' />
+<meta name="msapplication-TileColor" content='#080705' />
+<meta name="msapplication-TileImage" content='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/favicon/ms-icon-144x144.png' />
+<meta name="theme-color"             content='#080705' />
+
+<link rel="apple-touch-icon" sizes="57x57"   href='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/favicon/apple-icon-57x57.png' />
+<link rel="apple-touch-icon" sizes="60x60"   href='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/favicon/apple-icon-60x60.png' />
+<link rel="apple-touch-icon" sizes="72x72"   href='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/favicon/apple-icon-72x72.png' />
+<link rel="apple-touch-icon" sizes="76x76"   href='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/favicon/apple-icon-76x76.png' />
+<link rel="apple-touch-icon" sizes="114x114" href='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/favicon/apple-icon-114x114.png' />
+<link rel="apple-touch-icon" sizes="120x120" href='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/favicon/apple-icon-120x120.png' />
+<link rel="apple-touch-icon" sizes="144x144" href='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/favicon/apple-icon-144x144.png' />
+<link rel="apple-touch-icon" sizes="152x152" href='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/favicon/apple-icon-152x152.png' />
+<link rel="apple-touch-icon" sizes="180x180" href='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/favicon/apple-icon-180x180.png' />
+<link rel="icon"             sizes="192x192" href='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/favicon/android-icon-192x192.png' type="image/png" />
+<link rel="icon"             sizes="32x32"   href='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/favicon/favicon-32x32.png'        type="image/png" />
+<link rel="icon"             sizes="96x96"   href='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/favicon/favicon-96x96.png'        type="image/png" />
+<link rel="icon"             sizes="16x16"   href='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/favicon/favicon-16x16.png'        type="image/png" />
+<link rel="manifest"                         href='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/favicon/manifest.json' />
+
+<!--[if lte IE 8]>
+    <link rel='stylesheet' href='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/css/grids-responsive-old-ie-min.css' />
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://www.pavouk.tech/wp-content/cache/minify/961f7.css" media="all" />
+
+<!--<![endif]-->
+</head>
+
+<body class="home page-template-default page page-id-345 custom-background">
+
+<div id='particles-js'></div>
+
+<header>
+<nav class='menu-main pure-menu pure-menu-horizontal pure-menu-fixed'>
+    <div class='logo'>
+        <a href='https://www.pavouk.tech'>
+            <img class='pure-img' src='https://www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/logo/pv-center.svg.inv.svg.png' alt="Pavouk">
+        </a>
+    </div>
+    
+    <ul id="menu-main" class="pure-menu-list"><li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-9 pure-menu-item"><a href="https://www.pavouk.tech" aria-current="page" class="pure-menu-link">Home</a></li>
+<li id="menu-item-736" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-736 pure-menu-item"><a href="https://www.pavouk.tech/category/isoxya/" class="pure-menu-link">Isoxya</a></li>
+<li id="menu-item-737" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-737 pure-menu-item"><a href="https://www.pavouk.tech/category/tigrosa/" class="pure-menu-link">Tigrosa</a></li>
+<li id="menu-item-74" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74 pure-menu-item"><a href="https://www.pavouk.tech/contact/" class="pure-menu-link">Contact</a></li>
+<li id="menu-item-481" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-481 pure-menu-item"><a href="https://www.pavouk.tech/posts/" class="pure-menu-link">Posts</a></li>
+<li id="menu-item-491" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-491 pure-menu-item"><a href="https://community.pavouk.tech/" class="pure-menu-link">Community</a></li>
+</ul></nav>
+</header>
+
+<main>
+    <article id='post-345' class="post-345 page type-page status-publish hentry">
+    <div class='pure-g'>
+    <div class="pure-u-1 section center">
+<div class="panel">
+<h2>Hi, we&#8217;re Pavouk.</h2>
+<h1>We can teach old spiders new tricks.</h1>
+<div class="pure-g">
+<div class="pure-u-1 pure-u-sm-1-2">
+<div class="panel">
+                    <img src="https://www.pavouk.tech/wp-content/uploads/2018/11/pvk-isoxya.svg.inv_.svg.png" alt="Isoxya" class="alignnone size-full wp-image-406" width="113" height="113" srcset="https://www.pavouk.tech/wp-content/uploads/2018/11/pvk-isoxya.svg.inv_.svg.png 355w, https://www.pavouk.tech/wp-content/uploads/2018/11/pvk-isoxya.svg.inv_.svg-150x150.png 150w, https://www.pavouk.tech/wp-content/uploads/2018/11/pvk-isoxya.svg.inv_.svg-300x300.png 300w" sizes="(max-width: 113px) 100vw, 113px" /><br />
+High-Performance<br />
+Internet Data Processor &amp; Web Crawler,<br />
+available for private preview.</div>
+</div>
+<div class="pure-u-1 pure-u-sm-1-2">
+<div class="panel">
+                    <img src="https://www.pavouk.tech/wp-content/uploads/2018/11/pv-pavouk.svg.inv_.svg.png" alt="Pavouk" class="alignnone size-full wp-image-408" width="113" height="113" srcset="https://www.pavouk.tech/wp-content/uploads/2018/11/pv-pavouk.svg.inv_.svg.png 355w, https://www.pavouk.tech/wp-content/uploads/2018/11/pv-pavouk.svg.inv_.svg-150x150.png 150w, https://www.pavouk.tech/wp-content/uploads/2018/11/pv-pavouk.svg.inv_.svg-300x300.png 300w" sizes="(max-width: 113px) 100vw, 113px" /><br />
+Consultancy within Europe for<br />
+Big-Data Architecture, Distributed Parallel Processing, High-Availability Systems,<br />
+Linux Platform Engineering, and Linux Security Analysis.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pure-u-1 section banner center">
+<div class="panel">
+<h2>Interested in what we&#8217;re doing?</h2>
+<h4><a href="https://community.pavouk.tech/signup">Sign up to Pavouk Community</a></h4>
+<p>to receive news emails about how we&#8217;re changing SEO and web crawling.</p>
+</div>
+</div>
+    </div>
+</article>
+<article class='post-summary' id='post-761' class="post-761 post type-post status-publish format-standard has-post-thumbnail hentry category-isoxya">
+<div class='pure-g'>
+<div class='pure-u-1 pure-u-md-1-4 section img'>
+    <a href='https://www.pavouk.tech/2019/07/19/isoxya-pickax-link-checker-1-0-release/'>
+        <img width="1920" height="1277" src="https://www.pavouk.tech/wp-content/uploads/2019/07/background-bright-chain-link-fence-957769.jpg" class="pure-img wp-post-image" alt="" srcset="https://www.pavouk.tech/wp-content/uploads/2019/07/background-bright-chain-link-fence-957769.jpg 1920w, https://www.pavouk.tech/wp-content/uploads/2019/07/background-bright-chain-link-fence-957769-300x200.jpg 300w, https://www.pavouk.tech/wp-content/uploads/2019/07/background-bright-chain-link-fence-957769-768x511.jpg 768w, https://www.pavouk.tech/wp-content/uploads/2019/07/background-bright-chain-link-fence-957769-1024x681.jpg 1024w" sizes="(max-width: 1920px) 100vw, 1920px" />    </a>
+</div>
+<div class='pure-u-1 pure-u-md-3-4'>
+    <div class='pure-g'>
+    <div class='pure-u-1 section dark'>
+        <div class='pure-g'>
+            <div class='pure-u-1 pure-u-sm-4-5'>
+                <div class='panel'>
+                    <h1 class='post-title'>
+                        <a href='https://www.pavouk.tech/2019/07/19/isoxya-pickax-link-checker-1-0-release/'>
+                            Isoxya Pickax Link Checker 1.0 release                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class='pure-u-1 pure-u-sm-1-5'>
+                <div class='panel'>
+                    <p class='post-meta'>19 Jul 2019</p>
+                    <p class='post-meta'><a href="https://www.pavouk.tech/author/n-williams/" title="Posts by N. Williams" rel="author">N. Williams</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='pure-u-1 section light'>
+        <div class='panel'>
+            <p>We&#8217;re pleased to announce open-source Isoxya Pickax Link Checker 1.0—one of many possible plugins for the flexible Isoxya internet data processor and web crawler. This helps with link checking, useful in SEO for validating large lists of URLs. The very first release, this marks a new phase within the history of Isoxya, as we&#8217;ve decided [&hellip;]</p>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+</article>
+<article class='post-summary' id='post-720' class="post-720 post type-post status-publish format-standard has-post-thumbnail hentry category-open-source">
+<div class='pure-g'>
+<div class='pure-u-1 pure-u-md-1-4 section img'>
+    <a href='https://www.pavouk.tech/2019/06/21/open-source-postgres-xl-docker-nginx-test-upstream-isoxya-api-demo-shell-updates/'>
+        <img width="1920" height="1277" src="https://www.pavouk.tech/wp-content/uploads/2019/06/animal-animals-asia-322480.jpg" class="pure-img wp-post-image" alt="" srcset="https://www.pavouk.tech/wp-content/uploads/2019/06/animal-animals-asia-322480.jpg 1920w, https://www.pavouk.tech/wp-content/uploads/2019/06/animal-animals-asia-322480-300x200.jpg 300w, https://www.pavouk.tech/wp-content/uploads/2019/06/animal-animals-asia-322480-768x511.jpg 768w, https://www.pavouk.tech/wp-content/uploads/2019/06/animal-animals-asia-322480-1024x681.jpg 1024w" sizes="(max-width: 1920px) 100vw, 1920px" />    </a>
+</div>
+<div class='pure-u-1 pure-u-md-3-4'>
+    <div class='pure-g'>
+    <div class='pure-u-1 section dark'>
+        <div class='pure-g'>
+            <div class='pure-u-1 pure-u-sm-4-5'>
+                <div class='panel'>
+                    <h1 class='post-title'>
+                        <a href='https://www.pavouk.tech/2019/06/21/open-source-postgres-xl-docker-nginx-test-upstream-isoxya-api-demo-shell-updates/'>
+                            Open-Source Postgres-XL Docker, NGINX Test Upstream, Isoxya API Demo (Shell) updates                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class='pure-u-1 pure-u-sm-1-5'>
+                <div class='panel'>
+                    <p class='post-meta'>21 Jun 2019</p>
+                    <p class='post-meta'><a href="https://www.pavouk.tech/author/n-williams/" title="Posts by N. Williams" rel="author">N. Williams</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='pure-u-1 section light'>
+        <div class='panel'>
+            <p>We&#8217;re pleased to announce lots of updates to three open-source projects we maintain: Postgres-XL Docker, NGINX Test Upstream, and Isoxya API Demo (Shell). So much of the time in tech, we&#8217;re standing on the shoulders of giants, and it&#8217;s good to give something back. We make grateful use of lots of open-source components in Isoxya, [&hellip;]</p>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+</article>
+<article class='post-summary' id='post-701' class="post-701 post type-post status-publish format-standard has-post-thumbnail hentry category-isoxya">
+<div class='pure-g'>
+<div class='pure-u-1 pure-u-md-1-4 section img'>
+    <a href='https://www.pavouk.tech/2019/06/17/isoxya-1-2-release/'>
+        <img width="3500" height="2318" src="https://www.pavouk.tech/wp-content/uploads/2019/06/beautiful-dawn-dew-247426.jpg" class="pure-img wp-post-image" alt="" srcset="https://www.pavouk.tech/wp-content/uploads/2019/06/beautiful-dawn-dew-247426.jpg 3500w, https://www.pavouk.tech/wp-content/uploads/2019/06/beautiful-dawn-dew-247426-300x199.jpg 300w, https://www.pavouk.tech/wp-content/uploads/2019/06/beautiful-dawn-dew-247426-768x509.jpg 768w, https://www.pavouk.tech/wp-content/uploads/2019/06/beautiful-dawn-dew-247426-1024x678.jpg 1024w" sizes="(max-width: 3500px) 100vw, 3500px" />    </a>
+</div>
+<div class='pure-u-1 pure-u-md-3-4'>
+    <div class='pure-g'>
+    <div class='pure-u-1 section dark'>
+        <div class='pure-g'>
+            <div class='pure-u-1 pure-u-sm-4-5'>
+                <div class='panel'>
+                    <h1 class='post-title'>
+                        <a href='https://www.pavouk.tech/2019/06/17/isoxya-1-2-release/'>
+                            Isoxya 1.2 release                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class='pure-u-1 pure-u-sm-1-5'>
+                <div class='panel'>
+                    <p class='post-meta'>17 Jun 2019</p>
+                    <p class='post-meta'><a href="https://www.pavouk.tech/author/n-williams/" title="Posts by N. Williams" rel="author">N. Williams</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='pure-u-1 section light'>
+        <div class='panel'>
+            <p>We&#8217;re pleased to announce the release of Isoxya 1.2—the high-performance internet data processor and web crawler. This release introduces partial snapshots limited by maximum pages or maximum depth, user agent whitelists, a more efficient approach to multi-snapshot settings, and numerous optimisations and fixes.</p>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+</article>
+<article class='post-summary' id='post-680' class="post-680 post type-post status-publish format-standard has-post-thumbnail hentry category-tigrosa">
+<div class='pure-g'>
+<div class='pure-u-1 pure-u-md-1-4 section img'>
+    <a href='https://www.pavouk.tech/2019/06/02/tigrosa-1-1-release/'>
+        <img width="2400" height="1800" src="https://www.pavouk.tech/wp-content/uploads/2019/06/animal-arachnid-close-up-68186.jpg" class="pure-img wp-post-image" alt="" srcset="https://www.pavouk.tech/wp-content/uploads/2019/06/animal-arachnid-close-up-68186.jpg 2400w, https://www.pavouk.tech/wp-content/uploads/2019/06/animal-arachnid-close-up-68186-300x225.jpg 300w, https://www.pavouk.tech/wp-content/uploads/2019/06/animal-arachnid-close-up-68186-768x576.jpg 768w, https://www.pavouk.tech/wp-content/uploads/2019/06/animal-arachnid-close-up-68186-1024x768.jpg 1024w" sizes="(max-width: 2400px) 100vw, 2400px" />    </a>
+</div>
+<div class='pure-u-1 pure-u-md-3-4'>
+    <div class='pure-g'>
+    <div class='pure-u-1 section dark'>
+        <div class='pure-g'>
+            <div class='pure-u-1 pure-u-sm-4-5'>
+                <div class='panel'>
+                    <h1 class='post-title'>
+                        <a href='https://www.pavouk.tech/2019/06/02/tigrosa-1-1-release/'>
+                            Tigrosa 1.1 release                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class='pure-u-1 pure-u-sm-1-5'>
+                <div class='panel'>
+                    <p class='post-meta'>2 Jun 2019</p>
+                    <p class='post-meta'><a href="https://www.pavouk.tech/author/n-williams/" title="Posts by N. Williams" rel="author">N. Williams</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='pure-u-1 section light'>
+        <div class='panel'>
+            <p>We&#8217;re pleased to announce the release of Tigrosa 1.1—the secure authentication and authorisation proxy. This version introduces a flexible roles permissions system, introducing the concepts of a user realm (such as admin) and a role for a specific organisation (usually member, but now can also be an organisation admin). Tigrosa is like a guard-spider, protecting [&hellip;]</p>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+</article>
+<article class='post-summary' id='post-656' class="post-656 post type-post status-publish format-standard has-post-thumbnail hentry category-isoxya">
+<div class='pure-g'>
+<div class='pure-u-1 pure-u-md-1-4 section img'>
+    <a href='https://www.pavouk.tech/2019/05/16/isoxya-api-demo-bash/'>
+        <img src="https://www.pavouk.tech/wp-content/uploads/2019/05/JcdvIbpfiB5mPXijwVe1fi5ff.svg" class="pure-img wp-post-image" alt="" height="862.4" width="1619.199999936" />    </a>
+</div>
+<div class='pure-u-1 pure-u-md-3-4'>
+    <div class='pure-g'>
+    <div class='pure-u-1 section dark'>
+        <div class='pure-g'>
+            <div class='pure-u-1 pure-u-sm-4-5'>
+                <div class='panel'>
+                    <h1 class='post-title'>
+                        <a href='https://www.pavouk.tech/2019/05/16/isoxya-api-demo-bash/'>
+                            Isoxya API Demo (Bash)                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class='pure-u-1 pure-u-sm-1-5'>
+                <div class='panel'>
+                    <p class='post-meta'>16 May 2019</p>
+                    <p class='post-meta'><a href="https://www.pavouk.tech/author/n-williams/" title="Posts by N. Williams" rel="author">N. Williams</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='pure-u-1 section light'>
+        <div class='panel'>
+            <p>We&#8217;re pleased to announce the publication of the Isoxya API Demo (Bash) code to GitHub, available under the BSD3 licence. We realise it&#8217;s not always easy to get started with a new system, and the more help you can get, the better—especially if you&#8217;re allowed to share and modify it as desired! We think that [&hellip;]</p>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+</article>
+<article class='post-summary' id='post-607' class="post-607 post type-post status-publish format-standard has-post-thumbnail hentry category-isoxya">
+<div class='pure-g'>
+<div class='pure-u-1 pure-u-md-1-4 section img'>
+    <a href='https://www.pavouk.tech/2019/05/10/isoxya-1-1-release/'>
+        <img width="3072" height="2304" src="https://www.pavouk.tech/wp-content/uploads/2019/05/blur-close-up-cobweb-276487.jpg" class="pure-img wp-post-image" alt="" srcset="https://www.pavouk.tech/wp-content/uploads/2019/05/blur-close-up-cobweb-276487.jpg 3072w, https://www.pavouk.tech/wp-content/uploads/2019/05/blur-close-up-cobweb-276487-300x225.jpg 300w, https://www.pavouk.tech/wp-content/uploads/2019/05/blur-close-up-cobweb-276487-768x576.jpg 768w, https://www.pavouk.tech/wp-content/uploads/2019/05/blur-close-up-cobweb-276487-1024x768.jpg 1024w" sizes="(max-width: 3072px) 100vw, 3072px" />    </a>
+</div>
+<div class='pure-u-1 pure-u-md-3-4'>
+    <div class='pure-g'>
+    <div class='pure-u-1 section dark'>
+        <div class='pure-g'>
+            <div class='pure-u-1 pure-u-sm-4-5'>
+                <div class='panel'>
+                    <h1 class='post-title'>
+                        <a href='https://www.pavouk.tech/2019/05/10/isoxya-1-1-release/'>
+                            Isoxya 1.1 release                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class='pure-u-1 pure-u-sm-1-5'>
+                <div class='panel'>
+                    <p class='post-meta'>10 May 2019</p>
+                    <p class='post-meta'><a href="https://www.pavouk.tech/author/n-williams/" title="Posts by N. Williams" rel="author">N. Williams</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='pure-u-1 section light'>
+        <div class='panel'>
+            <p>We&#8217;re pleased to announce the release of Isoxya 1.1—the high performance internet data processor and web crawler. It&#8217;s the first minor-version release since Isoxya 1.0 (over 5 months ago), and represents a major milestone in the maturity and functionality of the software, bringing even higher performance, and simplified interfaces for connection with other programs. Increased [&hellip;]</p>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+</article>
+<article class='post-summary' id='post-581' class="post-581 post type-post status-publish format-standard has-post-thumbnail hentry category-tigrosa">
+<div class='pure-g'>
+<div class='pure-u-1 pure-u-md-1-4 section img'>
+    <a href='https://www.pavouk.tech/2019/02/12/tigrosa-1-0-private-release/'>
+        <img width="3840" height="2160" src="https://www.pavouk.tech/wp-content/uploads/2019/02/Screenshot-from-2019-02-12-18-41-45.png" class="pure-img wp-post-image" alt="" srcset="https://www.pavouk.tech/wp-content/uploads/2019/02/Screenshot-from-2019-02-12-18-41-45.png 3840w, https://www.pavouk.tech/wp-content/uploads/2019/02/Screenshot-from-2019-02-12-18-41-45-300x169.png 300w, https://www.pavouk.tech/wp-content/uploads/2019/02/Screenshot-from-2019-02-12-18-41-45-768x432.png 768w, https://www.pavouk.tech/wp-content/uploads/2019/02/Screenshot-from-2019-02-12-18-41-45-1024x576.png 1024w" sizes="(max-width: 3840px) 100vw, 3840px" />    </a>
+</div>
+<div class='pure-u-1 pure-u-md-3-4'>
+    <div class='pure-g'>
+    <div class='pure-u-1 section dark'>
+        <div class='pure-g'>
+            <div class='pure-u-1 pure-u-sm-4-5'>
+                <div class='panel'>
+                    <h1 class='post-title'>
+                        <a href='https://www.pavouk.tech/2019/02/12/tigrosa-1-0-private-release/'>
+                            Tigrosa 1.0 private release                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class='pure-u-1 pure-u-sm-1-5'>
+                <div class='panel'>
+                    <p class='post-meta'>12 Feb 2019</p>
+                    <p class='post-meta'><a href="https://www.pavouk.tech/author/n-williams/" title="Posts by N. Williams" rel="author">N. Williams</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='pure-u-1 section light'>
+        <div class='panel'>
+            <p>We&#8217;re pleased to announce the private release of Tigrosa 1.0—the very first stable version! Tigrosa is a dedicated authentication and authorisation program, which acts as a secure proxy for a backend API, vastly simplifying the programming logic necessary for securing an application. This not only increases security, but also decreases development time for new products! [&hellip;]</p>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+</article>
+<article class='post-summary' id='post-525' class="post-525 post type-post status-publish format-standard has-post-thumbnail hentry category-community">
+<div class='pure-g'>
+<div class='pure-u-1 pure-u-md-1-4 section img'>
+    <a href='https://www.pavouk.tech/2018/11/28/how-to-get-started-with-the-pavouk-community/'>
+        <img width="1271" height="627" src="https://www.pavouk.tech/wp-content/uploads/2018/11/Sign-Up.png" class="pure-img wp-post-image" alt="" srcset="https://www.pavouk.tech/wp-content/uploads/2018/11/Sign-Up.png 1271w, https://www.pavouk.tech/wp-content/uploads/2018/11/Sign-Up-300x148.png 300w, https://www.pavouk.tech/wp-content/uploads/2018/11/Sign-Up-768x379.png 768w, https://www.pavouk.tech/wp-content/uploads/2018/11/Sign-Up-1024x505.png 1024w" sizes="(max-width: 1271px) 100vw, 1271px" />    </a>
+</div>
+<div class='pure-u-1 pure-u-md-3-4'>
+    <div class='pure-g'>
+    <div class='pure-u-1 section dark'>
+        <div class='pure-g'>
+            <div class='pure-u-1 pure-u-sm-4-5'>
+                <div class='panel'>
+                    <h1 class='post-title'>
+                        <a href='https://www.pavouk.tech/2018/11/28/how-to-get-started-with-the-pavouk-community/'>
+                            How To: Get Started with the Pavouk Community                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class='pure-u-1 pure-u-sm-1-5'>
+                <div class='panel'>
+                    <p class='post-meta'>28 Nov 2018</p>
+                    <p class='post-meta'><a href="https://www.pavouk.tech/author/a-burazor/" title="Posts by A. Burazor" rel="author">A. Burazor</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='pure-u-1 section light'>
+        <div class='panel'>
+            <p>So you’ve read our post launching the Pavouk Community, you’re positively crawling with excitement and just want to get connected with other like-minded future thinkers! Here’s how you can do that: Create an account Start by navigating over to our Community page and hitting the “Sign Up” button, in the top-right corner. Populate your details [&hellip;]</p>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+</article>
+<article class='post-summary' id='post-510' class="post-510 post type-post status-publish format-standard has-post-thumbnail hentry category-community">
+<div class='pure-g'>
+<div class='pure-u-1 pure-u-md-1-4 section img'>
+    <a href='https://www.pavouk.tech/2018/11/25/connect-with-fellow-big-thinkers-in-the-pavouk-community/'>
+        <img width="3840" height="2160" src="https://www.pavouk.tech/wp-content/uploads/2018/11/community.pavouk.tech_.png" class="pure-img wp-post-image" alt="" srcset="https://www.pavouk.tech/wp-content/uploads/2018/11/community.pavouk.tech_.png 3840w, https://www.pavouk.tech/wp-content/uploads/2018/11/community.pavouk.tech_-300x169.png 300w, https://www.pavouk.tech/wp-content/uploads/2018/11/community.pavouk.tech_-768x432.png 768w, https://www.pavouk.tech/wp-content/uploads/2018/11/community.pavouk.tech_-1024x576.png 1024w" sizes="(max-width: 3840px) 100vw, 3840px" />    </a>
+</div>
+<div class='pure-u-1 pure-u-md-3-4'>
+    <div class='pure-g'>
+    <div class='pure-u-1 section dark'>
+        <div class='pure-g'>
+            <div class='pure-u-1 pure-u-sm-4-5'>
+                <div class='panel'>
+                    <h1 class='post-title'>
+                        <a href='https://www.pavouk.tech/2018/11/25/connect-with-fellow-big-thinkers-in-the-pavouk-community/'>
+                            Connect with fellow big thinkers in the Pavouk Community!                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class='pure-u-1 pure-u-sm-1-5'>
+                <div class='panel'>
+                    <p class='post-meta'>25 Nov 2018</p>
+                    <p class='post-meta'><a href="https://www.pavouk.tech/author/a-burazor/" title="Posts by A. Burazor" rel="author">A. Burazor</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='pure-u-1 section light'>
+        <div class='panel'>
+            <p>Pavouk is embarking on a journey to change the the very landscape of data processing and web crawling, and create powerful new ways to intelligently process and derive valuable insights from data. And we want you to join us as we launch the Pavouk Community! We envision the Pavouk Community to be no ordinary forum. [&hellip;]</p>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+</article>
+<article class='post-summary' id='post-496' class="post-496 post type-post status-publish format-standard has-post-thumbnail hentry category-isoxya">
+<div class='pure-g'>
+<div class='pure-u-1 pure-u-md-1-4 section img'>
+    <a href='https://www.pavouk.tech/2018/11/23/isoxya-1-0-official-release/'>
+        <img width="3840" height="2104" src="https://www.pavouk.tech/wp-content/uploads/2018/11/api.isoxya.pavouk.tech_-2.png" class="pure-img wp-post-image" alt="Isoxya API screenshot" srcset="https://www.pavouk.tech/wp-content/uploads/2018/11/api.isoxya.pavouk.tech_-2.png 3840w, https://www.pavouk.tech/wp-content/uploads/2018/11/api.isoxya.pavouk.tech_-2-300x164.png 300w, https://www.pavouk.tech/wp-content/uploads/2018/11/api.isoxya.pavouk.tech_-2-768x421.png 768w, https://www.pavouk.tech/wp-content/uploads/2018/11/api.isoxya.pavouk.tech_-2-1024x561.png 1024w" sizes="(max-width: 3840px) 100vw, 3840px" />    </a>
+</div>
+<div class='pure-u-1 pure-u-md-3-4'>
+    <div class='pure-g'>
+    <div class='pure-u-1 section dark'>
+        <div class='pure-g'>
+            <div class='pure-u-1 pure-u-sm-4-5'>
+                <div class='panel'>
+                    <h1 class='post-title'>
+                        <a href='https://www.pavouk.tech/2018/11/23/isoxya-1-0-official-release/'>
+                            Isoxya 1.0 official release                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class='pure-u-1 pure-u-sm-1-5'>
+                <div class='panel'>
+                    <p class='post-meta'>23 Nov 2018</p>
+                    <p class='post-meta'><a href="https://www.pavouk.tech/author/n-williams/" title="Posts by N. Williams" rel="author">N. Williams</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='pure-u-1 section light'>
+        <div class='panel'>
+            <p>What is Isoxya? That is a very good question, and one which I have pondered much during the time since I made the first commit to the first code repository. Blank files, containing absolutely nothing, stretching out before me like snow on mountains. Empty. Inspiring. And intimidating. Now, a little over two years later, I [&hellip;]</p>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+</article>
+</main>
+
+<footer>
+
+<div class='license'>
+    <p>Copyright © 2017–2019 Pavouk OÜ</p>
+</div>
+
+<nav class='menu-notices pure-menu pure-menu-horizontal'>
+    <ul id="menu-notices" class="pure-menu-list"><li id="menu-item-495" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-495 pure-menu-item"><a href="https://github.com/pavouk-0/pavouk-policy/blob/master/www.pavouk.tech/en/privacy-policy.md" class="pure-menu-link">Privacy Policy</a></li>
+<li id="menu-item-375" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-375 pure-menu-item"><a href="https://www.pavouk.tech/credits/" class="pure-menu-link">Credits</a></li>
+</ul></nav>
+</footer>
+
+
+<script src="https://www.pavouk.tech/wp-content/cache/minify/3bdc5.js"></script>
+
+<script type="text/javascript">/* <![CDATA[ */EnlighterJS_Config = {"selector":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"language":"generic","theme":"enlighter","indent":2,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}};!function(){var a=function(a){var b="Enlighter Error: ";console.error?console.error(b+a):console.log&&console.log(b+a)};return window.addEvent?"undefined"==typeof EnlighterJS?void a("Javascript Resources not loaded yet!"):"undefined"==typeof EnlighterJS_Config?void a("Configuration not loaded yet!"):void window.addEvent("domready",function(){EnlighterJS.Util.Init(EnlighterJS_Config.selector.block,EnlighterJS_Config.selector.inline,EnlighterJS_Config)}):void a("MooTools Framework not loaded yet!")}();;/* ]]> */</script>
+</body>
+
+</html>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Object Caching 3/408 objects using disk
+Page Caching using disk: enhanced 
+Minified using disk
+
+Served from: www.pavouk.tech @ 2019-08-04 07:41:05 by W3 Total Cache
+-->

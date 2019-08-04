@@ -12,6 +12,7 @@ extra-source-files:     README.md
 library pvk-com
     exposed-modules:
         PVK.Com.API.Aeson
+        PVK.Com.API.Ext.URI
         PVK.Com.API.Req
         PVK.Com.API.Res
         PVK.Com.API.Resource.CommonError
@@ -19,7 +20,6 @@ library pvk-com
         PVK.Com.API.Resource.ISXPickSnap
         PVK.Com.API.Zone.Common.Error
     other-modules:
-        PVK.Com.API.Ext.URI
         Prelude
     build-depends:
         base-noprelude                  ==  4.12.*,
@@ -30,7 +30,8 @@ library pvk-com
         network-uri,
         snap-core,
         snap-extras,
-        unordered-containers
+        unordered-containers,
+        vector
     hs-source-dirs:
         lib/pvk-com/src
     default-language:   Haskell2010
@@ -41,6 +42,7 @@ library pvk-com
 
 library isx-pick-spellchecker-int
     exposed-modules:
+        ISX.Pick.Spellchecker.Parser
         ISX.Pick.Spellchecker.Route
         ISX.Pick.Spellchecker.Zone.Common.Apex
     other-modules:
@@ -53,9 +55,13 @@ library isx-pick-spellchecker-int
         pvk-com,
         --
         aeson,
+        bytestring,
         containers,
+        HandsomeSoup,
+        hxt,
         snap-core,
         snap-extras,
+        text,
         time
     hs-source-dirs:
         src
@@ -118,6 +124,8 @@ test-suite isx-pick-spellchecker-test
     type:               exitcode-stdio-1.0
     main-is:            Spec.hs
     other-modules:
+        ISX.Factory
+        ISX.Pick.Spellchecker.ParserSpec
         ISX.Pick.Spellchecker.Zone.Common.ApexSpec
         ISX.Test
         Prelude
@@ -128,10 +136,14 @@ test-suite isx-pick-spellchecker-test
         hlint                           ==  2.1.17,
         hspec                           ==  2.*,
         --
-        pvk-com-test,
         isx-pick-spellchecker-int,
+        pvk-com,
+        pvk-com-test,
         --
-        containers
+        bytestring,
+        containers,
+        network-uri,
+        text
     hs-source-dirs:
         test
     build-tool-depends:
