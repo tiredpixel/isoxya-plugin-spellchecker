@@ -15,7 +15,7 @@ import qualified    Data.Text                               as  T
 assertTextsLookup :: [Text] -> Text -> IO ()
 assertTextsLookup texts url = do
     texts0 <- readFileText $ fixtureText url
-    texts `shouldBe` lines texts0
+    unlines texts `shouldBe` texts0
 
 withSrv :: RequestBuilder IO () -> IO Response
 withSrv r = runHandler r site
