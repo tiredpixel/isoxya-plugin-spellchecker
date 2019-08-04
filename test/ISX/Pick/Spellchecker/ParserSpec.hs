@@ -18,6 +18,9 @@ spec = do
         
         it "robots" $
             testPage "www.pavouk.tech/robots.txt"
+        
+        it "image" $
+            testPage "www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/logo/pv-center.svg.inv.svg.png"
     
     describe "www.tiredpixel.com" $
         it "apex" $
