@@ -42,6 +42,7 @@ library pvk-com
 
 library isx-pick-spellchecker-int
     exposed-modules:
+        ISX.Pick.Spellchecker.Checker
         ISX.Pick.Spellchecker.Parser
         ISX.Pick.Spellchecker.Route
         ISX.Pick.Spellchecker.Zone.Common.Apex
@@ -59,6 +60,7 @@ library isx-pick-spellchecker-int
         containers,
         HandsomeSoup,
         hxt,
+        process,
         snap-core,
         snap-extras,
         text,
@@ -125,6 +127,7 @@ test-suite isx-pick-spellchecker-test
     main-is:            Spec.hs
     other-modules:
         ISX.Factory
+        ISX.Pick.Spellchecker.CheckerSpec
         ISX.Pick.Spellchecker.ParserSpec
         ISX.Pick.Spellchecker.Zone.Common.ApexSpec
         ISX.Test
