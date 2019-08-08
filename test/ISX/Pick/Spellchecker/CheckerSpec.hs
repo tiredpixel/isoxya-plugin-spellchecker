@@ -102,6 +102,90 @@ spec =
                 rs `shouldBe` [
                     (ls !! 0, [])]
         
+        describe "cs" $ do
+            -- https://www.radio.cz/cz/rubrika/ekonomika/cesko-ve-srovnani-se-zememi-eu-vynika-v-zamestnanosti-padesatniku
+            
+            let check' = check [DictCs]
+            
+            it "ok sentence" $ do
+                let ls = [
+                        "Česká republika si v rámci Evropské unie udržuje velmi dobrou kondici trhu práce."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+            
+            it "miss sentence" $ do
+                let ls = [
+                        "Česka republika si v rámci Evropské uni udržuje velmi dobrou kondici trhu práce."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [
+                        ResultMiss "uni" 37 ["inu","ni","unie","unii","unií","unci","učni","unik","upni","usni","unit","utni","uhni","ani","oni"]])]
+        
+        describe "cs-cz" $ do
+            -- https://www.radio.cz/cz/rubrika/ekonomika/cesko-ve-srovnani-se-zememi-eu-vynika-v-zamestnanosti-padesatniku
+            
+            let check' = check [DictCsCZ]
+            
+            it "ok sentence" $ do
+                let ls = [
+                        "Česká republika si v rámci Evropské unie udržuje velmi dobrou kondici trhu práce."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+            
+            it "miss sentence" $ do
+                let ls = [
+                        "Česka republika si v rámci Evropské uni udržuje velmi dobrou kondici trhu práce."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [
+                        ResultMiss "uni" 37 ["inu","ni","unie","unii","unií","unci","učni","unik","upni","usni","unit","utni","uhni","ani","oni"]])]
+        
+        describe "de" $ do
+            -- https://www.spiegel.de/wissenschaft/natur/polarstern-laeuft-fuer-klima-mission-richtung-arktis-aus-a-1280998.html
+            
+            let check' = check [DictDe]
+            
+            it "ok sentence" $ do
+                let ls = [
+                        "Die 140 Millionen Euro teure Expedition Richtung Norden beginnt dann am 20. September. Sie führt das Team von Norwegen entlang der sibirischen Küste Richtung Pol. Vor Ort werden Messungen im Meerwasser, im Eis und in der Atmosphäre vorgenommen."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+            
+            it "miss sentence" $ do
+                let ls = [
+                        "Die 140 millionen Euro teure Expedition Richtung Norden beginnt dan am 20. September. Sie fuhrt das Team von Norwegen entlang der sibirischen Küste Richtung Pol. Vor Ort werden Messungen im Meerwaßer, im Eis und in der Atmosphäre vorgenommen."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [
+                        ResultMiss "millionen" 9 ["Millionen","millionen-","-millionen","Billionen"],
+                        ResultMiss "dan" 65 ["da","an","dann","dran","dank","den","das","dar","ran","man","van","San","Jan","Pan","Fan"],
+                        ResultMiss "Meerwaßer" 191 ["Meerwasser","Meterware"]])]
+        
+        describe "de-de" $ do
+            -- https://www.spiegel.de/wissenschaft/natur/polarstern-laeuft-fuer-klima-mission-richtung-arktis-aus-a-1280998.html
+            
+            let check' = check [DictDeDE]
+            
+            it "ok sentence" $ do
+                let ls = [
+                        "Die 140 Millionen Euro teure Expedition Richtung Norden beginnt dann am 20. September. Sie führt das Team von Norwegen entlang der sibirischen Küste Richtung Pol. Vor Ort werden Messungen im Meerwasser, im Eis und in der Atmosphäre vorgenommen."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+            
+            it "miss sentence" $ do
+                let ls = [
+                        "Die 140 millionen Euro teure Expedition Richtung Norden beginnt dan am 20. September. Sie fuhrt das Team von Norwegen entlang der sibirischen Küste Richtung Pol. Vor Ort werden Messungen im Meerwaßer, im Eis und in der Atmosphäre vorgenommen."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [
+                        ResultMiss "millionen" 9 ["Millionen","millionen-","-millionen","Billionen"],
+                        ResultMiss "dan" 65 ["da","an","dann","dran","dank","den","das","dar","ran","man","van","San","Jan","Pan","Fan"],
+                        ResultMiss "Meerwaßer" 191 ["Meerwasser","Meterware"]])]
+        
         describe "en" $ do
             -- https://www.theguardian.com/environment/2019/aug/08/climate-crisis-reducing-lands-ability-to-sustain-humanity-says-ipcc
             
@@ -174,3 +258,177 @@ spec =
                 rs `shouldBe` [
                     (ls !! 0, [
                         ResultMiss "colours" 1 ["colors","co lours","co-lours","col ours","col-ours","coursers","courser","courses","colossus","colossal","callous"]])]
+        
+        describe "es" $ do
+            -- https://elpais.com/sociedad/2019/08/07/actualidad/1565193502_273906.html
+            
+            let check' = check [DictEs]
+            
+            it "ok sentence" $ do
+                let ls = [
+                        "El planeta necesita un cambio del modelo alimentario para combatir la crisis climática"]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+            
+            it "miss sentence" $ do
+                let ls = [
+                        "El planeta necesita un cambio del modelo alementario paar combatir la crisis climatica"]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [
+                        ResultMiss "alementario" 42 ["alimentario","suplementario","complementario","parlamentario","argumentario"],
+                        ResultMiss "paar" 54 ["para","par","parar","pasar","papar","pagar","pajar","payar","piar","puar"],
+                        ResultMiss "climatica" 78 ["climática","climatice","climatiza","climaticé"]])]
+        
+        describe "es-es" $ do
+            -- https://elpais.com/sociedad/2019/08/07/actualidad/1565193502_273906.html
+            
+            let check' = check [DictEsES]
+            
+            it "ok sentence" $ do
+                let ls = [
+                        "El planeta necesita un cambio del modelo alimentario para combatir la crisis climática"]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+            
+            it "miss sentence" $ do
+                let ls = [
+                        "El planeta necesita un cambio del modelo alementario paar combatir la crisis climatica"]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [
+                        ResultMiss "alementario" 42 ["alimentario","suplementario","complementario","parlamentario","argumentario"],
+                        ResultMiss "paar" 54 ["para","par","parar","pasar","papar","pagar","pajar","payar","piar","puar"],
+                        ResultMiss "climatica" 78 ["climática","climatice","climatiza","climaticé"]])]
+        
+        describe "et" $ do
+            -- https://www.err.ee/968561/venemaa-militaarobjektil-kargatas-plahvatus-kiirgustase-hetkeks-tousis
+            
+            let check' = check [DictEt]
+            
+            it "ok sentence" $ do
+                let ls = [
+                        "\"Vedelkütusega raketimootori katsetuse ajal toimus plahvatus ja seade võttis tuld,\" ütles ministeerium."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+            
+            it "miss sentence" $ do
+                let ls = [
+                        "\"Vedelkutusega raketimootori katsetuse ajal toiimus plahvatus ja seade vottis tuld,\" ütles ministeerium."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [
+                        ResultMiss "Vedelkutusega" 2 ["VEdelkutusega","Edelkutusega","Aedelkutusega","Eedelkutusega","Tedelkutusega","Dedelkutusega","Medelkutusega","Redelkutusega","Õedelkutusega","Vedeldutusega","Vedelktuusega","Vedelkuutsega","Vedelkutsuega","Vedeldusega","Vedrutusega"],
+                        ResultMiss "toiimus" 45 ["toimus","toismui","toiaimus","toieimus","toisimus","toiilmus","toiuimus","toioimus","toimimus","toiihmus","toihimus","toiäimus","toiimbus","toimunus","toitumus"],
+                        ResultMiss "vottis" 72 ["vettis","voltis","nottis","kottis","võttis","vtotis","votits","vttois","tavotis"]])]
+        
+        describe "et-ee" $ do
+            -- https://www.err.ee/968561/venemaa-militaarobjektil-kargatas-plahvatus-kiirgustase-hetkeks-tousis
+            
+            let check' = check [DictEtEE]
+            
+            it "ok sentence" $ do
+                let ls = [
+                        "\"Vedelkütusega raketimootori katsetuse ajal toimus plahvatus ja seade võttis tuld,\" ütles ministeerium."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+            
+            it "miss sentence" $ do
+                let ls = [
+                        "\"Vedelkutusega raketimootori katsetuse ajal toiimus plahvatus ja seade vottis tuld,\" ütles ministeerium."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [
+                        ResultMiss "Vedelkutusega" 2 ["VEdelkutusega","Edelkutusega","Aedelkutusega","Eedelkutusega","Tedelkutusega","Dedelkutusega","Medelkutusega","Redelkutusega","Õedelkutusega","Vedeldutusega","Vedelktuusega","Vedelkuutsega","Vedelkutsuega","Vedeldusega","Vedrutusega"],
+                        ResultMiss "toiimus" 45 ["toimus","toismui","toiaimus","toieimus","toisimus","toiilmus","toiuimus","toioimus","toimimus","toiihmus","toihimus","toiäimus","toiimbus","toimunus","toitumus"],
+                        ResultMiss "vottis" 72 ["vettis","voltis","nottis","kottis","võttis","vtotis","votits","vttois","tavotis"]])]
+        
+        describe "fr" $ do
+            -- https://www.lemonde.fr/les-decodeurs/article/2019/08/08/journee-du-chat-des-toilettes-ou-de-la-resistance-comment-et-par-qui-sont-elles-decretees_5497728_4355770.html
+            
+            let check' = check [DictFr]
+            
+            it "ok sentence" $ do
+                let ls = [
+                        "Journées du chat, des toilettes ou de la Résistance : comment et par qui sont-elles décrétées ?"]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+            
+            it "miss sentence" $ do
+                let ls = [
+                        "Journees du chat, des toiletes ou de la Résistance : comment et par qui sont elles décrétées ?"]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [
+                        ResultMiss "Journees" 1 ["Journées","Ajournes","Séjournes","Journades"],
+                        ResultMiss "toiletes" 23 ["toilettes","toilâtes","toile tes","toile-tes"]])]
+        
+        describe "fr-fr" $ do
+            -- https://www.lemonde.fr/les-decodeurs/article/2019/08/08/journee-du-chat-des-toilettes-ou-de-la-resistance-comment-et-par-qui-sont-elles-decretees_5497728_4355770.html
+            
+            let check' = check [DictFrFR]
+            
+            it "ok sentence" $ do
+                let ls = [
+                        "Journées du chat, des toilettes ou de la Résistance : comment et par qui sont-elles décrétées ?"]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+            
+            it "miss sentence" $ do
+                let ls = [
+                        "Journees du chat, des toiletes ou de la Résistance : comment et par qui sont elles décrétées ?"]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [
+                        ResultMiss "Journees" 1 ["Journées","Ajournes","Séjournes","Journades"],
+                        ResultMiss "toiletes" 23 ["toilettes","toilâtes","toile tes","toile-tes"]])]
+        
+        describe "nl" $ do
+            -- https://www.nu.nl/buitenland/5976175/bijna-zevenhonderd-immigranten-vs-uitgezet-na-politie-invallen.html
+            
+            let check' = check [DictNl]
+            
+            it "ok sentence" $ do
+                let ls = [
+                        "Ongeveer 680 illegale inwoners van de Amerikaanse staat Mississippi zijn woensdagavond na politie-invallen gearresteerd."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+            
+            it "miss sentence" $ do
+                let ls = [
+                        "Ongeveer 680 ilegale inwoners von de Amerikaanse staat Mississippi zijn woensdagavond na politie-invallen gearresteert."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [
+                        ResultMiss "ilegale" 14 ["illegale","legale"],
+                        ResultMiss "von" 31 ["con","bon","vin","on","vond","vont","vonk","Avon","Yvon","ven","vos","ion","van","vod","don"],
+                        ResultMiss "gearresteert." 107 ["gearresteerd"]])]
+        
+        describe "nl-nl" $ do
+            -- https://www.nu.nl/buitenland/5976175/bijna-zevenhonderd-immigranten-vs-uitgezet-na-politie-invallen.html
+            
+            let check' = check [DictNlNL]
+            
+            it "ok sentence" $ do
+                let ls = [
+                        "Ongeveer 680 illegale inwoners van de Amerikaanse staat Mississippi zijn woensdagavond na politie-invallen gearresteerd."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+            
+            it "miss sentence" $ do
+                let ls = [
+                        "Ongeveer 680 ilegale inwoners von de Amerikaanse staat Mississippi zijn woensdagavond na politie-invallen gearresteert."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [
+                        ResultMiss "ilegale" 14 ["illegale","legale"],
+                        ResultMiss "von" 31 ["con","bon","vin","on","vond","vont","vonk","Avon","Yvon","ven","vos","ion","van","vod","don"],
+                        ResultMiss "gearresteert." 107 ["gearresteerd"]])]

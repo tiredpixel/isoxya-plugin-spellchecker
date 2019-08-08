@@ -11,10 +11,16 @@ RUN apt-get update && \
         ghc-8.6.5-prof \
         happy \
         hunspell \
+        hunspell-cs \
+        hunspell-de-de \
         hunspell-en-gb \
         hunspell-en-us \
+        hunspell-es \
+        hunspell-fr \
+        hunspell-nl \
         jq \
-        libpcre3-dev && \
+        libpcre3-dev \
+        myspell-et && \
     rm -rf /var/lib/apt/lists/*
 
 RUN useradd ${USER} -d ${HOME} && \

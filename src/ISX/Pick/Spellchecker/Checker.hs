@@ -10,9 +10,21 @@ import qualified    Data.Text                               as  T
 
 
 data Dict =
+    DictCs |
+    DictCsCZ |
+    DictDe |
+    DictDeDE |
     DictEn |
     DictEnGB |
-    DictEnUS
+    DictEnUS |
+    DictEs |
+    DictEsES |
+    DictEt |
+    DictEtEE |
+    DictFr |
+    DictFrFR |
+    DictNl |
+    DictNlNL
 
 data Result =
     ResultOk |
@@ -51,13 +63,25 @@ hunspell dicts texts = drop 1 . lines . toText <$> readProcess "hunspell" [
     where
         -- ! terse-mode; ^ disable prefix [SEC]; replace inner newlines [SEC]
         texts' = "!" : (("^" <>) . T.replace "\n" " " <$> texts)
-        dicts' = hunspellDict <$> dicts
+        dicts' = concat $ hunspellDicts <$> dicts
 
-hunspellDict :: Dict -> Text
-hunspellDict d = case d of
-    DictEn   -> "en_GB,en_US"
-    DictEnGB -> "en_GB"
-    DictEnUS -> "en_US"
+hunspellDicts :: Dict -> [Text]
+hunspellDicts d = case d of
+    DictCs   -> ["cs_CZ"]
+    DictCsCZ -> ["cs_CZ"]
+    DictDe   -> ["de_DE"]
+    DictDeDE -> ["de_DE"]
+    DictEn   -> ["en_GB", "en_US"]
+    DictEnGB -> ["en_GB"]
+    DictEnUS -> ["en_US"]
+    DictEs   -> ["es_ES"]
+    DictEsES -> ["es_ES"]
+    DictEt   -> ["et_EE"]
+    DictEtEE -> ["et_EE"]
+    DictFr   -> ["fr_FR"]
+    DictFrFR -> ["fr_FR"]
+    DictNl   -> ["nl_NL"]
+    DictNlNL -> ["nl_NL"]
 
 parse :: [Text] -> [Text] -> Results
 parse texts results = zip texts results'
