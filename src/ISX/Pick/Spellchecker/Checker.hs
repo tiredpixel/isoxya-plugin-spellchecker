@@ -5,7 +5,8 @@ module ISX.Pick.Spellchecker.Checker (
     ) where
 
 
-import              System.Process                          (readProcess)
+import              System.Exit
+import              System.Process.Text
 import qualified    Data.Text                               as  T
 
 
@@ -56,16 +57,18 @@ dictDef :: Dict
 dictDef = DictEn
 
 hunspell :: [Dict] -> [Text] -> IO [Text]
-hunspell dicts texts = drop 1 . lines . toText <$> readProcess "hunspell" [
-    "-d", toString $ T.intercalate "," dicts',
-    "-a"
-    ] (toString $ unlines texts')
+hunspell dicts texts = do
+    (ExitSuccess, out, _) <- readProcessWithExitCode "hunspell" [
+        "-d", intercalate "," dicts',
+        "-a"
+        ] (unlines texts')
+    return $ drop 1 $ lines out
     where
         -- ! terse-mode; ^ disable prefix [SEC]; replace inner newlines [SEC]
         texts' = "!" : (("^" <>) . T.replace "\n" " " <$> texts)
         dicts' = concat $ hunspellDicts <$> dicts
 
-hunspellDicts :: Dict -> [Text]
+hunspellDicts :: Dict -> [String]
 hunspellDicts d = case d of
     DictCs   -> ["cs_CZ"]
     DictCsCZ -> ["cs_CZ"]

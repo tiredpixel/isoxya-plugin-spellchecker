@@ -36,6 +36,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  BSD3
 * HandsomeSoup
     License:  BSD3
+* ListLike
+    License:  BSD3
 * QuickCheck
     License:  BSD3
 * StateVar
@@ -166,7 +168,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  BSD3
 * filepath
     License:  BSD3
+* fmlist
+    License:  BSD3
 * free
+    License:  BSD3
+* generic-deriving
     License:  BSD3
 * ghc
     License:  BSD3
@@ -287,6 +293,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     License:  BSD-3-Clause
 * process
     License:  BSD3
+* process-extras
+    License:  MIT
 * profunctors
     License:  BSD3
 * pwstore-fast
@@ -382,6 +390,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 * unliftio-core
     License:  MIT
 * unordered-containers
+    License:  BSD3
+* utf8-string
     License:  BSD3
 * uuid-types
     License:  BSD3

@@ -60,7 +60,7 @@ library isx-pick-spellchecker-int
         containers,
         HandsomeSoup,
         hxt,
-        process,
+        process-extras,
         snap-core,
         snap-extras,
         text,
