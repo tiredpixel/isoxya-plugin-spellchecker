@@ -85,6 +85,23 @@ spec =
                     (ls !! 0, [
                         ResultNone "aslkdflaasdfsdfhf" 1])]
         
+        describe "multi" $ do
+            let check' = check [DictEnGB, DictEnUS]
+            
+            it "ok en-gb" $ do
+                let ls = [
+                        "colours"]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+            
+            it "ok en-us" $ do
+                let ls = [
+                        "colors"]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+        
         describe "en" $ do
             -- https://www.theguardian.com/environment/2019/aug/08/climate-crisis-reducing-lands-ability-to-sustain-humanity-says-ipcc
             
@@ -107,6 +124,20 @@ spec =
                         ResultMiss "heeting" 8 ["sheeting","heating","heeling","heeding","meeting","hefting","greeting"],
                         ResultMiss "increesing" 19 ["increasing","screening","resining","cresting","resisting"],
                         ResultMiss "whyle" 67 ["while","whale","whole","why le","why-le","Whaley"]])]
+            
+            it "ok en-gb" $ do
+                let ls = [
+                        "colours"]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+            
+            it "ok en-us" $ do
+                let ls = [
+                        "colors"]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
         
         describe "en-gb" $ do
             let check' = check [DictEnGB]
@@ -125,3 +156,21 @@ spec =
                 rs `shouldBe` [
                     (ls !! 0, [
                         ResultMiss "colors" 1 ["colours","colons","col ors","col-ors","Coors","Corso"]])]
+        
+        describe "en-us" $ do
+            let check' = check [DictEnUS]
+            
+            it "ok en-us" $ do
+                let ls = [
+                        "colors"]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [])]
+            
+            it "miss en-gb" $ do
+                let ls = [
+                        "colours"]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [
+                        ResultMiss "colours" 1 ["colors","co lours","co-lours","col ours","col-ours","coursers","courser","courses","colossus","colossal","callous"]])]

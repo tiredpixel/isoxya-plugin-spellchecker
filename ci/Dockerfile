@@ -8,7 +8,8 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         curl \
         hunspell \
-        hunspell-en-gb && \
+        hunspell-en-gb \
+        hunspell-en-us && \
     rm -rf /var/lib/apt/lists/*
 
 RUN useradd ${USER} -d ${HOME} && \

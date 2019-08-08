@@ -12,6 +12,7 @@ RUN apt-get update && \
         happy \
         hunspell \
         hunspell-en-gb \
+        hunspell-en-us \
         jq \
         libpcre3-dev && \
     rm -rf /var/lib/apt/lists/*

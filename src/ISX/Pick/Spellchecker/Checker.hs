@@ -11,7 +11,8 @@ import qualified    Data.Text                               as  T
 
 data Dict =
     DictEn |
-    DictEnGB
+    DictEnGB |
+    DictEnUS
 
 data Result =
     ResultOk |
@@ -54,8 +55,9 @@ hunspell dicts texts = drop 1 . lines . toText <$> readProcess "hunspell" [
 
 hunspellDict :: Dict -> Text
 hunspellDict d = case d of
-    DictEn   -> "en_GB"
+    DictEn   -> "en_GB,en_US"
     DictEnGB -> "en_GB"
+    DictEnUS -> "en_US"
 
 parse :: [Text] -> [Text] -> Results
 parse texts results = zip texts results'
