@@ -69,6 +69,23 @@ spec =
                         ResultMiss "asessment" 20 ["assessment","amassment","easement","assent"],
                         ResultMiss "tHe" 33 ["t He","the","tee","tie","toe","he","thee","then","them","they","she","thy"]])]
             
+            it "miss interspersed" $ do
+                let ls = [
+                        "There is stil a lot more testing\nto go – next, Kay",
+                        "and other testers will wear",
+                        "the suit with temperature sensors",
+                        "for a more precize asessment of tHe heat situation."]
+                rs <- check' ls
+                rs `shouldBe` [
+                    (ls !! 0, [
+                        ResultMiss "stil" 10 ["slit","stile","stilt","still","silt","sail","stir","soil","instil","pistil","distil"]]),
+                    (ls !! 1, []),
+                    (ls !! 2, []),
+                    (ls !! 3, [
+                        ResultMiss "precize" 12 ["precise","prize"],
+                        ResultMiss "asessment" 20 ["assessment","amassment","easement","assent"],
+                        ResultMiss "tHe" 33 ["t He","the","tee","tie","toe","he","thee","then","them","they","she","thy"]])]
+            
             it "miss control" $ do
                 let ls = [
                         "*steeep"]

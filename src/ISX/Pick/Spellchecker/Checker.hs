@@ -7,6 +7,7 @@ module ISX.Pick.Spellchecker.Checker (
 
 import              System.Exit
 import              System.Process.Text
+import qualified    Data.List                               as  L
 import qualified    Data.Text                               as  T
 
 
@@ -32,7 +33,8 @@ data Result =
     ResultRoot WordRoot |
     ResultCompound |
     ResultMiss WordOriginal WordOffset [WordMiss] |
-    ResultNone WordOriginal WordOffset
+    ResultNone WordOriginal WordOffset |
+    ResultSep
     deriving (Show, Eq)
 
 type Results = [(Text, [Result])]
@@ -62,10 +64,12 @@ hunspell dicts texts = do
         "-d", intercalate "," dicts',
         "-a"
         ] (unlines texts')
-    return $ drop 1 $ lines out
+    return $ drop 1 $ lines $ T.stripEnd out
     where
-        -- ! terse-mode; ^ disable prefix [SEC]; replace inner newlines [SEC]
-        texts' = "!" : (("^" <>) . T.replace "\n" " " <$> texts)
+        -- not ! terse-mode, as that affects alignment of results, when there
+        -- are consecutive correct lines
+        -- ^ disable prefix [SEC]; replace inner newlines [SEC]
+        texts' = ("^" <>) . T.replace "\n" " " <$> texts
         dicts' = concat $ hunspellDicts <$> dicts
 
 hunspellDicts :: Dict -> [String]
@@ -89,8 +93,15 @@ hunspellDicts d = case d of
 parse :: [Text] -> [Text] -> Results
 parse texts results = zip texts results'
     where
-        results' = (parseLine <$>) . filter ("" /=) <$>
-            (lines <$> T.splitOn "\n\n" (unlines results))
+        results' = (filter isMistake <$>) <$>
+            L.groupBy groupSep $ parseLine <$> results
+        groupSep _ b = case b of
+            ResultSep {} -> False
+            _ -> True
+        isMistake r = case r of
+            ResultMiss {} -> True
+            ResultNone {} -> True
+            _ -> False
 
 parseLine :: Text -> Result
 parseLine l = fromMaybe (error "invalid spellchecker output") $ case ctrl of
@@ -99,6 +110,7 @@ parseLine l = fromMaybe (error "invalid spellchecker output") $ case ctrl of
     "-" -> Just ResultCompound
     "&" -> parseLineMiss lRem
     "#" -> parseLineNone lRem
+    ""  -> Just ResultSep
     _ -> Nothing
     where
         (ctrl, lRem_) = T.breakOn " " l
