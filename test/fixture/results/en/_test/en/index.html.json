@@ -1,0 +1,60 @@
+[
+  {
+    "paragraph": "GloBal heeting is increesing droughts, soil erosion and wildfires whyle diminishing crop yields in the tropics and thawing permafrost near the Poles, says the report by the Intergovernmental Panel on Climate Change.",
+    "results": [
+      {
+        "correct": false,
+        "offset": 1,
+        "status": "miss",
+        "suggestions": [
+          "Global",
+          "Glob al",
+          "Glob-al"
+        ],
+        "word": "GloBal"
+      },
+      {
+        "correct": false,
+        "offset": 8,
+        "status": "miss",
+        "suggestions": [
+          "sheeting",
+          "heating",
+          "heeling",
+          "heeding",
+          "meeting",
+          "hefting",
+          "greeting"
+        ],
+        "word": "heeting"
+      },
+      {
+        "correct": false,
+        "offset": 19,
+        "status": "miss",
+        "suggestions": [
+          "increasing",
+          "screening",
+          "resining",
+          "cresting",
+          "resisting"
+        ],
+        "word": "increesing"
+      },
+      {
+        "correct": false,
+        "offset": 67,
+        "status": "miss",
+        "suggestions": [
+          "while",
+          "whale",
+          "whole",
+          "why le",
+          "why-le",
+          "Whaley"
+        ],
+        "word": "whyle"
+      }
+    ]
+  }
+]

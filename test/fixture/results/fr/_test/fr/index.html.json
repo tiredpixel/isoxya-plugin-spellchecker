@@ -1,0 +1,31 @@
+[
+  {
+    "paragraph": "Journees du chat, des toiletes ou de la Résistance : comment et par qui sont elles décrétées ?",
+    "results": [
+      {
+        "correct": false,
+        "offset": 1,
+        "status": "miss",
+        "suggestions": [
+          "Journées",
+          "Ajournes",
+          "Séjournes",
+          "Journades"
+        ],
+        "word": "Journees"
+      },
+      {
+        "correct": false,
+        "offset": 23,
+        "status": "miss",
+        "suggestions": [
+          "toilettes",
+          "toilâtes",
+          "toile tes",
+          "toile-tes"
+        ],
+        "word": "toiletes"
+      }
+    ]
+  }
+]

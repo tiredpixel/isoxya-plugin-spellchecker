@@ -1,0 +1,30 @@
+[
+  {
+    "paragraph": "Česka republika si v rámci Evropské uni udržuje velmi dobrou kondici trhu práce.",
+    "results": [
+      {
+        "correct": false,
+        "offset": 37,
+        "status": "miss",
+        "suggestions": [
+          "inu",
+          "ni",
+          "unie",
+          "unii",
+          "unií",
+          "unci",
+          "učni",
+          "unik",
+          "upni",
+          "usni",
+          "unit",
+          "utni",
+          "uhni",
+          "ani",
+          "oni"
+        ],
+        "word": "uni"
+      }
+    ]
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "paragraph": "\"Vedelkutusega raketimootori katsetuse ajal toiimus plahvatus ja seade vottis tuld,\" ütles ministeerium.",
+    "results": [
+      {
+        "correct": false,
+        "offset": 2,
+        "status": "miss",
+        "suggestions": [
+          "VEdelkutusega",
+          "Edelkutusega",
+          "Aedelkutusega",
+          "Eedelkutusega",
+          "Tedelkutusega",
+          "Dedelkutusega",
+          "Medelkutusega",
+          "Redelkutusega",
+          "Õedelkutusega",
+          "Vedeldutusega",
+          "Vedelktuusega",
+          "Vedelkuutsega",
+          "Vedelkutsuega",
+          "Vedeldusega",
+          "Vedrutusega"
+        ],
+        "word": "Vedelkutusega"
+      },
+      {
+        "correct": false,
+        "offset": 45,
+        "status": "miss",
+        "suggestions": [
+          "toimus",
+          "toismui",
+          "toiaimus",
+          "toieimus",
+          "toisimus",
+          "toiilmus",
+          "toiuimus",
+          "toioimus",
+          "toimimus",
+          "toiihmus",
+          "toihimus",
+          "toiäimus",
+          "toiimbus",
+          "toimunus",
+          "toitumus"
+        ],
+        "word": "toiimus"
+      },
+      {
+        "correct": false,
+        "offset": 72,
+        "status": "miss",
+        "suggestions": [
+          "vettis",
+          "voltis",
+          "nottis",
+          "kottis",
+          "võttis",
+          "vtotis",
+          "votits",
+          "vttois",
+          "tavotis"
+        ],
+        "word": "vottis"
+      }
+    ]
+  }
+]

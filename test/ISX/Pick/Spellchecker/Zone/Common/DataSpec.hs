@@ -32,6 +32,55 @@ spec =
             describe "www.pavouk.tech" $
                 it "apex" $
                     check' "www.pavouk.tech/"
+        
+        describe "cs" $ do
+            let check' = testPage "cs" ["cs"]
+        
+            describe "_test" $
+                it "apex" $
+                    check' "_test/cs/"
+        
+        describe "de" $ do
+            let check' = testPage "de" ["de"]
+        
+            describe "_test" $
+                it "apex" $
+                    check' "_test/de/"
+        
+        describe "en" $ do
+            let check' = testPage "en" ["en"]
+        
+            describe "_test" $
+                it "apex" $
+                    check' "_test/en/"
+        
+        describe "es" $ do
+            let check' = testPage "es" ["es"]
+        
+            describe "_test" $
+                it "apex" $
+                    check' "_test/es/"
+        
+        describe "et" $ do
+            let check' = testPage "et" ["et"]
+        
+            describe "_test" $
+                it "apex" $
+                    check' "_test/et/"
+        
+        describe "fr" $ do
+            let check' = testPage "fr" ["fr"]
+        
+            describe "_test" $
+                it "apex" $
+                    check' "_test/fr/"
+        
+        describe "nl" $ do
+            let check' = testPage "nl" ["nl"]
+        
+            describe "_test" $
+                it "apex" $
+                    check' "_test/nl/"
 
 
 pC :: Value
