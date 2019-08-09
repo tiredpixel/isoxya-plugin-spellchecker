@@ -17,15 +17,15 @@ JSON, and is available now for private preview.
 
 ## Languages
 
-CODE | LANGUAGE | VARIANTS
------|----------|---------
-en * | English  | GB (BrE), US (AmE)
-cs   | Czech    | CZ
-de   | German   | DE
-es   | Spanish  | ES (European)
-et   | Estonian | EE
-fr   | French   | FR
-nl   | Dutch    | NL
+CODE   | LANGUAGE | VARIANTS
+-------|----------|---------
+`en *` | English  | `gb` (BrE), `us` (AmE)
+`cs`   | Czech    | `cz`
+`de`   | German   | `de`
+`es`   | Spanish  | `es` (European)
+`et`   | Estonian | `ee`
+`fr`   | French   | `fr`
+`nl`   | Dutch    | `nl`
 
 `*`: this is the default, if no language or variant is specified
 
