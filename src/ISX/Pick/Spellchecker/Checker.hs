@@ -28,6 +28,7 @@ data Dict =
     DictFrFR |
     DictNl |
     DictNlNL
+    deriving (Show)
 
 type Para = Text
 

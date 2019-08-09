@@ -29,6 +29,6 @@ spec = do
 
 testPage :: Text -> IO ()
 testPage url = do
-    rock <- fRock url
+    rock <- fRock url Nothing
     let texts = parse rock
     assertTextsLookup texts url

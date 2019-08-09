@@ -4,6 +4,7 @@ module ISX.Factory (
     ) where
 
 
+import              Data.Aeson
 import              Network.URI
 import              PVK.Com.API.Ext.URI
 import qualified    Data.Map.Strict                         as  Map
@@ -11,8 +12,8 @@ import qualified    Data.Text                               as  T
 import qualified    PVK.Com.API.Resource.ISXPick            as  R
 
 
-fRock :: Text -> IO R.Rock
-fRock url = do
+fRock :: Text -> Maybe Value -> IO R.Rock
+fRock url config = do
     body <- readFileBS $ fixturePage url
     return $ R.Rock {
         R.rockMeta   = meta,
@@ -22,7 +23,8 @@ fRock url = do
         Just metaUrl = parseUrl url
         meta = R.RockMeta {
             R.rockMetaUrl        = metaUrl,
-            R.rockMetaStatusCode = Just "200"}
+            R.rockMetaStatusCode = Just "200",
+            R.rockMetaConfig     = config}
 
 fxExt :: Text -> Text
 fxExt url = if T.takeEnd 1 url == "/"

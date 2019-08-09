@@ -12,9 +12,9 @@ import              ISX.Pick.Spellchecker.Route
 import              PVK.Com.API.Test
 
 
-assertResultsLookup :: [Value] -> Text -> IO ()
-assertResultsLookup results url = do
-    results0 <- readFileText $ fixtureResult url
+assertResultsLookup :: [Value] -> Text -> Text -> IO ()
+assertResultsLookup results ns url = do
+    results0 <- readFileText $ fixtureResult ns url
     let Just results0' = decode $ encodeUtf8 results0 :: Maybe [Value]
     results `shouldBe` results0'
 
@@ -27,8 +27,9 @@ withSrv :: RequestBuilder IO () -> IO Response
 withSrv r = runHandler r site
 
 
-fixtureResult :: Text -> FilePath
-fixtureResult url = toString $ "test/fixture/results/" <> fxExt url <> ".json"
+fixtureResult :: Text -> Text -> FilePath
+fixtureResult ns url = toString $
+    "test/fixture/results/" <> ns <> "/" <> fxExt url <> ".json"
 
 fixtureText :: Text -> FilePath
 fixtureText url = toString $ "test/fixture/texts/" <> fxExt url <> ".txt"

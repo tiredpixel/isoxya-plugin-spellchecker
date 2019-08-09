@@ -1,0 +1,426 @@
+[
+  [
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 1,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        },
+        {
+          "status": "miss",
+          "offset": 8,
+          "correct": false,
+          "suggestions": [
+            "Pickaxe",
+            "Pick"
+          ],
+          "word": "Pickax"
+        }
+      ],
+      "paragraph": "Isoxya Pickax Link Checker 1.0 release"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 39,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        },
+        {
+          "status": "miss",
+          "offset": 46,
+          "correct": false,
+          "suggestions": [
+            "Pickaxe",
+            "Pick"
+          ],
+          "word": "Pickax"
+        },
+        {
+          "status": "miss",
+          "offset": 91,
+          "correct": false,
+          "suggestions": [
+            "plug ins",
+            "plug-ins",
+            "plug-in"
+          ],
+          "word": "plugins"
+        },
+        {
+          "status": "miss",
+          "offset": 116,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        },
+        {
+          "status": "miss",
+          "offset": 314,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        }
+      ],
+      "paragraph": "We’re pleased to announce open-source Isoxya Pickax Link Checker 1.0—one of many possible plugins for the flexible Isoxya internet data processor and web crawler. This helps with link checking, useful in SEO for validating large lists of URLs. The very first release, this marks a new phase within the history of Isoxya, as we’ve decided […]"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 13,
+          "correct": false,
+          "suggestions": [
+            "Postures",
+            "Repost"
+          ],
+          "word": "Postgres"
+        },
+        {
+          "status": "miss",
+          "offset": 33,
+          "correct": false,
+          "suggestions": [
+            "ENGIN"
+          ],
+          "word": "NGINX"
+        },
+        {
+          "status": "miss",
+          "offset": 54,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        }
+      ],
+      "paragraph": "Open-Source Postgres-XL Docker, NGINX Test Upstream, Isoxya API Demo (Shell) updates"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 86,
+          "correct": false,
+          "suggestions": [
+            "Postures",
+            "Repost"
+          ],
+          "word": "Postgres"
+        },
+        {
+          "status": "miss",
+          "offset": 106,
+          "correct": false,
+          "suggestions": [
+            "ENGIN"
+          ],
+          "word": "NGINX"
+        },
+        {
+          "status": "miss",
+          "offset": 131,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        },
+        {
+          "status": "miss",
+          "offset": 324,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        }
+      ],
+      "paragraph": "We’re pleased to announce lots of updates to three open-source projects we maintain: Postgres-XL Docker, NGINX Test Upstream, and Isoxya API Demo (Shell). So much of the time in tech, we’re standing on the shoulders of giants, and it’s good to give something back. We make grateful use of lots of open-source components in Isoxya, […]"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 1,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        }
+      ],
+      "paragraph": "Isoxya 1.2 release"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 42,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        }
+      ],
+      "paragraph": "We’re pleased to announce the release of Isoxya 1.2—the high-performance internet data processor and web crawler. This release introduces partial snapshots limited by maximum pages or maximum depth, user agent whitelists, a more efficient approach to multi-snapshot settings, and numerous optimisations and fixes."
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 1,
+          "correct": false,
+          "suggestions": [
+            "Tigris"
+          ],
+          "word": "Tigrosa"
+        }
+      ],
+      "paragraph": "Tigrosa 1.1 release"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 42,
+          "correct": false,
+          "suggestions": [
+            "Tigris"
+          ],
+          "word": "Tigrosa"
+        },
+        {
+          "status": "miss",
+          "offset": 323,
+          "correct": false,
+          "suggestions": [
+            "Tigris"
+          ],
+          "word": "Tigrosa"
+        }
+      ],
+      "paragraph": "We’re pleased to announce the release of Tigrosa 1.1—the secure authentication and authorisation proxy. This version introduces a flexible roles permissions system, introducing the concepts of a user realm (such as admin) and a role for a specific organisation (usually member, but now can also be an organisation admin). Tigrosa is like a guard-spider, protecting […]"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 1,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        }
+      ],
+      "paragraph": "Isoxya API Demo (Bash)"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 50,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        },
+        {
+          "status": "miss",
+          "offset": 109,
+          "correct": false,
+          "suggestions": [
+            "BSD"
+          ],
+          "word": "BSD3"
+        }
+      ],
+      "paragraph": "We’re pleased to announce the publication of the Isoxya API Demo (Bash) code to GitHub, available under the BSD3 licence. We realise it’s not always easy to get started with a new system, and the more help you can get, the better—especially if you’re allowed to share and modify it as desired! We think that […]"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 1,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        }
+      ],
+      "paragraph": "Isoxya 1.1 release"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 42,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        },
+        {
+          "status": "miss",
+          "offset": 158,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        }
+      ],
+      "paragraph": "We’re pleased to announce the release of Isoxya 1.1—the high performance internet data processor and web crawler. It’s the first minor-version release since Isoxya 1.0 (over 5 months ago), and represents a major milestone in the maturity and functionality of the software, bringing even higher performance, and simplified interfaces for connection with other programs. Increased […]"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 1,
+          "correct": false,
+          "suggestions": [
+            "Tigris"
+          ],
+          "word": "Tigrosa"
+        }
+      ],
+      "paragraph": "Tigrosa 1.0 private release"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 50,
+          "correct": false,
+          "suggestions": [
+            "Tigris"
+          ],
+          "word": "Tigrosa"
+        },
+        {
+          "status": "miss",
+          "offset": 93,
+          "correct": false,
+          "suggestions": [
+            "Tigris"
+          ],
+          "word": "Tigrosa"
+        },
+        {
+          "status": "miss",
+          "offset": 193,
+          "correct": false,
+          "suggestions": [
+            "backed",
+            "backbend",
+            "back end",
+            "back-end",
+            "backhand"
+          ],
+          "word": "backend"
+        }
+      ],
+      "paragraph": "We’re pleased to announce the private release of Tigrosa 1.0—the very first stable version! Tigrosa is a dedicated authentication and authorisation program, which acts as a secure proxy for a backend API, vastly simplifying the programming logic necessary for securing an application. This not only increases security, but also decreases development time for new products! […]"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 4,
+          "correct": false,
+          "suggestions": [
+            "Razor"
+          ],
+          "word": "Burazor"
+        }
+      ],
+      "paragraph": "A. Burazor"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 4,
+          "correct": false,
+          "suggestions": [
+            "Razor"
+          ],
+          "word": "Burazor"
+        }
+      ],
+      "paragraph": "A. Burazor"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 1,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        }
+      ],
+      "paragraph": "Isoxya 1.0 official release"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 9,
+          "correct": false,
+          "suggestions": [
+            "Oxyanion"
+          ],
+          "word": "Isoxya"
+        }
+      ],
+      "paragraph": "What is Isoxya? That is a very good question, and one which I have pondered much during the time since I made the first commit to the first code repository. Blank files, containing absolutely nothing, stretching out before me like snow on mountains. Empty. Inspiring. And intimidating. Now, a little over two years later, I […]"
+    },
+    {
+      "results": [
+        {
+          "status": "miss",
+          "offset": 30,
+          "correct": false,
+          "suggestions": [
+            "O",
+            "OB",
+            "OČ",
+            "OD",
+            "ON",
+            "OŇ",
+            "OJ",
+            "OK",
+            "OP",
+            "OŘ",
+            "OS",
+            "OE"
+          ],
+          "word": "OÜ"
+        }
+      ],
+      "paragraph": "Copyright © 2017–2019 Pavouk OÜ"
+    }
+  ]
+]

@@ -1,8 +1,10 @@
 module ISX.Pick.Spellchecker.Zone.Common.DataSpec (spec) where
 
 
+import              ISX.Pick.Spellchecker.Checker
 import              ISX.Test
 import              Prelude                                 hiding  (get)
+import qualified    ISX.Pick.Spellchecker.Resource.Common   as  R
 
 
 {-# ANN module ("HLint: ignore Reduce duplication" :: String) #-}
@@ -19,11 +21,19 @@ spec =
             b ^.. key "urls" . values `shouldBe` []
             assertElemN res 2
         
-        describe "default" $
+        describe "default" $ do
+            let check' = testPage "default" []
         
             describe "www.pavouk.tech" $
                 it "apex" $
-                    testPage "www.pavouk.tech/"
+                    check' "www.pavouk.tech/"
+        
+        describe "multi" $ do
+            let check' = testPage "multi" [DictEnGB, DictCs]
+        
+            describe "www.pavouk.tech" $
+                it "apex" $
+                    check' "www.pavouk.tech/"
 
 
 pC :: Value
@@ -33,12 +43,16 @@ pC = object [
     ("header", object []),
     ("body", String "")]
 
-testPage :: Text -> IO ()
-testPage url = do
-    rock <- fRock url
+testPage :: Text -> [Dict] -> Text -> IO ()
+testPage ns dicts url = do
+    rock <- fRock url dicts'
     res <- withSrv $ postJSON "/data" rock
     assertSuccess res
     b <- getResponseBody res
-    assertResultsLookup (b ^.. key "data") url
+    assertResultsLookup (b ^.. key "data") ns url
     b ^.. key "urls" . values `shouldBe` []
     assertElemN res 2
+    where
+        dicts' = if null dicts
+            then Nothing
+            else Just $ toJSON $ R.RockMetaConfig dicts
