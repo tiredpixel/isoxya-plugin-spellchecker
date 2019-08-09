@@ -149,7 +149,8 @@ test-suite isx-pick-spellchecker-test
         bytestring,
         containers,
         network-uri,
-        text
+        text,
+        vector
     hs-source-dirs:
         test
     build-tool-depends:

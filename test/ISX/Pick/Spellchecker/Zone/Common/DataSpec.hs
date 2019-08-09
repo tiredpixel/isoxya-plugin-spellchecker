@@ -47,7 +47,7 @@ testPage ns dicts url = do
     res <- withSrv $ postJSON "/data" rock
     assertSuccess res
     b <- getResponseBody res
-    assertResultsLookup (b ^.. key "data") ns url
+    assertResultsLookup (b ^. key "data" . _Array) ns url
     b ^.. key "urls" . values `shouldBe` []
     assertElemN res 2
     where

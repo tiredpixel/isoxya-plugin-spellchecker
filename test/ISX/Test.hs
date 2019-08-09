@@ -7,15 +7,16 @@ module ISX.Test (
     ) where
 
 
+import              Data.Vector                             (Vector)
 import              ISX.Factory
 import              ISX.Pick.Spellchecker.Route
 import              PVK.Com.API.Test
 
 
-assertResultsLookup :: [Value] -> Text -> Text -> IO ()
+assertResultsLookup :: Vector Value -> Text -> Text -> IO ()
 assertResultsLookup results ns url = do
     results0 <- readFileText $ fixtureResult ns url
-    let Just results0' = decode $ encodeUtf8 results0 :: Maybe [Value]
+    let Just results0' = decode $ encodeUtf8 results0 :: Maybe (Vector Value)
     results `shouldBe` results0'
 
 assertTextsLookup :: [Text] -> Text -> IO ()
