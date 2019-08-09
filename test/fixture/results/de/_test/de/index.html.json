@@ -1,6 +1,6 @@
 [
   {
-    "paragraph": "Die 140 millionen Euro teure Expedition Richtung Norden beginnt dan am 20. September. Sie fuhrt das Team von Norwegen entlang der sibirischen Küste Richtung Pol. Vor Ort werden Messungen im Meerwaßer, im Eis und in der Atmosphäre vorgenommen.",
+    "paragraph": "Die 140 millionen Euro teure Expedition Richtung Norden beginnt dann am 20. September. Sie fuhrt das Team von Norwegen entlang der sibirischen Küste Richtung Pol. Vor Ort werden Messungen im Meerwaßer, im Eis und in der Atmosphäre vorgenommen.",
     "results": [
       {
         "correct": false,
@@ -16,30 +16,7 @@
       },
       {
         "correct": false,
-        "offset": 65,
-        "status": "miss",
-        "suggestions": [
-          "da",
-          "an",
-          "dann",
-          "dran",
-          "dank",
-          "den",
-          "das",
-          "dar",
-          "ran",
-          "man",
-          "van",
-          "San",
-          "Jan",
-          "Pan",
-          "Fan"
-        ],
-        "word": "dan"
-      },
-      {
-        "correct": false,
-        "offset": 191,
+        "offset": 192,
         "status": "miss",
         "suggestions": [
           "Meerwasser",

@@ -1,6 +1,6 @@
 [
   {
-    "paragraph": "Ongeveer 680 ilegale inwoners von de Amerikaanse staat Mississippi zijn woensdagavond na politie-invallen gearresteert.",
+    "paragraph": "Ongeveer 680 ilegale inwoners van de Amerikaanse staat Mississippi zijn woensdagavond na politie-invallen gearresteert.",
     "results": [
       {
         "correct": false,
@@ -11,29 +11,6 @@
           "legale"
         ],
         "word": "ilegale"
-      },
-      {
-        "correct": false,
-        "offset": 31,
-        "status": "miss",
-        "suggestions": [
-          "con",
-          "bon",
-          "vin",
-          "on",
-          "vond",
-          "vont",
-          "vonk",
-          "Avon",
-          "Yvon",
-          "ven",
-          "vos",
-          "ion",
-          "van",
-          "vod",
-          "don"
-        ],
-        "word": "von"
       },
       {
         "correct": false,

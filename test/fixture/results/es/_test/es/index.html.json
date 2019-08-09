@@ -1,6 +1,6 @@
 [
   {
-    "paragraph": "El planeta necesita un cambio del modelo alementario paar combatir la crisis climatica",
+    "paragraph": "El planeta necesita un cambio del modelo alementario para combatir la crisis climatica",
     "results": [
       {
         "correct": false,
@@ -14,24 +14,6 @@
           "argumentario"
         ],
         "word": "alementario"
-      },
-      {
-        "correct": false,
-        "offset": 54,
-        "status": "miss",
-        "suggestions": [
-          "para",
-          "par",
-          "parar",
-          "pasar",
-          "papar",
-          "pagar",
-          "pajar",
-          "payar",
-          "piar",
-          "puar"
-        ],
-        "word": "paar"
       },
       {
         "correct": false,
