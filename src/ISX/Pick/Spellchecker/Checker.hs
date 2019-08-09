@@ -1,5 +1,6 @@
 module ISX.Pick.Spellchecker.Checker (
     Dict(..),
+    ParaResult(..),
     Result(..),
     check
     ) where
@@ -28,6 +29,13 @@ data Dict =
     DictNl |
     DictNlNL
 
+type Para = Text
+
+data ParaResult = ParaResult {
+    paraResultPara    :: Para,
+    paraResultResults :: [Result]
+    } deriving (Show, Eq)
+
 data Result =
     ResultOk |
     ResultRoot WordRoot |
@@ -37,8 +45,6 @@ data Result =
     ResultSep
     deriving (Show, Eq)
 
-type Results = [(Text, [Result])]
-
 type WordMiss = Text
 
 type WordOffset = Integer
@@ -47,7 +53,7 @@ type WordOriginal = Text
 
 type WordRoot = Text
 
-check :: [Dict] -> [Text] -> IO Results
+check :: [Dict] -> [Para] -> IO [ParaResult]
 check dicts texts = parse texts <$> hunspell dicts' texts
     where
         dicts' = if null dicts
@@ -90,8 +96,8 @@ hunspellDicts d = case d of
     DictNl   -> ["nl_NL"]
     DictNlNL -> ["nl_NL"]
 
-parse :: [Text] -> [Text] -> Results
-parse texts results = zip texts results'
+parse :: [Para] -> [Text] -> [ParaResult]
+parse texts results = zipWith ParaResult texts results'
     where
         results' = (filter isMistake <$>) <$>
             L.groupBy groupSep $ parseLine <$> results
