@@ -17,20 +17,20 @@ JSON, and is available now for private preview.
 
 ## Languages
 
-CODE   | LANGUAGE | VARIANTS
--------|----------|---------
-`en *` | English  | `gb` (BrE), `us` (AmE)
-`cs`   | Czech    | `cz`
-`de`   | German   | `de`
-`es`   | Spanish  | `es` (European)
-`et`   | Estonian | `ee`
-`fr`   | French   | `fr`
-`nl`   | Dutch    | `nl`
+CODE     | LANGUAGE | VARIANTS
+---------|----------|---------
+`en` `*` | English  | `gb` (BrE), `us` (AmE)
+`cs`     | Czech    | `cz`
+`de`     | German   | `de`
+`es`     | Spanish  | `es` (European)
+`et`     | Estonian | `ee`
+`fr`     | French   | `fr`
+`nl`     | Dutch    | `nl`
 
 `*`: this is the default, if no language or variant is specified
 
 Many other languages can be added easily, since both Hunspell and MySpell
-dictionaries are used. If it's present in the build image, it can probably be
+dictionaries are used. If it's available in the build OS, it can probably be
 added, with appropriate tests and extensions to the Isoxya engine interface.
 
 ### en: English
