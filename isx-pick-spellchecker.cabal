@@ -44,11 +44,11 @@ library isx-pick-spellchecker-int
     exposed-modules:
         ISX.Pick.Spellchecker.Checker
         ISX.Pick.Spellchecker.Parser
-        ISX.Pick.Spellchecker.Resource.Common
         ISX.Pick.Spellchecker.Route
         ISX.Pick.Spellchecker.Zone.Common.Apex
         ISX.Pick.Spellchecker.Zone.Common.Data
     other-modules:
+        ISX.Pick.Spellchecker.Resource.Common
         Prelude
     build-depends:
         base-noprelude                  ==  4.12.*,
