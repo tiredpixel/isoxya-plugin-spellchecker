@@ -1,5 +1,6 @@
 module ISX.Factory (
-    fRock
+    fRock,
+    fxExt
     ) where
 
 
@@ -23,13 +24,14 @@ fRock url = do
             R.rockMetaUrl        = metaUrl,
             R.rockMetaStatusCode = Just "200"}
 
+fxExt :: Text -> Text
+fxExt url = if T.takeEnd 1 url == "/"
+    then url <> "index.html"
+    else url
+
 
 fixturePage :: Text -> FilePath
-fixturePage url = toString $ "test/fixture/pages/" <> f
-    where
-        f = if T.takeEnd 1 url == "/"
-            then url <> "index.html"
-            else url
+fixturePage url = toString $ "test/fixture/pages/" <> fxExt url
 
 parseUrl :: Text -> Maybe URIAbsolute
 parseUrl url = URIAbsolute <$> parseAbsoluteURI (toString $ "http://" <> url)

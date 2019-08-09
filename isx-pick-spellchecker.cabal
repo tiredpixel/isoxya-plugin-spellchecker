@@ -46,6 +46,7 @@ library isx-pick-spellchecker-int
         ISX.Pick.Spellchecker.Parser
         ISX.Pick.Spellchecker.Route
         ISX.Pick.Spellchecker.Zone.Common.Apex
+        ISX.Pick.Spellchecker.Zone.Common.Data
     other-modules:
         ISX.Pick.Spellchecker.Resource.Common
         Prelude
@@ -130,6 +131,7 @@ test-suite isx-pick-spellchecker-test
         ISX.Pick.Spellchecker.CheckerSpec
         ISX.Pick.Spellchecker.ParserSpec
         ISX.Pick.Spellchecker.Zone.Common.ApexSpec
+        ISX.Pick.Spellchecker.Zone.Common.DataSpec
         ISX.Test
         Prelude
     build-depends:

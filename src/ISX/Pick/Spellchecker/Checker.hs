@@ -40,8 +40,8 @@ data Result =
     ResultOk |
     ResultRoot WordRoot |
     ResultCompound |
-    ResultMiss WordOriginal WordOffset [WordMiss] |
-    ResultNone WordOriginal WordOffset |
+    ResultMiss WordOrig WordOffset [WordMiss] |
+    ResultNone WordOrig WordOffset |
     ResultSep
     deriving (Show, Eq)
 
@@ -49,7 +49,7 @@ type WordMiss = Text
 
 type WordOffset = Integer
 
-type WordOriginal = Text
+type WordOrig = Text
 
 type WordRoot = Text
 
