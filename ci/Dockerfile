@@ -15,6 +15,7 @@ RUN apt-get update && \
         hunspell-es \
         hunspell-fr \
         hunspell-nl \
+        libpcre3-dev \
         myspell-et && \
     rm -rf /var/lib/apt/lists/*
 
