@@ -30,7 +30,9 @@ USER ${USER}
 
 WORKDIR ${HOME}
 
-ENV PATH ${HOME}/bin:$PATH
+ENV \
+    LANG=C.UTF-8 \
+    PATH=${HOME}/bin:$PATH
 
 CMD ["isx-pick-spellchecker", \
     "-p", "8000"]

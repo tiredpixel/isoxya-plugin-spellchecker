@@ -31,7 +31,9 @@ USER ${USER}
 
 WORKDIR ${HOME}/src
 
-ENV PATH ${HOME}/.cabal/bin:$PATH
+ENV \
+    LANG=C.UTF-8 \
+    PATH=${HOME}/.cabal/bin:$PATH
 
 COPY [ \
     "cabal.config", \
