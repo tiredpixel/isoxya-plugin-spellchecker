@@ -23,7 +23,7 @@ fRock url config = do
         Just metaUrl = parseUrl url
         meta = R.RockMeta {
             R.rockMetaUrl        = metaUrl,
-            R.rockMetaStatusCode = Just "200",
+            R.rockMetaStatusCode = Just 200,
             R.rockMetaConfig     = config}
 
 fxExt :: Text -> Text
