@@ -18,7 +18,7 @@ import qualified    PVK.Com.API.Resource.ISXPick            as  R
 
 create :: Snap ()
 create = do
-    req_      <- Req.getJSON' >>= Req.validateJSON
+    req_      <- Req.getBoundedJSON' s >>= Req.validateJSON
     Just rock <- Res.runValidate req_
     let texts = parse rock
     let dicts = maybe [] R.rockMetaConfigDicts (reparseConfig rock)
@@ -28,6 +28,7 @@ create = do
         R.oreData = toJSON results',
         R.oreUrls = S.empty}
     where
+        s = 50000000 -- 50 MB
         isMistake = not . null . paraResultResults
 
 
