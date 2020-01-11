@@ -4,6 +4,7 @@ services:
     env_file: .env
     build: .
     volumes:
+      - ./dist:/home/x/src/dist
       - ./isx-pick-spellchecker.cabal:/home/x/src/isx-pick-spellchecker.cabal
       - ./lib:/home/x/src/lib
       - ./src:/home/x/src/src
