@@ -10,6 +10,7 @@ RUN apt-get update && \
         daemontools \
         ghc-8.6.5-prof \
         happy \
+        hlint \
         hunspell \
         hunspell-cs \
         hunspell-de-de \
