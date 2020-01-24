@@ -1,5 +1,6 @@
 #===============================================================================
-FROM debian:9
+# FROMFREEZE debian:9
+FROM debian@sha256:85c4668abb4f26e913152ba8fd04fca5f1c2345d3e2653855e6bb0acf461ed50
 
 ARG USER=x
 ARG HOME=/home/x

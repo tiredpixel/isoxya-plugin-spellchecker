@@ -24,7 +24,7 @@ create = do
     let dicts = maybe [] R.rockMetaConfigDicts (reparseConfig rock)
     results <- liftIO $ check dicts texts
     let results' = filter isMistake results
-    writeJSON $ R.Ore {
+    writeJSON  R.Ore {
         R.oreData = toJSON results',
         R.oreUrls = S.empty}
     where

@@ -39,8 +39,7 @@ library pvk-com
         network-uri,
         snap-core,
         snap-extras,
-        unordered-containers,
-        vector
+        unordered-containers
     hs-source-dirs:
         lib/pvk-com/src
 
@@ -62,9 +61,7 @@ library isx-pick-spellchecker-int
         pvk-com,
         --
         aeson,
-        bytestring,
         containers,
-        HandsomeSoup,
         hxt,
         process-extras,
         snap-core,
@@ -107,8 +104,10 @@ library pvk-com-test
         aeson,
         base64-bytestring,
         bytestring,
-        http-link-header,
+        directory,
+        filepath,
         hspec                           ==  2.*,
+        http-link-header,
         lens,
         lens-aeson,
         snap-core
@@ -136,7 +135,6 @@ test-suite isx-pick-spellchecker-test
         pvk-com-test,
         --
         aeson,
-        bytestring,
         containers,
         hspec                           ==  2.*,
         network-uri,

@@ -15,7 +15,7 @@ import qualified    PVK.Com.API.Resource.ISXPick            as  R
 fRock :: Text -> Maybe Value -> IO R.Rock
 fRock url config = do
     body <- readFileBS $ fixturePage url
-    return $ R.Rock {
+    return R.Rock {
         R.rockMeta   = meta,
         R.rockHeader = Map.empty,
         R.rockBody   = body}

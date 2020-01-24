@@ -5,9 +5,6 @@ import              ISX.Test
 import              Prelude                                 hiding  (get)
 
 
-{-# ANN module ("HLint: ignore Reduce duplication" :: String) #-}
-
-
 spec :: Spec
 spec =
     describe "/data POST" $ do

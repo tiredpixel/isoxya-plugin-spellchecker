@@ -7,7 +7,7 @@ import              Prelude                                 hiding  (get)
 import              Relude.Unsafe                           ((!!))
 
 
-{-# ANN module ("HLint: ignore Reduce duplication" :: String) #-}
+{-# ANN module ("HLint: ignore Use head" :: String) #-}
 
 
 spec :: Spec
