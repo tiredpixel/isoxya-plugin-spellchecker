@@ -1,7 +1,6 @@
 version: "2.4"
 services:
   pick_spellchecker:
-    env_file: .env
     build: .
     volumes:
       - ./dist:/home/x/src/dist
