@@ -13,8 +13,7 @@ import qualified    ISX.Pick.Spellchecker.Resource.Common   as  R
 apex :: Snap ()
 apex = do
     t <- liftIO Clock.getCurrentTime
-    version_ <- liftIO $ join <$> (fmap . fmap) readMaybe (lookupEnv
-        "VERSION")
+    version_ <- liftIO $ join <$> (fmap . fmap) readMaybe (lookupEnv "VERSION")
     let version = fromMaybe versionDef version_
     writeJSON $ R.Apex t version
 

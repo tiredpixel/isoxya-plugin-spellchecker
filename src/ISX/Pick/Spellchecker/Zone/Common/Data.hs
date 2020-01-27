@@ -9,6 +9,7 @@ import              ISX.Pick.Spellchecker.Parser
 import              PVK.Com.API.Resource.ISXPickSnap        ()
 import              Snap.Core
 import              Snap.Extras.JSON
+import              System.Environment                      (lookupEnv)
 import qualified    Data.Set                                as  S
 import qualified    ISX.Pick.Spellchecker.Resource.Common   as  R
 import qualified    PVK.Com.API.Req                         as  Req
@@ -18,7 +19,9 @@ import qualified    PVK.Com.API.Resource.ISXPick            as  R
 
 create :: Snap ()
 create = do
-    req_      <- Req.getBoundedJSON' s >>= Req.validateJSON
+    reqLim_ <- liftIO $ join <$> (fmap . fmap) readMaybe (lookupEnv "REQ_LIM")
+    let reqLim = fromMaybe reqLimDef reqLim_
+    req_      <- Req.getBoundedJSON' reqLim >>= Req.validateJSON
     Just rock <- Res.runValidate req_
     let texts = parse rock
     let dicts = maybe [] R.rockMetaConfigDicts (reparseConfig rock)
@@ -28,9 +31,11 @@ create = do
         R.oreData = toJSON results',
         R.oreUrls = S.empty}
     where
-        s = 50000000 -- 50 MB
         isMistake = not . null . paraResultResults
 
+
+reqLimDef :: Int64
+reqLimDef = 2097152 -- 2 MB = (1 + .5) * (4/3) MB
 
 reparseConfig :: R.Rock -> Maybe R.RockMetaConfig
 reparseConfig = decode . encode . R.rockMetaConfig . R.rockMeta
