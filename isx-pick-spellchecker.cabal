@@ -10,6 +10,11 @@ build-type:             Simple
 extra-source-files:     README.md
 --------------------------------------------------------------------------------
 common shared-properties
+    build-depends:
+        base-noprelude                  ==  4.12.*,
+        relude
+    mixins:
+        relude                          (Relude as Prelude)
     default-language:   Haskell2010
     default-extensions:
         OverloadedStrings
@@ -28,12 +33,7 @@ library pvk-com
         PVK.Com.API.Resource.ISXPick
         PVK.Com.API.Resource.ISXPickSnap
         PVK.Com.API.Zone.Common.Error
-    other-modules:
-        Prelude
     build-depends:
-        base-noprelude                  ==  4.12.*,
-        relude,
-        --
         aeson,
         base64-bytestring,
         network-uri,
@@ -53,11 +53,7 @@ library isx-pick-spellchecker-int
         ISX.Pick.Spellchecker.Zone.Common.Data
     other-modules:
         ISX.Pick.Spellchecker.Resource.Common
-        Prelude
     build-depends:
-        base-noprelude                  ==  4.12.*,
-        relude,
-        --
         pvk-com,
         --
         aeson,
@@ -74,12 +70,7 @@ library isx-pick-spellchecker-int
 executable isx-pick-spellchecker
     import:             shared-properties
     main-is:            Main.hs
-    other-modules:
-        Prelude
     build-depends:
-        base-noprelude                  ==  4.12.*,
-        relude,
-        --
         pvk-com,
         isx-pick-spellchecker-int,
         --
@@ -93,12 +84,7 @@ library pvk-com-test
     import:             shared-properties
     exposed-modules:
         PVK.Com.API.Test
-    other-modules:
-        Prelude
     build-depends:
-        base-noprelude                  ==  4.12.*,
-        relude,
-        --
         pvk-com,
         --
         aeson,
@@ -111,6 +97,8 @@ library pvk-com-test
         lens,
         lens-aeson,
         snap-core
+    mixins:
+        relude                          (Relude.Unsafe)
     hs-source-dirs:
         lib/pvk-com/test
 
@@ -125,11 +113,7 @@ test-suite isx-pick-spellchecker-test
         ISX.Pick.Spellchecker.Zone.Common.ApexSpec
         ISX.Pick.Spellchecker.Zone.Common.DataSpec
         ISX.Test
-        Prelude
     build-depends:
-        base-noprelude                  ==  4.12.*,
-        relude,
-        --
         isx-pick-spellchecker-int,
         pvk-com,
         pvk-com-test,
@@ -140,6 +124,8 @@ test-suite isx-pick-spellchecker-test
         network-uri,
         text,
         vector
+    mixins:
+        relude                          (Relude.Unsafe)
     hs-source-dirs:
         test
     build-tool-depends:
