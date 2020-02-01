@@ -1,8 +1,8 @@
-# Isoxya Pickax Spellchecker (Haskell)
+# Isoxya plugin: Spellchecker (Haskell)
 
-[Isoxya Pickax Spellchecker](https://github.com/pavouk-0/isoxya-pickax-spellchecker-hs) is an Isoxya Pickax providing spellchecking to SEO and other internet-related data-processing activities. Using this in combination with the proprietary Isoxya engine, it's possible to spellcheck entire websites, even if they have millions of pages. The spellchecker backend is [Hunspell](https://hunspell.github.io/), the same spellchecker as is used in LibreOffice, Mozilla Firefox, Mozilla Thunderbird, Google Chrome, and various proprietary programs. [Docker images](https://hub.docker.com/r/pavouk0/isoxya-pickax-spellchecker) are available.
+[Isoxya plugin: Spellchecker](https://github.com/pavouk-0/isoxya-plugin-spellchecker-hs) is an Isoxya plugin providing spellchecking to SEO and other internet-related data-processing activities. Using this in combination with the proprietary Isoxya engine, it's possible to spellcheck entire websites, even if they have millions of pages. The spellchecker backend is [Hunspell](https://hunspell.github.io/), the same spellchecker as is used in LibreOffice, Mozilla Firefox, Mozilla Thunderbird, Google Chrome, and various proprietary programs.
 
-[Isoxya](https://www.pavouk.tech/category/isoxya/) is a High-Performance Internet Data Processor and Web Crawler. It is designed as a next-generation web crawler, scalable for large sites (millions of pages), cost-effective for tiny sites (1+ pages), offering flexible data processing using multi-industry plugins, delivering results via data streaming to multiple storage backends. It is magicked via a REST API using JSON, and is available now for private preview.
+[Isoxya](https://www.pavouk.tech/isoxya/) is a web crawler & data processing system. It is designed as a next-generation web crawler, scalable for large sites (millions of pages), cost-effective for tiny sites (1+ pages), offering flexible data processing using multi-industry plugins, delivering results via data streaming to multiple storage backends. It is magicked via a REST API using JSON.
 
 
 ## Languages
