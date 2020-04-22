@@ -29,14 +29,14 @@ USER ${USER}
 
 WORKDIR ${HOME}
 
-ENV \
+ENV ADDRESS=localhost \
     LANG=C.UTF-8 \
-    PATH=${HOME}/bin:$PATH
+    PATH=${HOME}/bin:$PATH \
+    PORT=8000
 
-CMD ["isx-pick-spellchecker", \
-    "-p", "8000"]
+CMD isx-pick-spellchecker -b ${ADDRESS} -p ${PORT}
 
-EXPOSE 8000
+EXPOSE ${PORT}
 
-HEALTHCHECK CMD curl -fs http://localhost:8000 || false
+HEALTHCHECK CMD curl -fs http://${ADDRESS}:${PORT} || false
 #===============================================================================

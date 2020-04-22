@@ -1,6 +1,7 @@
 version: "2.4"
 services:
   pick_spellchecker:
+    env_file: .env
     build: .
     volumes:
       - ./dist:/home/x/src/dist
@@ -9,10 +10,10 @@ services:
       - ./src:/home/x/src/src
       - ./test:/home/x/src/test
     networks:
-      pick:
+      plugin:
         aliases:
-          - spellchecker.pick.proc.isoxya.pavouk.tech
+          - spellchecker.plugins.isoxya-stag.pavouk.tech
 networks:
-  pick:
+  plugin:
     external: true
-    name: isx_pick
+    name: isx_plugin

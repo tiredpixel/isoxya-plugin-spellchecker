@@ -47,10 +47,12 @@ RUN cabal v1-update && \
 #-------------------------------------------------------------------------------
 COPY . .
 #-------------------------------------------------------------------------------
-CMD ["cabal", "v1-run", "isx-pick-spellchecker", "--", \
-    "-p", "8000"]
+ENV ADDRESS=localhost \
+    PORT=8000
 
-EXPOSE 8000
+CMD cabal v1-run isx-pick-spellchecker -- -b ${ADDRESS} -p ${PORT}
 
-HEALTHCHECK CMD curl -fs http://localhost:8000 || false
+EXPOSE ${PORT}
+
+HEALTHCHECK CMD curl -fs http://${ADDRESS}:${PORT} || false
 #===============================================================================
