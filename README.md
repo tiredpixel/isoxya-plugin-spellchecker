@@ -1,8 +1,8 @@
-# Isoxya plugin: Spellchecker (Haskell)
+# Isoxya plugin: Spellchecker
 
-[Isoxya plugin: Spellchecker](https://github.com/pavouk-0/isoxya-plugin-spellchecker-hs) is an Isoxya plugin providing spellchecking to SEO and other internet-related data-processing activities. Using this in combination with the proprietary Isoxya engine, it's possible to spellcheck entire websites, even if they have millions of pages. The spellchecker backend is [Hunspell](https://hunspell.github.io/), the same spellchecker as is used in LibreOffice, Mozilla Firefox, Mozilla Thunderbird, Google Chrome, and various proprietary programs.
+[Isoxya plugin: Spellchecker](https://github.com/pavouk-0/isoxya-plugin-spellchecker) is a plugin for [Isoxya](https://www.pavouk.tech/isoxya/)—Web Crawler & Data Processing System. Using this in combination with the proprietary crawling engine by [Pavouk](https://www.pavouk.tech/), it's possible to spellcheck entire websites, even if they have millions of pages.
 
-[Isoxya](https://www.pavouk.tech/isoxya/) is a web crawler & data processing system. It is designed as a next-generation web crawler, scalable for large sites (millions of pages), cost-effective for tiny sites (1+ pages), offering flexible data processing using multi-industry plugins, delivering results via data streaming to multiple storage backends. It is magicked via a REST API using JSON.
+The spellchecker backend is [Hunspell](https://hunspell.github.io/), the same spellchecker as is used in LibreOffice, Mozilla Firefox, Mozilla Thunderbird, Google Chrome, and various proprietary programs.
 
 
 ## Languages
@@ -332,14 +332,13 @@ Example:
 ]
 ```
 
+
 ## Blessing
 
 May you find peace, and help others to do likewise.
 
 
 ## Contact
-
-We've tried to make this document clear and accessible. If you have any feedback about how we could improve it, or if there's any part of it you'd like to discuss or clarify, we'd love to hear from you. Our contact details are:
 
 Pavouk OÜ | [https://www.pavouk.tech/](https://www.pavouk.tech/) | [en@pavouk.tech](mailto:en@pavouk.tech)
 
