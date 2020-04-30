@@ -22,7 +22,7 @@ common shared-properties
         -Wall
         -ddump-minimal-imports
 --------------------------------------------------------------------------------
-library pvk-com
+library common
     import:             shared-properties
     exposed-modules:
         PVK.Com.API.Aeson
@@ -41,7 +41,7 @@ library pvk-com
         snap-extras,
         unordered-containers
     hs-source-dirs:
-        lib/pvk-com/src
+        lib/common/src
 
 library isx-pick-spellchecker-int
     import:             shared-properties
@@ -54,7 +54,7 @@ library isx-pick-spellchecker-int
     other-modules:
         ISX.Pick.Spellchecker.Resource.Common
     build-depends:
-        pvk-com,
+        common,
         --
         aeson,
         containers,
@@ -71,7 +71,7 @@ executable isx-pick-spellchecker
     import:             shared-properties
     main-is:            Main.hs
     build-depends:
-        pvk-com,
+        common,
         isx-pick-spellchecker-int,
         --
         snap-server
@@ -80,12 +80,12 @@ executable isx-pick-spellchecker
     ghc-options:
         -threaded
 --------------------------------------------------------------------------------
-library pvk-com-test
+library common-test
     import:             shared-properties
     exposed-modules:
         PVK.Com.API.Test
     build-depends:
-        pvk-com,
+        common,
         --
         aeson,
         base64-bytestring,
@@ -100,7 +100,7 @@ library pvk-com-test
     mixins:
         relude                          (Relude.Unsafe)
     hs-source-dirs:
-        lib/pvk-com/test
+        lib/common/test
 
 test-suite isx-pick-spellchecker-test
     import:             shared-properties
@@ -115,8 +115,8 @@ test-suite isx-pick-spellchecker-test
         ISX.Test
     build-depends:
         isx-pick-spellchecker-int,
-        pvk-com,
-        pvk-com-test,
+        common,
+        common-test,
         --
         aeson,
         containers,
