@@ -1,7 +1,7 @@
-cabal-version:          2.4
-name:                   isx-pick-spellchecker
+cabal-version:          3.0
+name:                   isx-plugin-spellchecker
 version:                1.0
-synopsis:               Isoxya Pickax Spellchecker
+synopsis:               Isoxya plugin: Spellchecker
 license:                BSD-3-Clause
 license-file:           LICENSE
 author:                 Pavouk OÜ
@@ -11,7 +11,7 @@ extra-source-files:     README.md
 --------------------------------------------------------------------------------
 common shared-properties
     build-depends:
-        base-noprelude                  ==  4.12.*,
+        base-noprelude                  ==  4.13.*,
         relude
     mixins:
         relude                          (Relude as Prelude)
@@ -43,16 +43,16 @@ library common
     hs-source-dirs:
         lib/common/src
 
-library isx-pick-spellchecker-int
+library isx-plugin-spellchecker-int
     import:             shared-properties
     exposed-modules:
-        ISX.Pick.Spellchecker.Checker
-        ISX.Pick.Spellchecker.Parser
-        ISX.Pick.Spellchecker.Route
-        ISX.Pick.Spellchecker.Zone.Common.Apex
-        ISX.Pick.Spellchecker.Zone.Common.Data
+        ISX.Plugin.Spellchecker.Checker
+        ISX.Plugin.Spellchecker.Parser
+        ISX.Plugin.Spellchecker.Route
+        ISX.Plugin.Spellchecker.Zone.Common.Apex
+        ISX.Plugin.Spellchecker.Zone.Common.Data
     other-modules:
-        ISX.Pick.Spellchecker.Resource.Common
+        ISX.Plugin.Spellchecker.Resource.Common
     build-depends:
         common,
         --
@@ -67,16 +67,16 @@ library isx-pick-spellchecker-int
     hs-source-dirs:
         src
 --------------------------------------------------------------------------------
-executable isx-pick-spellchecker
+executable isx-plugin-spellchecker
     import:             shared-properties
     main-is:            Main.hs
     build-depends:
         common,
-        isx-pick-spellchecker-int,
+        isx-plugin-spellchecker-int,
         --
         snap-server
     hs-source-dirs:
-        src/ISX/Pick/Spellchecker/Bin
+        src/ISX/Plugin/Spellchecker/Bin
     ghc-options:
         -threaded
 --------------------------------------------------------------------------------
@@ -102,19 +102,19 @@ library common-test
     hs-source-dirs:
         lib/common/test
 
-test-suite isx-pick-spellchecker-test
+test-suite isx-plugin-spellchecker-test
     import:             shared-properties
     type:               exitcode-stdio-1.0
     main-is:            Spec.hs
     other-modules:
         ISX.Factory
-        ISX.Pick.Spellchecker.CheckerSpec
-        ISX.Pick.Spellchecker.ParserSpec
-        ISX.Pick.Spellchecker.Zone.Common.ApexSpec
-        ISX.Pick.Spellchecker.Zone.Common.DataSpec
+        ISX.Plugin.Spellchecker.CheckerSpec
+        ISX.Plugin.Spellchecker.ParserSpec
+        ISX.Plugin.Spellchecker.Zone.Common.ApexSpec
+        ISX.Plugin.Spellchecker.Zone.Common.DataSpec
         ISX.Test
     build-depends:
-        isx-pick-spellchecker-int,
+        isx-plugin-spellchecker-int,
         common,
         common-test,
         --

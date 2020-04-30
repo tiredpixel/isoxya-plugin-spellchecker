@@ -1,4 +1,4 @@
-module ISX.Pick.Spellchecker.Parser (parse) where
+module ISX.Plugin.Spellchecker.Parser (parse) where
 
 
 import              Text.XML.HXT.Core

@@ -1,7 +1,7 @@
 module Main (main) where
 
 
-import              ISX.Pick.Spellchecker.Route
+import              ISX.Plugin.Spellchecker.Route
 import qualified    PVK.Com.API.Zone.Common.Error           as  ZE
 import qualified    Snap.Http.Server                        as  Srv
 

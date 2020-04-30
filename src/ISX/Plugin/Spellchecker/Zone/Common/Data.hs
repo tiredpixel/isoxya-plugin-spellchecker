@@ -1,17 +1,17 @@
-module ISX.Pick.Spellchecker.Zone.Common.Data (
+module ISX.Plugin.Spellchecker.Zone.Common.Data (
     create
     ) where
 
 
 import              Data.Aeson
-import              ISX.Pick.Spellchecker.Checker
-import              ISX.Pick.Spellchecker.Parser
+import              ISX.Plugin.Spellchecker.Checker
+import              ISX.Plugin.Spellchecker.Parser
 import              PVK.Com.API.Resource.ISXPickSnap        ()
 import              Snap.Core
 import              Snap.Extras.JSON
 import              System.Environment                      (lookupEnv)
 import qualified    Data.Set                                as  S
-import qualified    ISX.Pick.Spellchecker.Resource.Common   as  R
+import qualified    ISX.Plugin.Spellchecker.Resource.Common as  R
 import qualified    PVK.Com.API.Req                         as  Req
 import qualified    PVK.Com.API.Res                         as  Res
 import qualified    PVK.Com.API.Resource.ISXPick            as  R

@@ -1,4 +1,4 @@
-module ISX.Pick.Spellchecker.Zone.Common.DataSpec (spec) where
+module ISX.Plugin.Spellchecker.Zone.Common.DataSpec (spec) where
 
 
 import              ISX.Test

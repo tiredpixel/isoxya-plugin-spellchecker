@@ -1,11 +1,11 @@
 version: "2.4"
 services:
-  pick_spellchecker:
+  plugin_spellchecker:
     env_file: .env
     build: .
     volumes:
       - ./dist:/home/x/src/dist
-      - ./isx-pick-spellchecker.cabal:/home/x/src/isx-pick-spellchecker.cabal
+      - ./isx-plugin-spellchecker.cabal:/home/x/src/isx-plugin-spellchecker.cabal
       - ./lib:/home/x/src/lib
       - ./src:/home/x/src/src
       - ./test:/home/x/src/test
