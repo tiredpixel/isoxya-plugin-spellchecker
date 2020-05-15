@@ -62,36 +62,16 @@
         "offset": 39,
         "correct": false,
         "suggestions": [
-          "Isobar",
-          "Asexual",
-          "Isacco"
+          "Isobar"
         ],
         "word": "Isoxya"
-      },
-      {
-        "status": "miss",
-        "offset": 91,
-        "correct": false,
-        "suggestions": [
-          "plug ins",
-          "plug-ins",
-          "plugging",
-          "plussing",
-          "slugging",
-          "plugs",
-          "pluckiness",
-          "polygynous"
-        ],
-        "word": "plugins"
       },
       {
         "status": "miss",
         "offset": 116,
         "correct": false,
         "suggestions": [
-          "Isobar",
-          "Asexual",
-          "Isacco"
+          "Isobar"
         ],
         "word": "Isoxya"
       },
@@ -517,21 +497,20 @@
         "offset": 30,
         "correct": false,
         "suggestions": [
+          "O",
+          "OI",
           "ON",
           "OR",
           "OF",
           "OP",
           "OH",
+          "OY",
           "OW",
           "OZ",
           "OX",
-          "O",
+          "OA",
           "OS",
-          "OT",
-          "OD",
-          "OM",
-          "OE",
-          "OK"
+          "OT"
         ],
         "word": "OÜ"
       }

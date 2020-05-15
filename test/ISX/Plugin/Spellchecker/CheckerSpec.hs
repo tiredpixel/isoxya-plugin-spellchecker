@@ -62,12 +62,12 @@ spec =
                 rs <- check' ls
                 rs `shouldBe` [
                     ParaResult (ls !! 0) [
-                        ResultMiss "stil" 10 ["slit","stile","stilt","still","silt","sail","stir","soil","instil","pistil","distil"],
+                        ResultMiss "stil" 10 ["slit","stile","stilt","still","silt","sail","stir","soil","instil","distil","pistil"],
                         ResultMiss "tempurature" 94 ["temperature","tempura","premature","maturate"]],
                     ParaResult (ls !! 1) [
                         ResultMiss "precize" 12 ["precise","prize"],
                         ResultMiss "asessment" 20 ["assessment","amassment","easement","assent"],
-                        ResultMiss "tHe" 33 ["t He","the","tee","tie","toe","he","thee","then","them","they","she","thy"]]]
+                        ResultMiss "tHe" 33 ["t He","the","tee","tie","toe","The","he","thee","then","them","they","she","thy","Che"]]]
             
             it "miss interspersed" $ do
                 let ls = [
@@ -78,13 +78,13 @@ spec =
                 rs <- check' ls
                 rs `shouldBe` [
                     ParaResult (ls !! 0) [
-                        ResultMiss "stil" 10 ["slit","stile","stilt","still","silt","sail","stir","soil","instil","pistil","distil"]],
+                        ResultMiss "stil" 10 ["slit","stile","stilt","still","silt","sail","stir","soil","instil","distil","pistil"]],
                     ParaResult (ls !! 1) [],
                     ParaResult (ls !! 2) [],
                     ParaResult (ls !! 3) [
                         ResultMiss "precize" 12 ["precise","prize"],
                         ResultMiss "asessment" 20 ["assessment","amassment","easement","assent"],
-                        ResultMiss "tHe" 33 ["t He","the","tee","tie","toe","he","thee","then","them","they","she","thy"]]]
+                        ResultMiss "tHe" 33 ["t He","the","tee","tie","toe","The","he","thee","then","them","they","she","thy","Che"]]]
             
             it "miss control" $ do
                 let ls = [
@@ -177,9 +177,9 @@ spec =
                 rs <- check' ls
                 rs `shouldBe` [
                     ParaResult (ls !! 0) [
-                        ResultMiss "millionen" 9 ["Millionen","millionen-","-millionen","Billionen"],
+                        ResultMiss "millionen" 9 ["Millionen","millionen-","-millionen","Billionen","millionsten","millionste"],
                         ResultMiss "dan" 65 ["da","an","dann","dran","dank","den","das","dar","ran","man","van","San","Jan","Pan","Fan"],
-                        ResultMiss "Meerwaßer" 191 ["Meerwasser","Meterware"]]]
+                        ResultMiss "Meerwaßer" 191 ["Meerwasser"]]]
         
         describe "de-de" $ do
             -- https://www.spiegel.de/wissenschaft/natur/polarstern-laeuft-fuer-klima-mission-richtung-arktis-aus-a-1280998.html
@@ -199,9 +199,9 @@ spec =
                 rs <- check' ls
                 rs `shouldBe` [
                     ParaResult (ls !! 0) [
-                        ResultMiss "millionen" 9 ["Millionen","millionen-","-millionen","Billionen"],
+                        ResultMiss "millionen" 9 ["Millionen","millionen-","-millionen","Billionen","millionsten","millionste"],
                         ResultMiss "dan" 65 ["da","an","dann","dran","dank","den","das","dar","ran","man","van","San","Jan","Pan","Fan"],
-                        ResultMiss "Meerwaßer" 191 ["Meerwasser","Meterware"]]]
+                        ResultMiss "Meerwaßer" 191 ["Meerwasser"]]]
         
         describe "en" $ do
             -- https://www.theguardian.com/environment/2019/aug/08/climate-crisis-reducing-lands-ability-to-sustain-humanity-says-ipcc
@@ -222,9 +222,9 @@ spec =
                 rs `shouldBe` [
                     ParaResult (ls !! 0) [
                         ResultMiss "GloBal" 1 ["Global","Glob al","Glob-al"],
-                        ResultMiss "heeting" 8 ["sheeting","heating","heeling","heeding","meeting","hefting","greeting"],
-                        ResultMiss "increesing" 19 ["increasing","screening","resining","cresting","resisting"],
-                        ResultMiss "whyle" 67 ["while","whale","whole","why le","why-le","Whaley"]]]
+                        ResultMiss "heeting" 8 ["sheeting","heating","heeling","heeding","meeting","hefting","Weeting","greeting"],
+                        ResultMiss "increesing" 19 ["increasing","screening","cresting","resisting","pressing"],
+                        ResultMiss "whyle" 67 ["Whyle","while","whale","whole","why le","why-le"]]]
             
             it "ok en-gb" $ do
                 let ls = [
@@ -256,7 +256,7 @@ spec =
                 rs <- check' ls
                 rs `shouldBe` [
                     ParaResult (ls !! 0) [
-                        ResultMiss "colors" 1 ["colours","colons","col ors","col-ors","Coors","Corso"]]]
+                        ResultMiss "colors" 1 ["colours","colons","col ors","col-ors","collators"]]]
         
         describe "en-us" $ do
             let check' = check [DictEnUS]
@@ -274,7 +274,7 @@ spec =
                 rs <- check' ls
                 rs `shouldBe` [
                     ParaResult (ls !! 0) [
-                        ResultMiss "colours" 1 ["colors","co lours","co-lours","col ours","col-ours","coursers","courser","courses","colossus","colossal","callous"]]]
+                        ResultMiss "colours" 1 ["colors","co lours","co-lours","col ours","col-ours","coursers"]]]
         
         describe "es" $ do
             -- https://elpais.com/sociedad/2019/08/07/actualidad/1565193502_273906.html
@@ -382,8 +382,8 @@ spec =
                 rs <- check' ls
                 rs `shouldBe` [
                     ParaResult (ls !! 0) [
-                        ResultMiss "Journees" 1 ["Journées","Ajournes","Séjournes","Journades"],
-                        ResultMiss "toiletes" 23 ["toilettes","toilâtes","toile tes","toile-tes"]]]
+                        ResultMiss "Journees" 1 ["Journées","Ajournes","Séjournes","Journades","Séjourner"],
+                        ResultMiss "toiletes" 23 ["toilettes","toilâtes"]]]
         
         describe "fr-fr" $ do
             -- https://www.lemonde.fr/les-decodeurs/article/2019/08/08/journee-du-chat-des-toilettes-ou-de-la-resistance-comment-et-par-qui-sont-elles-decretees_5497728_4355770.html
@@ -403,8 +403,8 @@ spec =
                 rs <- check' ls
                 rs `shouldBe` [
                     ParaResult (ls !! 0) [
-                        ResultMiss "Journees" 1 ["Journées","Ajournes","Séjournes","Journades"],
-                        ResultMiss "toiletes" 23 ["toilettes","toilâtes","toile tes","toile-tes"]]]
+                        ResultMiss "Journees" 1 ["Journées","Ajournes","Séjournes","Journades","Séjourner"],
+                        ResultMiss "toiletes" 23 ["toilettes","toilâtes"]]]
         
         describe "nl" $ do
             -- https://www.nu.nl/buitenland/5976175/bijna-zevenhonderd-immigranten-vs-uitgezet-na-politie-invallen.html
@@ -425,7 +425,7 @@ spec =
                 rs `shouldBe` [
                     ParaResult (ls !! 0) [
                         ResultMiss "ilegale" 14 ["illegale","legale"],
-                        ResultMiss "von" 31 ["con","bon","vin","on","vond","vont","vonk","Avon","Yvon","ven","vos","ion","van","vod","don"],
+                        ResultMiss "von" 31 ["vont","con","bon","vin","voj","on","vond","vonk","Avon","Yvon","ven","non","ion","ton","vos"],
                         ResultMiss "gearresteert." 107 ["gearresteerd"]]]
         
         describe "nl-nl" $ do
@@ -447,5 +447,5 @@ spec =
                 rs `shouldBe` [
                     ParaResult (ls !! 0) [
                         ResultMiss "ilegale" 14 ["illegale","legale"],
-                        ResultMiss "von" 31 ["con","bon","vin","on","vond","vont","vonk","Avon","Yvon","ven","vos","ion","van","vod","don"],
+                        ResultMiss "von" 31 ["vont","con","bon","vin","voj","on","vond","vonk","Avon","Yvon","ven","non","ion","ton","vos"],
                         ResultMiss "gearresteert." 107 ["gearresteerd"]]]

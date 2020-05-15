@@ -10,7 +10,9 @@
           "Millionen",
           "millionen-",
           "-millionen",
-          "Billionen"
+          "Billionen",
+          "millionsten",
+          "millionste"
         ],
         "word": "millionen"
       },
@@ -19,8 +21,7 @@
         "offset": 192,
         "status": "miss",
         "suggestions": [
-          "Meerwasser",
-          "Meterware"
+          "Meerwasser"
         ],
         "word": "Meerwaßer"
       }

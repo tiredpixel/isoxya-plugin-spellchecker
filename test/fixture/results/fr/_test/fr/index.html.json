@@ -10,7 +10,8 @@
           "Journées",
           "Ajournes",
           "Séjournes",
-          "Journades"
+          "Journades",
+          "Séjourner"
         ],
         "word": "Journees"
       },
@@ -20,9 +21,7 @@
         "status": "miss",
         "suggestions": [
           "toilettes",
-          "toilâtes",
-          "toile tes",
-          "toile-tes"
+          "toilâtes"
         ],
         "word": "toiletes"
       }

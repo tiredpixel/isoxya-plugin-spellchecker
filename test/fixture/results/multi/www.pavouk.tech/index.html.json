@@ -16,7 +16,7 @@
         "correct": false,
         "suggestions": [
           "Pickaxe",
-          "Pick"
+          "Pickaway"
         ],
         "word": "Pickax"
       }
@@ -40,7 +40,7 @@
         "correct": false,
         "suggestions": [
           "Pickaxe",
-          "Pick"
+          "Pickaway"
         ],
         "word": "Pickax"
       },
@@ -49,9 +49,7 @@
         "offset": 91,
         "correct": false,
         "suggestions": [
-          "plug ins",
-          "plug-ins",
-          "plug-in"
+          "plug-ins"
         ],
         "word": "plugins"
       },
