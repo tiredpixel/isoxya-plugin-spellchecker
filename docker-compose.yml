@@ -12,7 +12,7 @@ services:
     networks:
       plugin:
         aliases:
-          - spellchecker.plugins.isoxya-stag.pavouk.tech
+          - spellchecker.plugins.dev.isoxya.com
 networks:
   plugin:
     external: true

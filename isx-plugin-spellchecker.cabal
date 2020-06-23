@@ -2,10 +2,10 @@ cabal-version:          3.0
 name:                   isx-plugin-spellchecker
 version:                1.0
 synopsis:               Isoxya plugin: Spellchecker
-license:                BSD-3-Clause
+license:                NONE
 license-file:           LICENSE
-author:                 Pavouk OÜ
-maintainer:             en@pavouk.tech
+author:                 tiredpixel
+maintainer:             tp@tiredpixel.com
 build-type:             Simple
 extra-source-files:     README.md
 --------------------------------------------------------------------------------

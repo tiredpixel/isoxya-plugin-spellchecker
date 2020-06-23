@@ -135,7 +135,7 @@
 * generic-deriving
     License:  BSD3
 * ghc
-    License:  BSD3
+    License:  BSD-3-Clause
 * ghc-boot
     License:  BSD3
 * ghc-boot-th
@@ -333,8 +333,6 @@
 * uuid-types
     License:  BSD3
 * vector
-    License:  BSD3
-* vector-th-unbox
     License:  BSD3
 * void
     License:  BSD3
