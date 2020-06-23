@@ -5,7 +5,7 @@ synopsis:               Isoxya plugin: Spellchecker
 license:                NONE
 license-file:           LICENSE
 author:                 tiredpixel
-maintainer:             tp@tiredpixel.com
+maintainer:             tiredpixel
 build-type:             Simple
 extra-source-files:     README.md
 --------------------------------------------------------------------------------
