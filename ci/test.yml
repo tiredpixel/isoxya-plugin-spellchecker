@@ -1,8 +1,0 @@
-platform: linux
-inputs:
-  - name: src
-run:
-  user: root
-  path: src/ci/sh
-  args:
-    - src/ci/test.sh

@@ -26,18 +26,17 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN useradd ${USER} -d ${HOME} && \
-    mkdir -p ${HOME}/src && \
+    mkdir -p ${HOME}/repo && \
     chown -R ${USER}:${USER} ${HOME}
 #-------------------------------------------------------------------------------
 USER ${USER}
 
-WORKDIR ${HOME}/src
+WORKDIR ${HOME}/repo
 
-ENV \
-    LANG=C.UTF-8 \
+ENV LANG=C.UTF-8 \
     PATH=${HOME}/.cabal/bin:$PATH
 
-COPY [ \
+COPY --chown=x:x [ \
     "cabal.config", \
     "*.cabal", \
     "./"]
@@ -45,9 +44,9 @@ COPY [ \
 RUN cabal v1-update && \
     cabal v1-install -j --only-dependencies --enable-tests
 #-------------------------------------------------------------------------------
-COPY . .
+COPY --chown=x:x . .
 #-------------------------------------------------------------------------------
-ENV ADDRESS=localhost \
+ENV ADDRESS=0.0.0.0 \
     PORT=8000
 
 CMD cabal v1-run isx-plugin-spellchecker -- -b ${ADDRESS} -p ${PORT}
