@@ -15,4 +15,4 @@ main = do
         conf =
             Srv.setAccessLog cLog .
             Srv.setErrorLog cLog .
-            Srv.setErrorHandler Res.intErr
+            Srv.setErrorHandler Res.intErr'
