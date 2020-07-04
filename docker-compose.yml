@@ -1,7 +1,12 @@
 version: "2.4"
 services:
-  plugin_spellchecker:
+  plugin:
     image: registry.packages.tiredpixel.com/base/isoxya-plugin-spellchecker-build:head
+    volumes:
+      - ./isx-plugin-spellchecker.cabal:/home/x/repo/isx-plugin-spellchecker.cabal
+      - ./lib:/home/x/repo/lib
+      - ./src:/home/x/repo/src
+      - ./test:/home/x/repo/test
     networks:
       plugin:
         aliases:

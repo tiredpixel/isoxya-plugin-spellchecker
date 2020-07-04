@@ -32,13 +32,13 @@ library common
         PVK.Com.API.Resource.CommonError
         PVK.Com.API.Resource.ISXPick
         PVK.Com.API.Resource.ISXPickSnap
-        PVK.Com.API.Zone.Common.Error
     build-depends:
         aeson,
         base64-bytestring,
         network-uri,
         snap-core,
         snap-extras,
+        unix,
         unordered-containers
     hs-source-dirs:
         lib/common/src
