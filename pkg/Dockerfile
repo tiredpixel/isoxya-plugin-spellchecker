@@ -30,7 +30,7 @@ USER ${USER}
 
 WORKDIR ${HOME}
 
-ENV ADDRESS=0.0.0.0 \
+ENV ADDRESS=localhost \
     LANG=C.UTF-8 \
     PATH=${HOME}/bin:$PATH \
     PORT=8000
