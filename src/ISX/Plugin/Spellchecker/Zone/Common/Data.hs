@@ -6,15 +6,15 @@ module ISX.Plugin.Spellchecker.Zone.Common.Data (
 import              Data.Aeson
 import              ISX.Plugin.Spellchecker.Checker
 import              ISX.Plugin.Spellchecker.Parser
-import              PVK.Com.API.Resource.ISXPickSnap        ()
 import              Snap.Core
 import              Snap.Extras.JSON
 import              System.Environment                      (lookupEnv)
+import              TPX.Com.API.Resource.ISX.PickSnap       ()
 import qualified    Data.Set                                as  S
 import qualified    ISX.Plugin.Spellchecker.Resource.Common as  R
-import qualified    PVK.Com.API.Req                         as  Req
-import qualified    PVK.Com.API.Res                         as  Res
-import qualified    PVK.Com.API.Resource.ISXPick            as  R
+import qualified    TPX.Com.API.Req                         as  Req
+import qualified    TPX.Com.API.Res                         as  Res
+import qualified    TPX.Com.API.Resource.ISX.Pick           as  R
 
 
 create :: Snap ()

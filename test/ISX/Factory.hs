@@ -6,10 +6,10 @@ module ISX.Factory (
 
 import              Data.Aeson
 import              Network.URI
-import              PVK.Com.API.Ext.URI
+import              TPX.Com.API.Ext.URI
 import qualified    Data.Map.Strict                         as  Map
 import qualified    Data.Text                               as  T
-import qualified    PVK.Com.API.Resource.ISXPick            as  R
+import qualified    TPX.Com.API.Resource.ISX.Pick           as  R
 
 
 fRock :: Text -> Maybe Value -> IO R.Rock

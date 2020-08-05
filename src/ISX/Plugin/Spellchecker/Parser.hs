@@ -3,7 +3,7 @@ module ISX.Plugin.Spellchecker.Parser (parse) where
 
 import              Text.XML.HXT.Core
 import qualified    Data.Text                               as  T
-import qualified    PVK.Com.API.Resource.ISXPick            as  R
+import qualified    TPX.Com.API.Resource.ISX.Pick           as  R
 
 
 parse :: R.Rock -> [Text]

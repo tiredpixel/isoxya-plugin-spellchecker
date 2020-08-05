@@ -2,8 +2,8 @@ module Main (main) where
 
 
 import              ISX.Plugin.Spellchecker.Route
-import qualified    PVK.Com.API.Res                         as  Res
 import qualified    Snap.Http.Server                        as  Srv
+import qualified    TPX.Com.API.Res                         as  Res
 
 
 main :: IO ()

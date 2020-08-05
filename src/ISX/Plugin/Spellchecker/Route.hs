@@ -4,7 +4,7 @@ module ISX.Plugin.Spellchecker.Route (site) where
 import              Snap.Core
 import qualified    ISX.Plugin.Spellchecker.Zone.Common.Apex as  ZA
 import qualified    ISX.Plugin.Spellchecker.Zone.Common.Data as  ZD
-import qualified    PVK.Com.API.Res                         as  Res
+import qualified    TPX.Com.API.Res                         as  Res
 
 
 site :: Snap ()
