@@ -41,6 +41,7 @@ library common
         bytestring,
         http-conduit,
         network-uri,
+        regex-compat,
         snap-core,
         snap-extras,
         text,
