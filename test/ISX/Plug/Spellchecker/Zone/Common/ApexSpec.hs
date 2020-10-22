@@ -1,4 +1,4 @@
-module ISX.Plugin.Spellchecker.Zone.Common.ApexSpec (spec) where
+module ISX.Plug.Spellchecker.Zone.Common.ApexSpec (spec) where
 
 
 import              ISX.Test

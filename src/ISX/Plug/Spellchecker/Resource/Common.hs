@@ -2,7 +2,7 @@
 {-# OPTIONS_GHC -fno-warn-orphans #-}
 
 
-module ISX.Plugin.Spellchecker.Resource.Common (
+module ISX.Plug.Spellchecker.Resource.Common (
     Apex(..),
     RockMetaConfig(..)
     ) where
@@ -10,7 +10,7 @@ module ISX.Plugin.Spellchecker.Resource.Common (
 
 import              Data.Aeson                              hiding (Result)
 import              Data.Time.Clock                         (UTCTime)
-import              ISX.Plugin.Spellchecker.Checker
+import              ISX.Plug.Spellchecker.Checker
 
 
 data Apex = Apex {

@@ -1,7 +1,7 @@
-module ISX.Plugin.Spellchecker.ParserSpec (spec) where
+module ISX.Plug.Spellchecker.ParserSpec (spec) where
 
 
-import              ISX.Plugin.Spellchecker.Parser
+import              ISX.Plug.Spellchecker.Parser
 import              ISX.Test
 import              Prelude                                 hiding  (get)
 

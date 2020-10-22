@@ -1,7 +1,7 @@
 module Main (main) where
 
 
-import              ISX.Plugin.Spellchecker.Route
+import              ISX.Plug.Spellchecker.Route
 import qualified    Snap.Http.Server                        as  Srv
 import qualified    TPX.Com.API.Res                         as  Res
 

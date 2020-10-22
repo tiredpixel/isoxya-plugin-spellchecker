@@ -1,9 +1,9 @@
-module ISX.Plugin.Spellchecker.Route (site) where
+module ISX.Plug.Spellchecker.Route (site) where
 
 
 import              Snap.Core
-import qualified    ISX.Plugin.Spellchecker.Zone.Common.Apex as  ZA
-import qualified    ISX.Plugin.Spellchecker.Zone.Common.Data as  ZD
+import qualified    ISX.Plug.Spellchecker.Zone.Common.Apex  as  ZA
+import qualified    ISX.Plug.Spellchecker.Zone.Common.Data  as  ZD
 import qualified    TPX.Com.API.Res                         as  Res
 
 

@@ -9,7 +9,7 @@ module ISX.Test (
 
 import              Data.Vector                             (Vector)
 import              ISX.Factory
-import              ISX.Plugin.Spellchecker.Route
+import              ISX.Plug.Spellchecker.Route
 import              TPX.Com.API.Test
 
 

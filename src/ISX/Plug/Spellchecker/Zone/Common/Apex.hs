@@ -1,4 +1,4 @@
-module ISX.Plugin.Spellchecker.Zone.Common.Apex (
+module ISX.Plug.Spellchecker.Zone.Common.Apex (
     apex
     ) where
 
@@ -8,7 +8,7 @@ import              Paths_isx_plugin_spellchecker           (version)
 import              Snap.Core
 import              Snap.Extras.JSON
 import qualified    Data.Time.Clock                         as  Clock
-import qualified    ISX.Plugin.Spellchecker.Resource.Common as  R
+import qualified    ISX.Plug.Spellchecker.Resource.Common   as  R
 
 
 apex :: Snap ()

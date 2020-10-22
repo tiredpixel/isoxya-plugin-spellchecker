@@ -46,7 +46,7 @@ RUN cabal v1-update && \
 ENV ADDRESS=0.0.0.0 \
     PORT=8000
 
-CMD cabal v1-run isx-plugin-spellchecker -- -b ${ADDRESS} -p ${PORT}
+CMD cabal v1-run isx-plug-spellchecker -- -b ${ADDRESS} -p ${PORT}
 
 EXPOSE ${PORT}
 

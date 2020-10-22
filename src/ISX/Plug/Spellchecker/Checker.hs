@@ -1,4 +1,4 @@
-module ISX.Plugin.Spellchecker.Checker (
+module ISX.Plug.Spellchecker.Checker (
     Dict(..),
     ParaResult(..),
     Result(..),

@@ -3,7 +3,7 @@ services:
   plug:
     image: docker.package.tiredpixel.com/isoxya/isoxya-plugin-spellchecker-build:head
     volumes:
-      - ./isx-plugin-spellchecker.cabal:/home/x/repo/isx-plugin-spellchecker.cabal
+      - ./isx-plug-spellchecker.cabal:/home/x/repo/isx-plug-spellchecker.cabal
       - ./lib:/home/x/repo/lib
       - ./src:/home/x/repo/src
       - ./test:/home/x/repo/test

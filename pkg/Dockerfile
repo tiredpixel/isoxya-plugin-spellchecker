@@ -34,7 +34,7 @@ ENV ADDRESS=localhost \
     PATH=${HOME}/bin:$PATH \
     PORT=8000
 
-CMD isx-plugin-spellchecker -b ${ADDRESS} -p ${PORT}
+CMD isx-plug-spellchecker -b ${ADDRESS} -p ${PORT}
 
 EXPOSE ${PORT}
 
