@@ -4,7 +4,7 @@
 
 module ISX.Plug.Spellchecker.Resource.Common (
     Apex(..),
-    RockMetaConfig(..)
+    ProcIMetaConfig(..)
     ) where
 
 
@@ -22,16 +22,16 @@ instance ToJSON Apex where
         "t_now"   .= apexTNow o,
         "version" .= apexVersion o]
 
-newtype RockMetaConfig = RockMetaConfig {
-    rockMetaConfigDicts :: [Dict]
+newtype ProcIMetaConfig = ProcIMetaConfig {
+    procIMetaConfigDicts :: [Dict]
     } deriving (Show)
-instance FromJSON RockMetaConfig where
-    parseJSON = withObject "RockMetaConfig" $ \j -> do
+instance FromJSON ProcIMetaConfig where
+    parseJSON = withObject "ProcIMetaConfig" $ \j -> do
         fDicts <- j .: "dicts"
-        return $ RockMetaConfig fDicts
-instance ToJSON RockMetaConfig where
+        return $ ProcIMetaConfig fDicts
+instance ToJSON ProcIMetaConfig where
     toJSON o = object [
-        "dicts" .= rockMetaConfigDicts o]
+        "dicts" .= procIMetaConfigDicts o]
 
 
 instance FromJSON Dict where

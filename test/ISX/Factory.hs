@@ -1,5 +1,5 @@
 module ISX.Factory (
-    fRock,
+    fProcI,
     fxExt
     ) where
 
@@ -9,22 +9,22 @@ import              Network.URI
 import              TPX.Com.API.Ext.URI
 import qualified    Data.Map.Strict                         as  Map
 import qualified    Data.Text                               as  T
-import qualified    TPX.Com.API.Resource.ISX.Pick           as  R
+import qualified    TPX.Com.API.Resource.ISX.Proc           as  R
 
 
-fRock :: Text -> Maybe Value -> IO R.Rock
-fRock url config = do
+fProcI :: Text -> Maybe Value -> IO R.ProcI
+fProcI url config = do
     body <- readFileBS $ fixturePage url
-    return R.Rock {
-        R.rockMeta   = meta,
-        R.rockHeader = Map.empty,
-        R.rockBody   = body}
+    return R.ProcI {
+        R.procIMeta   = meta,
+        R.procIHeader = Map.empty,
+        R.procIBody   = body}
     where
         Just metaUrl = parseUrl url
-        meta = R.RockMeta {
-            R.rockMetaUrl        = metaUrl,
-            R.rockMetaStatusCode = Just 200,
-            R.rockMetaConfig     = config}
+        meta = R.ProcIMeta {
+            R.procIMetaUrl        = metaUrl,
+            R.procIMetaStatusCode = Just 200,
+            R.procIMetaConfig     = config}
 
 fxExt :: Text -> Text
 fxExt url = if T.takeEnd 1 url == "/"

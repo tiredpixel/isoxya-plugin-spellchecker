@@ -89,8 +89,8 @@ pC = object [
 
 testPage :: Text -> [Text] -> Text -> IO ()
 testPage ns dicts url = do
-    rock <- fRock url dicts'
-    res <- withSrv $ postJSON "/data" rock
+    procI <- fProcI url dicts'
+    res <- withSrv $ postJSON "/data" procI
     assertSuccess res
     b <- getResponseBody res
     assertResultsLookup (b ^. key "data" . _Array) ns url

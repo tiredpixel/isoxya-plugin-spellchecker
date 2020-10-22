@@ -31,18 +31,15 @@ library common-ce
         TPX.Com.API.Req
         TPX.Com.API.Res
         TPX.Com.API.Resource.CommonError
-        TPX.Com.API.Resource.ISX.Strm
-        TPX.Com.API.Resource.ISX.StrmSnap
+        TPX.Com.API.Resource.ISX.Proc
+        TPX.Com.API.Resource.ISX.ProcSnap
     build-depends:
         aeson,
         base64-bytestring,
-        bytestring,
-        http-conduit,
         network-uri,
-        regex-compat,
         snap-core,
         snap-extras,
-        text,
+        time,
         unix,
         unordered-containers
     hs-source-dirs:
@@ -94,7 +91,6 @@ library common-ce-test
         common-ce,
         --
         aeson,
-        base64-bytestring,
         bytestring,
         directory,
         filepath,
@@ -102,6 +98,7 @@ library common-ce-test
         http-link-header,
         lens,
         lens-aeson,
+        network-uri,
         snap-core
     mixins:
         relude                          (Relude.Unsafe)

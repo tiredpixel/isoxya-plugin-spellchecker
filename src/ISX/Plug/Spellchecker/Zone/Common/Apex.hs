@@ -4,7 +4,7 @@ module ISX.Plug.Spellchecker.Zone.Common.Apex (
 
 
 import              Data.Version                            (showVersion)
-import              Paths_isx_plugin_spellchecker           (version)
+import              Paths_isx_plug_spellchecker             (version)
 import              Snap.Core
 import              Snap.Extras.JSON
 import qualified    Data.Time.Clock                         as  Clock
