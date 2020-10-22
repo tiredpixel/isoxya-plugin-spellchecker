@@ -1,6 +1,6 @@
 version: "2.4"
 services:
-  plugin:
+  plug:
     image: docker.package.tiredpixel.com/isoxya/isoxya-plugin-spellchecker-build:head
     volumes:
       - ./isx-plugin-spellchecker.cabal:/home/x/repo/isx-plugin-spellchecker.cabal
@@ -8,10 +8,10 @@ services:
       - ./src:/home/x/repo/src
       - ./test:/home/x/repo/test
     networks:
-      plugin:
+      plug:
         aliases:
-          - spellchecker.plugins.dev.isoxya.com
+          - spellchecker.plugin.dev.isoxya.com
 networks:
-  plugin:
+  plug:
     external: true
-    name: isoxya_plugin
+    name: isoxya_plug

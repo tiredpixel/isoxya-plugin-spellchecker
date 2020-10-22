@@ -60,6 +60,7 @@ library isx-plugin-spellchecker-int
         ISX.Plugin.Spellchecker.Zone.Common.Data
     other-modules:
         ISX.Plugin.Spellchecker.Resource.Common
+        Paths_isx_plugin_spellchecker
     build-depends:
         common,
         --
