@@ -332,6 +332,8 @@
     License:  BSD3
 * th-abstraction
     License:  ISC
+* th-compat
+    License:  BSD3
 * th-expand-syns
     License:  BSD3
 * th-lift
@@ -353,8 +355,6 @@
 * transformers-base
     License:  BSD3
 * transformers-compat
-    License:  BSD3
-* type-equality
     License:  BSD3
 * typed-process
     License:  MIT
