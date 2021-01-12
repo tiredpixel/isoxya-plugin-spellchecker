@@ -177,6 +177,8 @@
 * hxt-unicode
     Synopsis: Unicode en-/decoding functions for utf8, iso-latin-* and other
     License:  MIT
+* indexed-traversable
+    License:  BSD2
 * integer-gmp
     License:  BSD3
 * integer-logarithms
