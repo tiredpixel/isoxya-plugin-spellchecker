@@ -1,4 +1,4 @@
-module ISX.Plug.Spellchecker.Zone.Common.DataSpec (spec) where
+module ISX.Plug.Spellchecker.Zone.DataSpec (spec) where
 
 
 import              ISX.Test
@@ -7,7 +7,7 @@ import              Prelude                                 hiding  (get)
 
 spec :: Spec
 spec =
-    describe "/data POST" $ do
+    describe "create" $ do
         it "ok" $ do
             res <- withSrv $ postJSON "/data" pC
             assertSuccess res
@@ -89,8 +89,8 @@ pC = object [
 
 testPage :: Text -> [Text] -> Text -> IO ()
 testPage ns dicts url = do
-    plugProcI <- fPlugProcI url dicts'
-    res <- withSrv $ postJSON "/data" plugProcI
+    ppi <- fPlugProcI url dicts'
+    res <- withSrv $ postJSON "/data" ppi
     assertSuccess res
     b <- getResponseBody res
     assertResultsLookup (b ^. key "data" . _Array) ns url

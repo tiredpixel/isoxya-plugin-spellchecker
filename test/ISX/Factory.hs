@@ -1,30 +1,30 @@
 module ISX.Factory (
     fPlugProcI,
-    fxExt
+    fxExt,
     ) where
 
 
 import              Data.Aeson
 import              Network.URI
+import              TPX.Com.ISX.PlugProc
 import              TPX.Com.URI
 import qualified    Data.Map.Strict                         as  Map
 import qualified    Data.Text                               as  T
-import qualified    TPX.Com.ISX.PlugProc                    as  R
 
 
-fPlugProcI :: Text -> Maybe Value -> IO R.PlugProcI
+fPlugProcI :: Text -> Maybe Value -> IO PlugProcI
 fPlugProcI url config = do
     body <- readFileBS $ fixturePage url
-    return R.PlugProcI {
-        R.plugProcIMeta   = meta,
-        R.plugProcIHeader = Map.empty,
-        R.plugProcIBody   = body}
+    return PlugProcI {
+        plugProcIMeta   = meta,
+        plugProcIHeader = Map.empty,
+        plugProcIBody   = body}
     where
         Just metaURL = parseURL url
-        meta = R.PlugProcIMeta {
-            R.plugProcIMetaURL    = metaURL,
-            R.plugProcIMetaStatus = Just 200,
-            R.plugProcIMetaConfig = config}
+        meta = PlugProcIMeta {
+            plugProcIMetaURL    = metaURL,
+            plugProcIMetaStatus = Just 200,
+            plugProcIMetaConfig = config}
 
 fxExt :: Text -> Text
 fxExt url = if T.takeEnd 1 url == "/"

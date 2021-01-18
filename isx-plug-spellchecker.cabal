@@ -100,8 +100,8 @@ test-suite test-isx-plug-spellchecker
         ISX.Factory
         ISX.Plug.Spellchecker.CheckerSpec
         ISX.Plug.Spellchecker.ParserSpec
-        ISX.Plug.Spellchecker.Zone.Common.ApexSpec
-        ISX.Plug.Spellchecker.Zone.Common.DataSpec
+        ISX.Plug.Spellchecker.Zone.ApexSpec
+        ISX.Plug.Spellchecker.Zone.DataSpec
         ISX.Test
     build-depends:
         common-ce-test,

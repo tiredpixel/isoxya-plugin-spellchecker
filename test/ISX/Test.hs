@@ -3,7 +3,7 @@ module ISX.Test (
     module TPX.Com.API.Test,
     assertResultsLookup,
     assertTextsLookup,
-    withSrv
+    withSrv,
     ) where
 
 
