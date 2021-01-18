@@ -3,13 +3,11 @@ name:                   isx-plug-spellchecker
 version:                0.0.0
 synopsis:               Isoxya plugin: Spellchecker
 license:                BSD-3-Clause
-license-file:           LICENSE
 author:                 Nic Williams <tp@tiredpixel.com>
 maintainer:             Nic Williams <tp@tiredpixel.com>
 build-type:             Simple
-extra-source-files:     README.md
 --------------------------------------------------------------------------------
-common shared-properties
+common common-properties
     build-depends:
         base                            ==  4.13.*,
         relude
@@ -23,72 +21,61 @@ common shared-properties
         -Wall
         -ddump-minimal-imports
 --------------------------------------------------------------------------------
-library common-ce
-    import:             shared-properties
-    exposed-modules:
-        TPX.Com.API.Aeson
-        TPX.Com.API.Ext.URI
-        TPX.Com.API.Req
-        TPX.Com.API.Res
-        TPX.Com.API.Resource.CommonError
-        TPX.Com.API.Resource.ISX.Proc
-        TPX.Com.API.Resource.ISX.ProcSnap
-    build-depends:
-        aeson,
-        base64-bytestring,
-        network-uri,
-        snap-core,
-        snap-extras,
-        time,
-        unix,
-        unordered-containers
-    hs-source-dirs:
-        lib/common-ce/src
-
-library isx-plug-spellchecker-int
-    import:             shared-properties
+library lib-isx-plug-spellchecker
+    import:             common-properties
     exposed-modules:
         ISX.Plug.Spellchecker.Checker
         ISX.Plug.Spellchecker.Parser
         ISX.Plug.Spellchecker.Route
-        ISX.Plug.Spellchecker.Zone.Common.Apex
-        ISX.Plug.Spellchecker.Zone.Common.Data
+        TPX.Com.API.Aeson
+        TPX.Com.API.Res
+        TPX.Com.ISX.PlugProc
+        TPX.Com.URI
     other-modules:
         ISX.Plug.Spellchecker.Resource.Common
+        ISX.Plug.Spellchecker.Zone.Common.Apex
+        ISX.Plug.Spellchecker.Zone.Common.Data
         Paths_isx_plug_spellchecker
+        TPX.Com.API.Req
+        TPX.Com.API.Resource
+        TPX.Com.ISX.PlugProcSnap
     build-depends:
-        common-ce,
-        --
         aeson,
+        base64-bytestring,
         containers,
         hxt,
+        network-uri,
         process-extras,
         snap-core,
         snap-extras,
         text,
-        time
+        time,
+        unix,
+        unordered-containers,
     hs-source-dirs:
+        lib/common-ce/src
         src
 --------------------------------------------------------------------------------
 executable isx-plug-spellchecker
-    import:             shared-properties
-    main-is:            Main.hs
+    import:             common-properties
+    main-is:            Spellchecker.hs
+    other-modules:
+        Paths_isx_plug_spellchecker
     build-depends:
-        common-ce,
-        isx-plug-spellchecker-int,
+        lib-isx-plug-spellchecker,
         --
-        snap-server
+        snap-server,
     hs-source-dirs:
-        src/ISX/Plug/Spellchecker/Bin
+        src/ISX/Plug/Bin
     ghc-options:
         -threaded
 --------------------------------------------------------------------------------
 library common-ce-test
-    import:             shared-properties
+    import:             common-properties
     exposed-modules:
         TPX.Com.API.Test
     build-depends:
-        common-ce,
+        lib-isx-plug-spellchecker,
         --
         aeson,
         bytestring,
@@ -99,14 +86,14 @@ library common-ce-test
         lens,
         lens-aeson,
         network-uri,
-        snap-core
+        snap-core,
     mixins:
         relude                          (Relude.Unsafe)
     hs-source-dirs:
         lib/common-ce/test
-
-test-suite isx-plug-spellchecker-test
-    import:             shared-properties
+--------------------------------------------------------------------------------
+test-suite test-isx-plug-spellchecker
+    import:             common-properties
     type:               exitcode-stdio-1.0
     main-is:            Spec.hs
     other-modules:
@@ -117,16 +104,15 @@ test-suite isx-plug-spellchecker-test
         ISX.Plug.Spellchecker.Zone.Common.DataSpec
         ISX.Test
     build-depends:
-        isx-plug-spellchecker-int,
-        common-ce,
         common-ce-test,
+        lib-isx-plug-spellchecker,
         --
         aeson,
         containers,
         hspec                           ==  2.*,
         network-uri,
         text,
-        vector
+        vector,
     mixins:
         relude                          (Relude.Unsafe)
     hs-source-dirs:

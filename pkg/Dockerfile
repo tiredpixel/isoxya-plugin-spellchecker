@@ -29,10 +29,10 @@ USER ${USER}
 
 WORKDIR ${HOME}
 
-ENV ADDRESS=localhost \
-    LANG=C.UTF-8 \
-    PATH=${HOME}/bin:$PATH \
-    PORT=8000
+ENV PATH=${HOME}/bin:$PATH \
+    ADDRESS=localhost \
+    PORT=8000 \
+    LANG=C.UTF-8
 
 CMD isx-plug-spellchecker -b ${ADDRESS} -p ${PORT}
 

@@ -29,6 +29,6 @@ spec = do
 
 testPage :: Text -> IO ()
 testPage url = do
-    procI <- fProcI url Nothing
-    let texts = parse procI
+    plugProcI <- fPlugProcI url Nothing
+    let texts = parse plugProcI
     assertTextsLookup texts url

@@ -32,9 +32,6 @@ USER ${USER}
 
 WORKDIR ${HOME}/repo
 
-ENV LANG=C.UTF-8 \
-    PATH=${HOME}/.cabal/bin:$PATH
-
 COPY --chown=x:x [ \
     "cabal.config", \
     "*.cabal", \
@@ -43,8 +40,10 @@ COPY --chown=x:x [ \
 RUN cabal v1-update && \
     cabal v1-install -j --only-dependencies --enable-tests
 #-------------------------------------------------------------------------------
-ENV ADDRESS=0.0.0.0 \
-    PORT=8000
+ENV PATH=${HOME}/.cabal/bin:$PATH \
+    ADDRESS=0.0.0.0 \
+    PORT=8000 \
+    LANG=C.UTF-8
 
 CMD cabal v1-run isx-plug-spellchecker -- -b ${ADDRESS} -p ${PORT}
 
