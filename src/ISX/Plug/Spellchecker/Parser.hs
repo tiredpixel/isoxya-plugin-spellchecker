@@ -1,15 +1,15 @@
 module ISX.Plug.Spellchecker.Parser (parse) where
 
 
+import              TPX.Com.ISX.PlugProc
 import              Text.XML.HXT.Core
 import qualified    Data.Text                               as  T
-import qualified    TPX.Com.ISX.PlugProc                    as  R
 
 
-parse :: R.PlugProcI -> [Text]
-parse plugProcI = T.strip . toText <$> texts
+parse :: PlugProcI -> [Text]
+parse rx = T.strip . toText <$> texts
     where
-        body = fromRight "" $ decodeUtf8' $ R.plugProcIBody plugProcI
+        body = fromRight "" $ decodeUtf8' $ plugProcIBody rx
         doc p = runLA (hread >>> p) $ toString body
         texts = doc $ deep (isTitle <+> isTagH <+> isTagP) >>>
             removeAllWhiteSpace //> getText

@@ -2,7 +2,7 @@ module ISX.Plug.Spellchecker.Checker (
     Dict(..),
     ParaResult(..),
     Result(..),
-    check
+    check,
     ) where
 
 

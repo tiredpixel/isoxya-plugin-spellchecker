@@ -32,9 +32,9 @@ library lib-isx-plug-spellchecker
         TPX.Com.ISX.PlugProc
         TPX.Com.URI
     other-modules:
-        ISX.Plug.Spellchecker.Resource.Common
-        ISX.Plug.Spellchecker.Zone.Common.Apex
-        ISX.Plug.Spellchecker.Zone.Common.Data
+        ISX.Plug.Spellchecker.Resource
+        ISX.Plug.Spellchecker.Zone.Apex
+        ISX.Plug.Spellchecker.Zone.Data
         Paths_isx_plug_spellchecker
         TPX.Com.API.Req
         TPX.Com.API.Resource

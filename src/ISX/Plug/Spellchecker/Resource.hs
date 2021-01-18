@@ -1,10 +1,11 @@
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE RecordWildCards #-}
 {-# OPTIONS_GHC -fno-warn-orphans #-}
 
 
-module ISX.Plug.Spellchecker.Resource.Common (
+module ISX.Plug.Spellchecker.Resource (
     Apex(..),
-    ProcIMetaConfig(..)
+    Config(..),
     ) where
 
 
@@ -18,20 +19,20 @@ data Apex = Apex {
     apexVersion :: Text
     } deriving (Show)
 instance ToJSON Apex where
-    toJSON o = object [
-        "t_now"   .= apexTNow o,
-        "version" .= apexVersion o]
+    toJSON Apex{..} = object [
+        "t_now"   .= apexTNow,
+        "version" .= apexVersion]
 
-newtype ProcIMetaConfig = ProcIMetaConfig {
-    procIMetaConfigDicts :: [Dict]
+newtype Config = Config {
+    configDicts :: [Dict]
     } deriving (Show)
-instance FromJSON ProcIMetaConfig where
-    parseJSON = withObject "ProcIMetaConfig" $ \j -> do
-        fDicts <- j .: "dicts"
-        return $ ProcIMetaConfig fDicts
-instance ToJSON ProcIMetaConfig where
-    toJSON o = object [
-        "dicts" .= procIMetaConfigDicts o]
+instance FromJSON Config where
+    parseJSON = withObject "plug_proc_i.meta.config" $ \j -> do
+        configDicts <- j .: "dicts"
+        return Config{..}
+instance ToJSON Config where
+    toJSON Config{..} = object [
+        "dicts" .= configDicts]
 
 
 instance FromJSON Dict where
@@ -71,9 +72,9 @@ instance ToJSON Dict where
         DictNlNL -> "nl-nl"
 
 instance ToJSON ParaResult where
-    toJSON o = object [
-        "paragraph" .= paraResultPara o,
-        "results"   .= paraResultResults o]
+    toJSON ParaResult{..} = object [
+        "paragraph" .= paraResultPara,
+        "results"   .= paraResultResults]
 
 instance ToJSON Result where
     toJSON = \case
