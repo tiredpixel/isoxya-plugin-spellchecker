@@ -83,7 +83,8 @@ spec =
 pC :: Value
 pC = object [
     ("meta", object [
-        ("url", "http://example.com:80/")]),
+        ("url", "http://example.com:80/"),
+        ("method", "GET")]),
     ("header", object []),
     ("body", String "")]
 
