@@ -78,15 +78,23 @@ library common-ce-test
         lib-isx-plug-spellchecker,
         --
         aeson,
+        base64-bytestring,
         bytestring,
+        containers,
         directory,
         filepath,
         hspec                           ==  2.*,
+        hspec-core,
+        hspec-snap,
         http-link-header,
         lens,
         lens-aeson,
+        mtl,
         network-uri,
+        process,
         snap-core,
+        text,
+        unordered-containers,
     mixins:
         relude                          (Relude.Unsafe)
     hs-source-dirs:
@@ -107,12 +115,14 @@ test-suite test-isx-plug-spellchecker
         common-ce-test,
         lib-isx-plug-spellchecker,
         --
-        aeson,
-        containers,
+        base64-bytestring,
+        directory,
         hspec                           ==  2.*,
         network-uri,
+        snap,
         text,
-        vector,
+        time,
+        unordered-containers,
     mixins:
         relude                          (Relude.Unsafe)
     hs-source-dirs:
