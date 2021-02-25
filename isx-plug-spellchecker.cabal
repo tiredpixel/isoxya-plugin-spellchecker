@@ -118,15 +118,10 @@ test-suite test-isx-plug-spellchecker
         common-ce-test,
         lib-isx-plug-spellchecker,
         --
-        base64-bytestring,
         containers,
-        directory,
         hspec                           ==  2.*,
         network-uri,
-        snap,
         text,
-        time,
-        unordered-containers,
     default-extensions:
         NoImplicitPrelude
     hs-source-dirs:
