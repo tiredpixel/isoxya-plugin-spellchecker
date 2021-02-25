@@ -7,6 +7,7 @@ module ISX.Plug.Spellchecker.Init (
 import           ISX.Plug.Spellchecker.Types
 import           Snap.Core
 import           Snap.Snaplet
+import           TPX.Com.Snap.CoreUtils
 import qualified ISX.Plug.Spellchecker.Zone.Apex as ZA
 import qualified ISX.Plug.Spellchecker.Zone.Data as ZD
 
@@ -21,4 +22,7 @@ routesSpellchecker :: [(ByteString, Handler b Spellchecker ())]
 routesSpellchecker = [
     ("",                                    ifTop           ZA.apex),
     --
-    ("data",                                method POST     ZD.create)]
+    ("data",                                method POST     ZD.create),
+    ("data/:_",                                             notFound),
+    --
+    ("",                                                    notFound)]
