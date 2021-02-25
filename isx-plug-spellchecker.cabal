@@ -24,30 +24,33 @@ common common-properties
 library lib-isx-plug-spellchecker
     import:             common-properties
     exposed-modules:
-        ISX.Plug.Spellchecker.Checker
-        ISX.Plug.Spellchecker.Parser
-        ISX.Plug.Spellchecker.Route
-        TPX.Com.API.Aeson
-        TPX.Com.API.Res
-        TPX.Com.ISX.PlugProc
+        ISX.Plug.Spellchecker
+        ISX.Plug.Spellchecker.Core
+        TPX.Com.Isoxya.PlugProc
+        TPX.Com.Snap.CoreUtils
         TPX.Com.URI
     other-modules:
+        Paths_isx_plug_spellchecker
+        ISX.Plug.Spellchecker.Checker
+        ISX.Plug.Spellchecker.Init
+        ISX.Plug.Spellchecker.Parser
         ISX.Plug.Spellchecker.Resource
+        ISX.Plug.Spellchecker.Types
         ISX.Plug.Spellchecker.Zone.Apex
         ISX.Plug.Spellchecker.Zone.Data
-        Paths_isx_plug_spellchecker
-        TPX.Com.API.Req
-        TPX.Com.API.Resource
-        TPX.Com.ISX.PlugProcSnap
+        TPX.Com.Isoxya.Snap.PlugProc
     build-depends:
         aeson,
         base64-bytestring,
         containers,
         hxt,
+        lens,
         network-uri,
         process-extras,
+        snap,
         snap-core,
         snap-extras,
+        snap-server,
         text,
         time,
         unix,
@@ -64,7 +67,8 @@ executable isx-plug-spellchecker
     build-depends:
         lib-isx-plug-spellchecker,
         --
-        snap-server,
+        lens,
+        snap,
     hs-source-dirs:
         src/ISX/Plug/Bin
     ghc-options:
@@ -73,7 +77,9 @@ executable isx-plug-spellchecker
 library common-ce-test
     import:             common-properties
     exposed-modules:
-        TPX.Com.API.Test
+        TPX.Com.Snap.Test
+    other-modules:
+        TPX.Com.Snap.TestUtils
     build-depends:
         lib-isx-plug-spellchecker,
         --
@@ -95,8 +101,6 @@ library common-ce-test
         snap-core,
         text,
         unordered-containers,
-    mixins:
-        relude                          (Relude.Unsafe)
     hs-source-dirs:
         lib/common-ce/test
 --------------------------------------------------------------------------------
@@ -105,17 +109,17 @@ test-suite test-isx-plug-spellchecker
     type:               exitcode-stdio-1.0
     main-is:            Spec.hs
     other-modules:
-        ISX.Factory
         ISX.Plug.Spellchecker.CheckerSpec
         ISX.Plug.Spellchecker.ParserSpec
+        ISX.Plug.Spellchecker.Test
         ISX.Plug.Spellchecker.Zone.ApexSpec
         ISX.Plug.Spellchecker.Zone.DataSpec
-        ISX.Test
     build-depends:
         common-ce-test,
         lib-isx-plug-spellchecker,
         --
         base64-bytestring,
+        containers,
         directory,
         hspec                           ==  2.*,
         network-uri,
@@ -123,8 +127,8 @@ test-suite test-isx-plug-spellchecker
         text,
         time,
         unordered-containers,
-    mixins:
-        relude                          (Relude.Unsafe)
+    default-extensions:
+        NoImplicitPrelude
     hs-source-dirs:
         test
     build-tool-depends:

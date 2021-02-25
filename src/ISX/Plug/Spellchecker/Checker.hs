@@ -6,10 +6,10 @@ module ISX.Plug.Spellchecker.Checker (
     ) where
 
 
-import              System.Exit
-import              System.Process.Text
-import qualified    Data.List                               as  L
-import qualified    Data.Text                               as  T
+import           System.Exit
+import           System.Process.Text
+import qualified Data.List           as L
+import qualified Data.Text           as T
 
 
 data Dict =
@@ -54,8 +54,8 @@ type WordOrig = Text
 
 type WordRoot = Text
 
-check :: [Dict] -> [Para] -> IO [ParaResult]
-check dicts texts = parse texts <$> hunspell dicts' texts
+check :: MonadIO m => [Dict] -> [Para] -> m [ParaResult]
+check dicts texts = parse texts <$> liftIO (hunspell dicts' texts)
     where
         dicts' = if null dicts
             then [dictDef]

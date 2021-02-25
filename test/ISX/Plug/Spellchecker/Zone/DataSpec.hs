@@ -1,83 +1,71 @@
 module ISX.Plug.Spellchecker.Zone.DataSpec (spec) where
 
 
-import              ISX.Test
-import              Prelude                                 hiding  (get)
+import ISX.Plug.Spellchecker.Test
+import TPX.Com.Isoxya.PlugProc
 
 
 spec :: Spec
-spec =
+spec = snapSpellchecker $
     describe "create" $ do
-        it "ok" $ do
-            res <- withSrv $ postJSON "/data" pC
-            assertSuccess res
-            b <- getResponseBody res
-            b ^.. key "data" . values `shouldBe` []
-            b ^.. key "urls" . values `shouldBe` []
-            assertElemN res 2
+        it "=> 200" $ do
+            let req = postJSON "/data" pC
+            res <- runRequest req
+            test res []
         
-        describe "default" $ do
-            let check' = testPage "default" []
+        it "default => 200" $ do
+            (i, dataE) <- load "default" [] "www.pavouk.tech/"
+            let req = postJSON "/data" i
+            res <- runRequest req
+            test res dataE
         
-            describe "www.pavouk.tech" $
-                it "apex" $
-                    check' "www.pavouk.tech/"
+        it "multi => 200" $ do
+            (i, dataE) <- load "multi" ["en-gb", "cs"] "www.pavouk.tech/"
+            let req = postJSON "/data" i
+            res <- runRequest req
+            test res dataE
         
-        describe "multi" $ do
-            let check' = testPage "multi" ["en-gb", "cs"]
+        it "cs => 200" $ do
+            (i, dataE) <- load "cs" ["cs"] "_test/cs/"
+            let req = postJSON "/data" i
+            res <- runRequest req
+            test res dataE
         
-            describe "www.pavouk.tech" $
-                it "apex" $
-                    check' "www.pavouk.tech/"
+        it "de => 200" $ do
+            (i, dataE) <- load "de" ["de"] "_test/de/"
+            let req = postJSON "/data" i
+            res <- runRequest req
+            test res dataE
         
-        describe "cs" $ do
-            let check' = testPage "cs" ["cs"]
+        it "en => 200" $ do
+            (i, dataE) <- load "en" ["en"] "_test/en/"
+            let req = postJSON "/data" i
+            res <- runRequest req
+            test res dataE
         
-            describe "_test" $
-                it "apex" $
-                    check' "_test/cs/"
+        it "es => 200" $ do
+            (i, dataE) <- load "es" ["es"] "_test/es/"
+            let req = postJSON "/data" i
+            res <- runRequest req
+            test res dataE
         
-        describe "de" $ do
-            let check' = testPage "de" ["de"]
+        it "et => 200" $ do
+            (i, dataE) <- load "et" ["et"] "_test/et/"
+            let req = postJSON "/data" i
+            res <- runRequest req
+            test res dataE
         
-            describe "_test" $
-                it "apex" $
-                    check' "_test/de/"
+        it "fr => 200" $ do
+            (i, dataE) <- load "fr" ["fr"] "_test/fr/"
+            let req = postJSON "/data" i
+            res <- runRequest req
+            test res dataE
         
-        describe "en" $ do
-            let check' = testPage "en" ["en"]
-        
-            describe "_test" $
-                it "apex" $
-                    check' "_test/en/"
-        
-        describe "es" $ do
-            let check' = testPage "es" ["es"]
-        
-            describe "_test" $
-                it "apex" $
-                    check' "_test/es/"
-        
-        describe "et" $ do
-            let check' = testPage "et" ["et"]
-        
-            describe "_test" $
-                it "apex" $
-                    check' "_test/et/"
-        
-        describe "fr" $ do
-            let check' = testPage "fr" ["fr"]
-        
-            describe "_test" $
-                it "apex" $
-                    check' "_test/fr/"
-        
-        describe "nl" $ do
-            let check' = testPage "nl" ["nl"]
-        
-            describe "_test" $
-                it "apex" $
-                    check' "_test/nl/"
+        it "nl => 200" $ do
+            (i, dataE) <- load "nl" ["nl"] "_test/nl/"
+            let req = postJSON "/data" i
+            res <- runRequest req
+            test res dataE
 
 
 pC :: Value
@@ -88,17 +76,22 @@ pC = object [
     ("header", object []),
     ("body", String "")]
 
-testPage :: Text -> [Text] -> Text -> IO ()
-testPage ns dicts url = do
-    ppi <- fPlugProcI url dicts'
-    res <- withSrv $ postJSON "/data" ppi
-    assertSuccess res
-    b <- getResponseBody res
-    assertResultsLookup (b ^. key "data" . _Array) ns url
-    b ^.. key "urls" . values `shouldBe` []
-    assertElemN res 2
+load :: MonadIO m => Text -> [Text] -> Text -> m (PlugProcI, [Value])
+load ns dicts url = do
+    i <- genPlugProcI url dicts'
+    t <- readFileText $ fixtureResult ns url
+    let Just dataE = decode $ encodeUtf8 t
+    return (i, dataE)
     where
         dicts' = if null dicts
             then Nothing
             else Just $ object [
                 ("dicts", toJSON dicts)]
+
+test :: Response -> [Value] -> SnapHspecM b ()
+test res dat = do
+    rspStatus res `shouldBe` 200
+    b <- getResponseBody res
+    toList (b ^. key "data" . _Array) `shouldBeList` dat
+    b ^. key "urls" . _Array `shouldMeasure` 0
+    b ^. _Object `shouldMeasure` 2

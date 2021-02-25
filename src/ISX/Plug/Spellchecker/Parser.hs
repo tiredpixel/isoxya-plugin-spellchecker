@@ -1,9 +1,9 @@
 module ISX.Plug.Spellchecker.Parser (parse) where
 
 
-import              TPX.Com.ISX.PlugProc
-import              Text.XML.HXT.Core
-import qualified    Data.Text                               as  T
+import           TPX.Com.Isoxya.PlugProc
+import           Text.XML.HXT.Core
+import qualified Data.Text               as T
 
 
 parse :: PlugProcI -> [Text]

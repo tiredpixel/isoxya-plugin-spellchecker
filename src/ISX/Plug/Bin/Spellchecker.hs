@@ -1,22 +1,31 @@
+{-# LANGUAGE TemplateHaskell #-}
+
+
 module Main (main) where
 
 
-import              Data.Version                            (showVersion)
-import              ISX.Plug.Spellchecker.Route
-import              Paths_isx_plug_spellchecker             (version)
-import              TPX.Com.API.Res
-import qualified    Snap.Http.Server                        as  Srv
+import Control.Lens                (makeLenses)
+import Data.Version                (showVersion)
+import ISX.Plug.Spellchecker
+import Paths_isx_plug_spellchecker (version)
+import Snap.Snaplet
+import System.IO
+import TPX.Com.Snap.CoreUtils
 
+
+newtype App = App {
+    _spellchecker :: Snaplet Spellchecker}
+
+makeLenses ''App
 
 main :: IO ()
 main = do
     let ver = toText $ showVersion version
-    putTextLn ver
-    cEmp <- Srv.commandLineConfig Srv.emptyConfig
-    Srv.httpServe (conf cEmp) site
-    where
-        cLog = Srv.ConfigFileLog "-"
-        conf =
-            Srv.setAccessLog cLog .
-            Srv.setErrorLog cLog .
-            Srv.setErrorHandler intErr'
+    hPutStrLn stderr $ toString ver
+    serveSnaplet snapCfg initApp
+
+
+initApp :: SnapletInit App App
+initApp = makeSnaplet "app" "Isoxya plugin: Spellchecker" Nothing $ do
+    spellchecker' <- nestSnaplet "" spellchecker initSpellchecker
+    return $ App spellchecker'

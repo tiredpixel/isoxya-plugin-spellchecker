@@ -1,34 +1,38 @@
 module ISX.Plug.Spellchecker.ParserSpec (spec) where
 
 
-import              ISX.Plug.Spellchecker.Parser
-import              ISX.Test
-import              Prelude                                 hiding  (get)
+import ISX.Plug.Spellchecker.Test
 
 
 spec :: Spec
-spec = do
+spec = snapSpellchecker $ do
     describe "example.com" $
-        it "apex" $
-            testPage "example.com/"
+        it "apex" $ do
+            (a, e) <- load "example.com/"
+            a `shouldBe` e
     
     describe "www.pavouk.tech" $ do
-        it "apex" $
-            testPage "www.pavouk.tech/"
+        it "apex" $ do
+            (a, e) <- load "www.pavouk.tech/"
+            a `shouldBe` e
         
-        it "robots" $
-            testPage "www.pavouk.tech/robots.txt"
+        it "robots" $ do
+            (a, e) <- load "www.pavouk.tech/robots.txt"
+            a `shouldBe` e
         
-        it "image" $
-            testPage "www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/logo/pv-center.svg.inv.svg.png"
+        it "image" $ do
+            (a, e) <- load "www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/logo/pv-center.svg.inv.svg.png"
+            a `shouldBe` e
     
     describe "www.tiredpixel.com" $
-        it "apex" $
-            testPage "www.tiredpixel.com/"
+        it "apex" $ do
+            (a, e) <- load "www.tiredpixel.com/"
+            a `shouldBe` e
 
 
-testPage :: Text -> IO ()
-testPage url = do
-    ppi <- fPlugProcI url Nothing
-    let texts = parse ppi
-    assertTextsLookup texts url
+load :: MonadIO m => Text -> m (Text, Text)
+load url = do
+    i <- genPlugProcI url Nothing
+    let textsA = parse i
+    textsE <- readFileText $ fixtureText url
+    return (unlines textsA, textsE)

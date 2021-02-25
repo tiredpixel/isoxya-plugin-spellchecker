@@ -9,9 +9,9 @@ module ISX.Plug.Spellchecker.Resource (
     ) where
 
 
-import              Data.Aeson                              hiding (Result)
-import              Data.Time.Clock                         (UTCTime)
-import              ISX.Plug.Spellchecker.Checker
+import Data.Aeson                    hiding (Result)
+import Data.Time.Clock
+import ISX.Plug.Spellchecker.Checker
 
 
 data Apex = Apex {
