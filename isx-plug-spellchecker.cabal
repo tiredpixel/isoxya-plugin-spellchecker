@@ -101,6 +101,7 @@ library common-ce-test
         snap-core,
         text,
         unordered-containers,
+        vector,
     hs-source-dirs:
         lib/common-ce/test
 --------------------------------------------------------------------------------
