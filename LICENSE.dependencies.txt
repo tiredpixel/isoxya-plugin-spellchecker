@@ -1,6 +1,10 @@
 * Cabal
     License:  BSD3
+* HTTP
+    License:  BSD3
 * HUnit
+    License:  BSD3
+* HandsomeSoup
     License:  BSD3
 * ListLike
     License:  BSD3
@@ -162,6 +166,8 @@
     License:  MIT
 * hspec-expectations
     License:  MIT
+* hspec-snap
+    License:  BSD3
 * http-api-data
     License:  BSD3
 * http-link-header
@@ -171,6 +177,8 @@
 * hxt
     License:  MIT
 * hxt-charproperties
+    License:  MIT
+* hxt-http
     License:  MIT
 * hxt-regex-xmlschema
     License:  MIT
