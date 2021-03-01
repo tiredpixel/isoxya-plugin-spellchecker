@@ -24,23 +24,19 @@ common common-properties
 library lib-common-ce
     import:             common-properties
     exposed-modules:
-        --TPX.Com.Cursor
-        --TPX.Com.Isoxya.PlugProc
-        --TPX.Com.Isoxya.PlugStrm
-        --TPX.Com.Net
-        --TPX.Com.Snap.CoreUtils
-        --TPX.Com.URI
+        TPX.Com.Isoxya.PlugProc
+        TPX.Com.Isoxya.Snap.PlugProc
+        TPX.Com.Snap.CoreUtils
+        TPX.Com.URI
+    other-modules:
+        TPX.Com.Cursor
     build-depends:
         aeson,
         base64-bytestring,
         bytestring,
-        conduit,
-        conduit-extra,
         http-conduit,
-        http-types,
         network-uri,
         regex-compat,
-        resourcet,
         safe,
         snap-core,
         snap-extras,
@@ -54,12 +50,12 @@ library lib-common-ce
 library lib-isx-plug-spellchecker
     import:             common-properties
     exposed-modules:
+        ISX.Plug.Spellchecker
+        ISX.Plug.Spellchecker.Core
     other-modules:
         Paths_isx_plug_spellchecker
         --
-        ISX.Plug.Spellchecker
         ISX.Plug.Spellchecker.Checker
-        ISX.Plug.Spellchecker.Core
         ISX.Plug.Spellchecker.Init
         ISX.Plug.Spellchecker.Parser
         ISX.Plug.Spellchecker.Resource
@@ -70,20 +66,15 @@ library lib-isx-plug-spellchecker
         lib-common-ce,
         --
         aeson,
-        base64-bytestring,
         containers,
         hxt,
         lens,
-        network-uri,
         process-extras,
         snap,
         snap-core,
         snap-extras,
-        snap-server,
         text,
         time,
-        unix,
-        unordered-containers,
     hs-source-dirs:
         src
 --------------------------------------------------------------------------------
