@@ -21,25 +21,54 @@ common common-properties
         -Wall
         -ddump-minimal-imports
 --------------------------------------------------------------------------------
+library lib-common-ce
+    import:             common-properties
+    exposed-modules:
+        --TPX.Com.Cursor
+        --TPX.Com.Isoxya.PlugProc
+        --TPX.Com.Isoxya.PlugStrm
+        --TPX.Com.Net
+        --TPX.Com.Snap.CoreUtils
+        --TPX.Com.URI
+    build-depends:
+        aeson,
+        base64-bytestring,
+        bytestring,
+        conduit,
+        conduit-extra,
+        http-conduit,
+        http-types,
+        network-uri,
+        regex-compat,
+        resourcet,
+        safe,
+        snap-core,
+        snap-extras,
+        snap-server,
+        time,
+        unix,
+        unordered-containers,
+    hs-source-dirs:
+        lib/common-ce/src
+--------------------------------------------------------------------------------
 library lib-isx-plug-spellchecker
     import:             common-properties
     exposed-modules:
-        ISX.Plug.Spellchecker
-        ISX.Plug.Spellchecker.Core
-        TPX.Com.Isoxya.PlugProc
-        TPX.Com.Snap.CoreUtils
-        TPX.Com.URI
     other-modules:
         Paths_isx_plug_spellchecker
+        --
+        ISX.Plug.Spellchecker
         ISX.Plug.Spellchecker.Checker
+        ISX.Plug.Spellchecker.Core
         ISX.Plug.Spellchecker.Init
         ISX.Plug.Spellchecker.Parser
         ISX.Plug.Spellchecker.Resource
         ISX.Plug.Spellchecker.Types
         ISX.Plug.Spellchecker.Zone.Apex
         ISX.Plug.Spellchecker.Zone.Data
-        TPX.Com.Isoxya.Snap.PlugProc
     build-depends:
+        lib-common-ce,
+        --
         aeson,
         base64-bytestring,
         containers,
@@ -56,7 +85,6 @@ library lib-isx-plug-spellchecker
         unix,
         unordered-containers,
     hs-source-dirs:
-        lib/common-ce/src
         src
 --------------------------------------------------------------------------------
 executable isx-plug-spellchecker
@@ -65,6 +93,7 @@ executable isx-plug-spellchecker
     other-modules:
         Paths_isx_plug_spellchecker
     build-depends:
+        lib-common-ce,
         lib-isx-plug-spellchecker,
         --
         lens,
@@ -74,14 +103,14 @@ executable isx-plug-spellchecker
     ghc-options:
         -threaded
 --------------------------------------------------------------------------------
-library common-ce-test
+library lib-common-ce-test
     import:             common-properties
     exposed-modules:
         TPX.Com.Snap.Test
     other-modules:
         TPX.Com.Snap.TestUtils
     build-depends:
-        lib-isx-plug-spellchecker,
+        lib-common-ce,
         --
         aeson,
         base64-bytestring,
@@ -116,7 +145,8 @@ test-suite test-isx-plug-spellchecker
         ISX.Plug.Spellchecker.Zone.ApexSpec
         ISX.Plug.Spellchecker.Zone.DataSpec
     build-depends:
-        common-ce-test,
+        lib-common-ce,
+        lib-common-ce-test,
         lib-isx-plug-spellchecker,
         --
         containers,
