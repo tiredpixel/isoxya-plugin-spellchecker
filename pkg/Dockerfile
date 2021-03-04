@@ -36,5 +36,5 @@ CMD ["isx-plug-spellchecker", "-b", "localhost", "-p", "8000"]
 
 EXPOSE 8000
 
-HEALTHCHECK CMD curl -fs http://${ADDRESS}:${PORT} || false
+HEALTHCHECK CMD curl -fs http://localhost:8000 || false
 #===============================================================================
