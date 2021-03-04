@@ -13,10 +13,9 @@ import qualified ISX.Plug.Spellchecker.Zone.Data as ZD
 
 
 initSpellchecker :: SnapletInit b Spellchecker
-initSpellchecker =
-    makeSnaplet "spellchecker" "Isoxya plugin: Spellchecker" Nothing $ do
-        addRoutes routesSpellchecker
-        return Spellchecker
+initSpellchecker = makeSnaplet "Spellchecker" "" Nothing $ do
+    addRoutes routesSpellchecker
+    return Spellchecker
 
 routesSpellchecker :: [(ByteString, Handler b Spellchecker ())]
 routesSpellchecker = [

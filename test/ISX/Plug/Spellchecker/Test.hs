@@ -58,6 +58,6 @@ fxExt url = if T.takeEnd 1 url == "/"
     else url
 
 initSpellcheckerTest :: SnapletInit b Spellchecker
-initSpellcheckerTest = makeSnaplet "spellcheckerTest" "Isoxya plugin: Spellchecker Test" Nothing $ do
+initSpellcheckerTest = makeSnaplet "Spellchecker" "" Nothing $ do
     addRoutes routesSpellchecker
     return Spellchecker

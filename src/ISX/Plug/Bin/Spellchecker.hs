@@ -26,6 +26,6 @@ main = do
 
 
 initApp :: SnapletInit App App
-initApp = makeSnaplet "app" "Isoxya plugin: Spellchecker" Nothing $ do
+initApp = makeSnaplet "App" "" Nothing $ do
     spellchecker' <- nestSnaplet "" spellchecker initSpellchecker
     return $ App spellchecker'
