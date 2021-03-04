@@ -41,13 +41,12 @@ RUN cabal v1-update && \
     cabal v1-install -j --only-dependencies --enable-tests
 #-------------------------------------------------------------------------------
 ENV PATH=${HOME}/.cabal/bin:$PATH \
-    ADDRESS=0.0.0.0 \
-    PORT=8000 \
     LANG=C.UTF-8
 
-CMD cabal v1-run isx-plug-spellchecker -- -b ${ADDRESS} -p ${PORT}
+CMD ["cabal", "v1-run", "isx-plug-spellchecker", "--", \
+    "-b", "0.0.0.0", "-p", "8000"]
 
-EXPOSE ${PORT}
+EXPOSE 8000
 
 HEALTHCHECK CMD curl -fs http://${ADDRESS}:${PORT} || false
 #===============================================================================
