@@ -4,6 +4,7 @@
 module Main (main) where
 
 
+import Control.Concurrent          (forkIO)
 import Control.Lens                (makeLenses)
 import Data.Version                (showVersion)
 import ISX.Plug.Spellchecker
@@ -22,7 +23,8 @@ main :: IO ()
 main = do
     let ver = toText $ showVersion version
     hPutStrLn stderr $ toString ver
-    serveSnaplet snapCfg initApp
+    tId <- forkIO $ serveSnaplet snapCfg initApp
+    snapWait tId
 
 
 initApp :: SnapletInit App App
