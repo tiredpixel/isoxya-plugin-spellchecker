@@ -22,7 +22,7 @@ makeLenses ''App
 main :: IO ()
 main = do
     let ver = toText $ showVersion version
-    hPutStrLn stderr $ toString ver
+    hPutStrLn stderr $ "Isoxya plugin: Spellchecker " <> toString ver
     tId <- forkIO $ serveSnaplet snapCfg initApp
     snapWait tId
 
