@@ -27,6 +27,7 @@ library lib-common-ce
         TPX.Com.Isoxya.PlugProc
         TPX.Com.Isoxya.Snap.PlugProc
         TPX.Com.Snap.CoreUtils
+        TPX.Com.Snap.Main
         TPX.Com.URI
     other-modules:
         TPX.Com.Cursor
