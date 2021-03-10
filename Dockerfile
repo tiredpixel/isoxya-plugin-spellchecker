@@ -48,5 +48,5 @@ CMD ["cabal", "v1-run", "isx-plug-spellchecker", "--", \
 
 EXPOSE 8000
 
-HEALTHCHECK CMD curl -fs http://0.0.0.0:8000 || false
+HEALTHCHECK CMD curl -fs http://localhost:8000 || false
 #===============================================================================
