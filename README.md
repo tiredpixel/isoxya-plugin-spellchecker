@@ -335,11 +335,6 @@ Example:
 ```
 
 
-## Blessing
-
-May you find peace, and help others to do likewise.
-
-
 ## Contact
 
 [tiredpixel.com](https://www.tiredpixel.com/) · [tp@tiredpixel.com](mailto:tp@tiredpixel.com)
