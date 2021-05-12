@@ -18,6 +18,8 @@
     License:  BSD3
 * ansi-terminal
     License:  BSD3
+* appar
+    License:  BSD3
 * array
     License:  BSD3
 * asn1-encoding
@@ -55,6 +57,8 @@
 * blaze-markup
     License:  BSD3
 * byteable
+    License:  BSD3
+* byteorder
     License:  BSD3
 * bytestring
     License:  BSD3
@@ -219,6 +223,8 @@
     License:  BSD3
 * io-streams-haproxy
     License:  BSD3
+* iproute
+    License:  BSD3
 * jmacro
     License:  BSD3
 * kan-extensions
@@ -355,7 +361,7 @@
 * th-reify-many
     License:  BSD3
 * time
-    License:  BSD3
+    License:  BSD2
 * time-compat
     License:  BSD3
 * tls
