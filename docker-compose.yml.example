@@ -1,22 +1,19 @@
 version: "2.4"
 services:
-  #-----------------------------------------------------------------------------
-  plug:
+  plugin:
     image: docker.io/tiredpixel/isoxya-plugin-spellchecker.build:unstable
     init: true
     volumes:
+      - ./isoxya-plugin-spellchecker.cabal:/home/x/repo/isoxya-plugin-spellchecker.cabal
       - ./lib:/home/x/repo/lib
       - ./src:/home/x/repo/src
       - ./test:/home/x/repo/test
-      #
-      - ./isx-plug-spellchecker.cabal:/home/x/repo/isx-plug-spellchecker.cabal
     networks:
-      plug:
+      plugin:
         aliases:
-          - spellchecker.plugin.dev.isoxya.com
+          - isoxya-plugin-spellchecker.localhost
     restart: on-failure
-  #-----------------------------------------------------------------------------
 networks:
-  plug:
+  plugin:
     external: true
-    name: isoxya_plug
+    name: isoxya_plugin

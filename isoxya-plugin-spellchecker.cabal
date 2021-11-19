@@ -1,7 +1,7 @@
 cabal-version:          3.0
-name:                   isx-plug-spellchecker
+name:                   isoxya-plugin-spellchecker
 version:                0.0.0
-synopsis:               Isoxya plugin: Spellchecker
+synopsis:               Isoxya Spellchecker plugin
 license:                BSD-3-Clause
 author:                 Nic Williams <tp@tiredpixel.com>
 maintainer:             Nic Williams <tp@tiredpixel.com>
@@ -21,16 +21,16 @@ common common-properties
         -Wall
         -ddump-minimal-imports
 --------------------------------------------------------------------------------
-library lib-common-ce
+library lib-common
     import:             common-properties
     exposed-modules:
-        TPX.Com.Isoxya.PlugProc
-        TPX.Com.Isoxya.Snap.PlugProc
-        TPX.Com.Snap.CoreUtils
-        TPX.Com.Snap.Main
-        TPX.Com.URI
+        TiredPixel.Common.Isoxya.PlugProc
+        TiredPixel.Common.Isoxya.Snap.PlugProc
+        TiredPixel.Common.Snap.CoreUtils
+        TiredPixel.Common.Snap.Main
+        TiredPixel.Common.URI
     other-modules:
-        TPX.Com.Cursor
+        TiredPixel.Common.Cursor
     build-depends:
         aeson,
         base64-bytestring,
@@ -46,25 +46,25 @@ library lib-common-ce
         unix,
         unordered-containers,
     hs-source-dirs:
-        lib/common-ce/src
+        lib/common/src
 --------------------------------------------------------------------------------
-library lib-isx-plug-spellchecker
+library lib-isoxya-plugin-spellchecker
     import:             common-properties
     exposed-modules:
-        ISX.Plug.Spellchecker
-        ISX.Plug.Spellchecker.Core
+        Isoxya.Plugin.Spellchecker
+        Isoxya.Plugin.Spellchecker.Core
     other-modules:
-        Paths_isx_plug_spellchecker
+        Paths_isoxya_plugin_spellchecker
         --
-        ISX.Plug.Spellchecker.Checker
-        ISX.Plug.Spellchecker.Init
-        ISX.Plug.Spellchecker.Parser
-        ISX.Plug.Spellchecker.Resource
-        ISX.Plug.Spellchecker.Types
-        ISX.Plug.Spellchecker.Zone.Apex
-        ISX.Plug.Spellchecker.Zone.Data
+        Isoxya.Plugin.Spellchecker.Checker
+        Isoxya.Plugin.Spellchecker.Init
+        Isoxya.Plugin.Spellchecker.Parser
+        Isoxya.Plugin.Spellchecker.Resource
+        Isoxya.Plugin.Spellchecker.Types
+        Isoxya.Plugin.Spellchecker.Zone.Apex
+        Isoxya.Plugin.Spellchecker.Zone.Data
     build-depends:
-        lib-common-ce,
+        lib-common,
         --
         aeson,
         containers,
@@ -79,30 +79,28 @@ library lib-isx-plug-spellchecker
     hs-source-dirs:
         src
 --------------------------------------------------------------------------------
-executable isx-plug-spellchecker
+executable isoxya-plugin-spellchecker
     import:             common-properties
     main-is:            Spellchecker.hs
     other-modules:
-        Paths_isx_plug_spellchecker
+        Paths_isoxya_plugin_spellchecker
     build-depends:
-        lib-common-ce,
-        lib-isx-plug-spellchecker,
+        lib-common,
+        lib-isoxya-plugin-spellchecker,
         --
         lens,
         snap,
     hs-source-dirs:
-        src/ISX/Plug/Bin
-    ghc-options:
-        -threaded
+        src/Isoxya/Plugin/Bin
 --------------------------------------------------------------------------------
-library lib-common-ce-test
+library lib-common-test
     import:             common-properties
     exposed-modules:
-        TPX.Com.Snap.Test
+        TiredPixel.Common.Snap.Test
     other-modules:
-        TPX.Com.Snap.TestUtils
+        TiredPixel.Common.Snap.TestUtils
     build-depends:
-        lib-common-ce,
+        lib-common,
         --
         aeson,
         base64-bytestring,
@@ -124,22 +122,22 @@ library lib-common-ce-test
         unordered-containers,
         vector,
     hs-source-dirs:
-        lib/common-ce/test
+        lib/common/test
 --------------------------------------------------------------------------------
-test-suite test-isx-plug-spellchecker
+test-suite test-isoxya-plugin-spellchecker
     import:             common-properties
     type:               exitcode-stdio-1.0
     main-is:            Spec.hs
     other-modules:
-        ISX.Plug.Spellchecker.CheckerSpec
-        ISX.Plug.Spellchecker.ParserSpec
-        ISX.Plug.Spellchecker.Test
-        ISX.Plug.Spellchecker.Zone.ApexSpec
-        ISX.Plug.Spellchecker.Zone.DataSpec
+        Isoxya.Plugin.Spellchecker.CheckerSpec
+        Isoxya.Plugin.Spellchecker.ParserSpec
+        Isoxya.Plugin.Spellchecker.Test
+        Isoxya.Plugin.Spellchecker.Zone.ApexSpec
+        Isoxya.Plugin.Spellchecker.Zone.DataSpec
     build-depends:
-        lib-common-ce,
-        lib-common-ce-test,
-        lib-isx-plug-spellchecker,
+        lib-common,
+        lib-common-test,
+        lib-isoxya-plugin-spellchecker,
         --
         containers,
         hspec                           ==  2.*,
@@ -151,6 +149,3 @@ test-suite test-isx-plug-spellchecker
         test
     build-tool-depends:
         hspec-discover:hspec-discover   ==  2.*
-    ghc-options:
-        -threaded
---------------------------------------------------------------------------------
