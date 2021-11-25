@@ -2,7 +2,7 @@
 {-# OPTIONS_GHC -Wno-unused-top-binds #-}
 
 
-module ISX.Plug.Spellchecker.Types (
+module Isoxya.Plugin.Spellchecker.Types (
     Spellchecker(..),
     ) where
 

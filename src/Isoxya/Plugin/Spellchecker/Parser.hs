@@ -1,15 +1,15 @@
-module ISX.Plug.Spellchecker.Parser (parse) where
+module Isoxya.Plugin.Spellchecker.Parser (parse) where
 
 
-import           TPX.Com.Isoxya.PlugProc
 import           Text.XML.HXT.Core
-import qualified Data.Text               as T
+import           TiredPixel.Common.Isoxya.Processor
+import qualified Data.Text                          as T
 
 
-parse :: PlugProcI -> [Text]
+parse :: ProcessorI -> [Text]
 parse rx = T.strip . toText <$> texts
     where
-        body = fromRight "" $ decodeUtf8' $ plugProcIBody rx
+        body = fromRight "" $ decodeUtf8' $ processorIBody rx
         doc p = runLA (hread >>> p) $ toString body
         texts = doc $ deep (isTitle <+> isTagH <+> isTagP) >>>
             removeAllWhiteSpace //> getText
