@@ -6,7 +6,7 @@ module Isoxya.Plugin.Spellchecker.Endpoint.Data (
 import           Isoxya.Plugin.Spellchecker.Core
 import           TiredPixel.Common.Isoxya.Processor
 import           TiredPixel.Common.Isoxya.Snap.Processor ()
-import qualified Data.Set                                   as S
+import qualified Data.Set                                as S
 
 
 create :: Handler b Spellchecker ()
