@@ -4,10 +4,10 @@ module Isoxya.Plugin.Spellchecker.Init (
     ) where
 
 
-import           Isoxya.Plugin.Spellchecker.Types
+import           Isoxya.Plugin.Spellchecker.Type
 import           Snap.Core
 import           Snap.Snaplet
-import           TiredPixel.Common.Snap.CoreUtils
+import           TiredPixel.Common.Snap.CoreUtil
 import qualified Isoxya.Plugin.Spellchecker.Endpoint.Apex as EA
 import qualified Isoxya.Plugin.Spellchecker.Endpoint.Data as ED
 

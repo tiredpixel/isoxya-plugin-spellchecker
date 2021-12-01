@@ -50,7 +50,7 @@ library lib-common
     exposed-modules:
         TiredPixel.Common.Isoxya.Processor
         TiredPixel.Common.Isoxya.Snap.Processor
-        TiredPixel.Common.Snap.CoreUtils
+        TiredPixel.Common.Snap.CoreUtil
         TiredPixel.Common.Snap.Main
         TiredPixel.Common.URI
     other-modules:
@@ -84,7 +84,7 @@ library lib-isoxya-plugin-spellchecker
         Isoxya.Plugin.Spellchecker.Init
         Isoxya.Plugin.Spellchecker.Parser
         Isoxya.Plugin.Spellchecker.Resource
-        Isoxya.Plugin.Spellchecker.Types
+        Isoxya.Plugin.Spellchecker.Type
         Paths_isoxya_plugin_spellchecker
     build-depends:
         aeson,
@@ -119,7 +119,7 @@ library lib-common-test
     exposed-modules:
         TiredPixel.Common.Snap.Test
     other-modules:
-        TiredPixel.Common.Snap.TestUtils
+        TiredPixel.Common.Snap.TestUtil
     build-depends:
         aeson,
         base64-bytestring,
