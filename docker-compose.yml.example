@@ -13,6 +13,5 @@ services:
         aliases:
           - isoxya-plugin-spellchecker.localhost
     restart: on-failure
-    env_file: .env
 networks:
   processor: {}
