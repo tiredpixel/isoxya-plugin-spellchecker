@@ -9,10 +9,10 @@ services:
       - ./src:/home/x/repo/src
       - ./test:/home/x/repo/test
     networks:
-      plugin:
+      processor:
         aliases:
           - isoxya-plugin-spellchecker.localhost
     restart: on-failure
     env_file: .env
 networks:
-  plugin: {}
+  processor: {}
