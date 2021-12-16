@@ -22,6 +22,7 @@ https://github.com/isoxya/isoxya-plugin-spellchecker
 
 Many other languages can be added easily, since both Hunspell and MySpell dictionaries are used. If it's available in the build OS, it can probably be added, with appropriate tests and extensions to the Isoxya engine interface.
 
+
 ## Example
 
 ```json
@@ -56,6 +57,27 @@ Many other languages can be added easily, since both Hunspell and MySpell dictio
     ]
   }
 ]
+```
+
+
+## Installation
+
+Choose a stream: `stable` (recommended), `testing`, or `unstable`:
+
+```sh
+cd misc/streams/stable/
+```
+
+Copy environment variables:
+
+```sh
+cp .env.example .env
+```
+
+Boot the stack:
+
+```sh
+docker-compose up
 ```
 
 
