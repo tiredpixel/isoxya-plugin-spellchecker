@@ -8,8 +8,8 @@ import           Isoxya.Plugin.Spellchecker.Type
 import           Snap.Core
 import           Snap.Snaplet
 import           TiredPixel.Common.Snap.CoreUtil
-import qualified Isoxya.Plugin.Spellchecker.Endpoint.Apex as EA
-import qualified Isoxya.Plugin.Spellchecker.Endpoint.Data as ED
+import qualified Isoxya.Plugin.Spellchecker.Endpoint.Apex as Apx
+import qualified Isoxya.Plugin.Spellchecker.Endpoint.Data as Dat
 
 
 initSpellchecker :: SnapletInit b Spellchecker
@@ -19,9 +19,9 @@ initSpellchecker = makeSnaplet "Spellchecker" "" Nothing $ do
 
 routesSpellchecker :: [(ByteString, Handler b Spellchecker ())]
 routesSpellchecker = [
-    ("",        ifTop       EA.apex),
+    ("",        ifTop       Apx.apex),
     --
-    ("data",    method POST ED.create),
+    ("data",    method POST Dat.create),
     ("data/:_",             notFound),
     --
     ("",                    notFound)]

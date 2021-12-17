@@ -11,7 +11,7 @@ import qualified Data.Set                                as S
 
 create :: Handler b Spellchecker ()
 create = do
-    req_     <- getBoundedJSON' reqLim >>= validateJSON
+    req_ <- getBoundedJSON' reqLim >>= validateJSON
     Just req <- runValidate req_
     let dicts = maybe [] configDictionaries (reparseConfig req)
     let texts = take parasLim $ parse req

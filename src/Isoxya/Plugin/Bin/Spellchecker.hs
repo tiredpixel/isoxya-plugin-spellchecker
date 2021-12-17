@@ -21,11 +21,12 @@ makeLenses ''App
 
 main :: IO ()
 main = do
-    let ver = toText $ showVersion version
-    hPutStrLn stderr $ "Isoxya Spellchecker plugin " <> toString ver
+    hPutStrLn stderr $ "Isoxya plugin Spellchecker " <> toString ver
     done <- S.init
     tId <- forkIO $ serveSnaplet S.config initApp
     S.wait done tId
+    where
+        ver = toText $ showVersion version
 
 
 initApp :: SnapletInit App App
