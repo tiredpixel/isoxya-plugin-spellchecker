@@ -1,6 +1,6 @@
-# Isoxya Spellchecker plugin
+# Isoxya plugin Spellchecker
 
-Isoxya Spellchecker plugin provides spellchecking capabilities to entire websites, even if they have millions of pages, and supports 7 languages. It is a plugin for [Isoxya](https://www.isoxya.com/) web crawler.
+Isoxya plugin Spellchecker provides spellchecking capabilities to entire websites, even if they have millions of pages, and supports 7 languages. It is a plugin for [Isoxya](https://www.isoxya.com/) web crawler.
 
 https://hub.docker.com/r/isoxya/isoxya-plugin-spellchecker  
 https://github.com/isoxya/isoxya-plugin-spellchecker  
@@ -66,12 +66,6 @@ Choose a stream: `stable` (recommended), `testing`, or `unstable`:
 
 ```sh
 cd misc/streams/stable/
-```
-
-Copy environment variables:
-
-```sh
-cp .env.example .env
 ```
 
 Boot the stack:
