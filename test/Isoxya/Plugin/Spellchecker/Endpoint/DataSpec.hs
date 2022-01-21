@@ -1,8 +1,8 @@
-module ISX.Plug.Spellchecker.Zone.DataSpec (spec) where
+module Isoxya.Plugin.Spellchecker.Endpoint.DataSpec (spec) where
 
 
-import ISX.Plug.Spellchecker.Test
-import TPX.Com.Isoxya.PlugProc
+import Isoxya.Plugin.Spellchecker.Test
+import TiredPixel.Common.Isoxya.Processor
 
 
 spec :: Spec
@@ -76,9 +76,9 @@ pC = object [
     ("header", object []),
     ("body", String "")]
 
-load :: MonadIO m => Text -> [Text] -> Text -> m (PlugProcI, [Value])
+load :: MonadIO m => Text -> [Text] -> Text -> m (ProcessorI, [Value])
 load ns dicts url = do
-    i <- genPlugProcI url dicts'
+    i <- genProcessorI url dicts'
     t <- readFileText $ fixtureResult ns url
     let Just dataE = decode $ encodeUtf8 t
     return (i, dataE)
@@ -86,7 +86,7 @@ load ns dicts url = do
         dicts' = if null dicts
             then Nothing
             else Just $ object [
-                ("dicts", toJSON dicts)]
+                ("dictionaries", toJSON dicts)]
 
 test :: Response -> [Value] -> SnapHspecM b ()
 test res dat = do

@@ -1,7 +1,7 @@
-module ISX.Plug.Spellchecker.ParserSpec (spec) where
+module Isoxya.Plugin.Spellchecker.ParserSpec (spec) where
 
 
-import ISX.Plug.Spellchecker.Test
+import Isoxya.Plugin.Spellchecker.Test
 
 
 spec :: Spec
@@ -32,7 +32,7 @@ spec = snapSpellchecker $ do
 
 load :: MonadIO m => Text -> m (Text, Text)
 load url = do
-    i <- genPlugProcI url Nothing
+    i <- genProcessorI url Nothing
     let textsA = parse i
     textsE <- readFileText $ fixtureText url
     return (unlines textsA, textsE)

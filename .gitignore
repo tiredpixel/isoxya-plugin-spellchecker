@@ -1,6 +1,4 @@
-# Base
 /*.env
-/docker-compose*.yml
-
-# Haskell
+/dist-newstyle/
 /dist/
+/docker-compose*.yml

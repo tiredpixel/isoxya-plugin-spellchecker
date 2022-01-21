@@ -1,0 +1,170 @@
+cabal-version:          3.0
+name:                   isoxya-plugin-spellchecker
+version:                0.0.0
+synopsis:               Isoxya plugin Spellchecker
+license:                BSD-3-Clause
+author:                 Nic Williams <tp@tiredpixel.com>
+maintainer:             Nic Williams <tp@tiredpixel.com>
+--------------------------------------------------------------------------------
+common common-properties
+    build-depends:
+        base                            ^>= 4.14.3.0,
+        relude
+    mixins:
+        base                            hiding (Prelude),
+        relude                          (Relude as Prelude)
+    default-language:   Haskell2010
+    default-extensions:
+        OverloadedStrings
+    ghc-options:
+        -Wall
+        -Werror
+        -Wunused-packages
+--------------------------------------------------------------------------------
+-- HACK: hspec-snap 1.0.2.0 breaks on Haskell 8.10, base 4.14.3.0
+library hspec-snap
+    exposed-modules:
+        Test.Hspec.Snap
+    build-depends:
+                   base                     >= 4.6      && < 4.15
+                 , aeson                    >= 0.6      && < 1.5
+                 , bytestring               >= 0.9      && < 0.11
+                 , containers               >= 0.4      && < 0.7
+                 , digestive-functors       >= 0.7      && < 0.9
+                 , hspec                    >= 2.2      && < 2.8
+                 , hspec-core               >= 2.2      && < 2.8
+                 , HUnit                    >= 1.5      && < 1.7
+                 , hxt                      >= 9.3      && < 9.4
+                 , HandsomeSoup             >= 0.3      && < 0.5
+                 , lens                     >= 3.10     && < 5
+                 , mtl                      >= 2        && < 3
+                 , snap                     >= 1.0      && < 1.2
+                 , snap-core                >= 1.0      && < 1.2
+                 , text                     >= 0.11     && < 1.3
+                 , transformers             >= 0.3      && < 0.6
+    hs-source-dirs:
+        lib/hspec-snap/src
+    default-language:   Haskell2010
+--------------------------------------------------------------------------------
+library lib-common
+    import:             common-properties
+    exposed-modules:
+        TiredPixel.Common.Isoxya.Processor
+        TiredPixel.Common.Isoxya.Snap.Processor
+        TiredPixel.Common.Snap.CoreUtil
+        TiredPixel.Common.Snap.Main
+        TiredPixel.Common.URI
+    other-modules:
+        TiredPixel.Common.Cursor
+    build-depends:
+        aeson,
+        base64-bytestring,
+        bytestring,
+        http-conduit,
+        network-uri,
+        regex-compat,
+        safe,
+        snap-core,
+        snap-extras,
+        snap-server,
+        time,
+        unix,
+        unordered-containers,
+    hs-source-dirs:
+        lib/common/src
+--------------------------------------------------------------------------------
+library lib-isoxya-plugin-spellchecker
+    import:             common-properties
+    exposed-modules:
+        Isoxya.Plugin.Spellchecker
+        Isoxya.Plugin.Spellchecker.Core
+    other-modules:
+        Isoxya.Plugin.Spellchecker.Checker
+        Isoxya.Plugin.Spellchecker.Endpoint.Apex
+        Isoxya.Plugin.Spellchecker.Endpoint.Data
+        Isoxya.Plugin.Spellchecker.Init
+        Isoxya.Plugin.Spellchecker.Parser
+        Isoxya.Plugin.Spellchecker.Resource
+        Isoxya.Plugin.Spellchecker.Type
+        Paths_isoxya_plugin_spellchecker
+    build-depends:
+        aeson,
+        containers,
+        hxt,
+        lens,
+        lib-common,
+        process-extras,
+        snap,
+        snap-core,
+        snap-extras,
+        text,
+        time,
+    hs-source-dirs:
+        src
+--------------------------------------------------------------------------------
+executable isoxya-plugin-spellchecker
+    import:             common-properties
+    main-is:            Spellchecker.hs
+    other-modules:
+        Paths_isoxya_plugin_spellchecker
+    build-depends:
+        lens,
+        lib-common,
+        lib-isoxya-plugin-spellchecker,
+        snap,
+    hs-source-dirs:
+        src/Isoxya/Plugin/Bin
+--------------------------------------------------------------------------------
+library lib-common-test
+    import:             common-properties
+    exposed-modules:
+        TiredPixel.Common.Snap.Test
+    other-modules:
+        TiredPixel.Common.Snap.TestUtil
+    build-depends:
+        aeson,
+        base64-bytestring,
+        bytestring,
+        containers,
+        directory,
+        filepath,
+        hspec                           ==  2.*,
+        hspec-core,
+        hspec-snap,
+        http-link-header,
+        lens,
+        lens-aeson,
+        mtl,
+        network-uri,
+        process,
+        snap-core,
+        text,
+        unordered-containers,
+        vector,
+    hs-source-dirs:
+        lib/common/test
+--------------------------------------------------------------------------------
+test-suite test-isoxya-plugin-spellchecker
+    import:             common-properties
+    type:               exitcode-stdio-1.0
+    main-is:            Spec.hs
+    other-modules:
+        Isoxya.Plugin.Spellchecker.CheckerSpec
+        Isoxya.Plugin.Spellchecker.Endpoint.ApexSpec
+        Isoxya.Plugin.Spellchecker.Endpoint.DataSpec
+        Isoxya.Plugin.Spellchecker.ParserSpec
+        Isoxya.Plugin.Spellchecker.Test
+    build-depends:
+        containers,
+        hspec                           ==  2.*,
+        lib-common,
+        lib-common-test,
+        lib-isoxya-plugin-spellchecker,
+        network-uri,
+        text,
+    default-extensions:
+        NoImplicitPrelude
+    hs-source-dirs:
+        test
+    build-tool-depends:
+        hspec-discover:hspec-discover   ==  2.*
