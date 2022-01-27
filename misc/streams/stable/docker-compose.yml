@@ -1,7 +1,7 @@
 version: "2.4"
 services:
   plugin_spellchecker:
-    image: docker.io/isoxya/isoxya-plugin-spellchecker:stable
+    image: ghcr.io/isoxya/isoxya-plugin-spellchecker:stable
     init: true
     networks:
       processor:
