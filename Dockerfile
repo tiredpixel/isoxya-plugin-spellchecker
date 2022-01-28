@@ -48,5 +48,3 @@ CMD ["cabal", "run", "isoxya-plugin-spellchecker", "--", \
 EXPOSE 80
 
 HEALTHCHECK CMD curl -fs http://localhost || false
-
-LABEL org.opencontainers.image.source https://github.com/isoxya/isoxya-plugin-spellchecker
