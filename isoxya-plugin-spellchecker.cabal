@@ -136,10 +136,13 @@ test-suite test-isoxya-plugin-spellchecker
         lib-common-test,
         lib-isoxya-plugin-spellchecker,
         network-uri,
+        stylish-haskell,
         text,
     default-extensions:
         NoImplicitPrelude
     hs-source-dirs:
         test
+    ghc-options:
+        -Wno-error=unused-packages
     build-tool-depends:
         hspec-discover:hspec-discover   ==  2.*
