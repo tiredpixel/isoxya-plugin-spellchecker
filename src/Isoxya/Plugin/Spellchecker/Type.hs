@@ -7,9 +7,9 @@ module Isoxya.Plugin.Spellchecker.Type (
     ) where
 
 
-import Control.Lens (makeLenses)
+import           Control.Lens (makeLenses)
 
 
-data Spellchecker = Spellchecker {}
+data Spellchecker = Spellchecker
 
 makeLenses ''Spellchecker

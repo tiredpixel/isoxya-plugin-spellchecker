@@ -10,14 +10,16 @@ module Isoxya.Plugin.Spellchecker.Test (
     ) where
 
 
+import qualified Data.Map                           as M
+import qualified Data.Text                          as T
 import           Isoxya.Plugin.Spellchecker
-import           Isoxya.Plugin.Spellchecker.Core    hiding (addHeader, setContentType, setHeader, (.=))
+import           Isoxya.Plugin.Spellchecker.Core    hiding (addHeader,
+                                                     setContentType, setHeader,
+                                                     (.=))
 import           Network.URI
 import           TiredPixel.Common.Isoxya.Processor
 import           TiredPixel.Common.Snap.Test        hiding (Result)
 import           TiredPixel.Common.URI
-import qualified Data.Map                           as M
-import qualified Data.Text                          as T
 
 
 fixturePage :: Text -> FilePath

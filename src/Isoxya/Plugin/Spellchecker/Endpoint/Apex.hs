@@ -3,10 +3,10 @@ module Isoxya.Plugin.Spellchecker.Endpoint.Apex (
     ) where
 
 
-import Data.Time.Clock
-import Data.Version                     (showVersion)
-import Isoxya.Plugin.Spellchecker.Core
-import Paths_isoxya_plugin_spellchecker (version)
+import           Data.Time.Clock
+import           Data.Version                     (showVersion)
+import           Isoxya.Plugin.Spellchecker.Core
+import           Paths_isoxya_plugin_spellchecker (version)
 
 
 apex :: Handler b Spellchecker ()

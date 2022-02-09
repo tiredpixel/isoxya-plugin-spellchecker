@@ -14,8 +14,7 @@ import           System.IO
 import qualified TiredPixel.Common.Snap.Main      as S
 
 
-newtype App = App {
-    _spellchecker :: Snaplet Spellchecker}
+newtype App = App { _spellchecker :: Snaplet Spellchecker }
 
 makeLenses ''App
 

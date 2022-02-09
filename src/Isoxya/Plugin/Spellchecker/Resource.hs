@@ -1,4 +1,4 @@
-{-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE LambdaCase      #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# OPTIONS_GHC -fno-warn-orphans #-}
 
@@ -9,23 +9,23 @@ module Isoxya.Plugin.Spellchecker.Resource (
     ) where
 
 
-import Data.Aeson                         hiding (Result)
-import Data.Time.Clock
-import Isoxya.Plugin.Spellchecker.Checker
+import           Data.Aeson                         hiding (Result)
+import           Data.Time.Clock
+import           Isoxya.Plugin.Spellchecker.Checker
 
 
-data Apex = Apex {
-    apexTime    :: UTCTime,
-    apexVersion :: Text
-    } deriving (Show)
+data Apex = Apex
+              { apexTime    :: UTCTime
+              , apexVersion :: Text
+              }
+  deriving (Show)
 instance ToJSON Apex where
     toJSON Apex{..} = object [
         "time"    .= apexTime,
         "version" .= apexVersion]
 
-newtype Config = Config {
-    configDictionaries :: [Dictionary]
-    } deriving (Show)
+newtype Config = Config { configDictionaries :: [Dictionary] }
+  deriving (Show)
 instance FromJSON Config where
     parseJSON = withObject "processor_i.meta.config" $ \j -> do
         configDictionaries <- j .: "dictionaries"

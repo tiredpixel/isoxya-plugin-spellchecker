@@ -1,7 +1,7 @@
 module Isoxya.Plugin.Spellchecker.ParserSpec (spec) where
 
 
-import Isoxya.Plugin.Spellchecker.Test
+import           Isoxya.Plugin.Spellchecker.Test
 
 
 spec :: Spec
@@ -10,20 +10,20 @@ spec = snapSpellchecker $ do
         it "apex" $ do
             (a, e) <- load "example.com/"
             a `shouldBe` e
-    
+
     describe "www.pavouk.tech" $ do
         it "apex" $ do
             (a, e) <- load "www.pavouk.tech/"
             a `shouldBe` e
-        
+
         it "robots" $ do
             (a, e) <- load "www.pavouk.tech/robots.txt"
             a `shouldBe` e
-        
+
         it "image" $ do
             (a, e) <- load "www.pavouk.tech/wp-content/themes/pv-www-theme-2.1.1/assets/images/logo/pv-center.svg.inv.svg.png"
             a `shouldBe` e
-    
+
     describe "www.tiredpixel.com" $
         it "apex" $ do
             (a, e) <- load "www.tiredpixel.com/"

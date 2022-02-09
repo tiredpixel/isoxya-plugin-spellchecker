@@ -6,45 +6,31 @@ module Isoxya.Plugin.Spellchecker.Checker (
     ) where
 
 
-import           System.Exit
-import           System.Process.Text
 import qualified Data.List           as L
 import qualified Data.Text           as T
+import           System.Exit
+import           System.Process.Text
 
 
-data Dictionary =
-    DictionaryCs |
-    DictionaryCsCz |
-    DictionaryDe |
-    DictionaryDeDe |
-    DictionaryEn |
-    DictionaryEnGb |
-    DictionaryEnUs |
-    DictionaryEs |
-    DictionaryEsEs |
-    DictionaryEt |
-    DictionaryEtEe |
-    DictionaryFr |
-    DictionaryFrFr |
-    DictionaryNl |
-    DictionaryNlNl
-    deriving (Show)
+data Dictionary = DictionaryCs | DictionaryCsCz | DictionaryDe | DictionaryDeDe | DictionaryEn | DictionaryEnGb | DictionaryEnUs | DictionaryEs | DictionaryEsEs | DictionaryEt | DictionaryEtEe | DictionaryFr | DictionaryFrFr | DictionaryNl | DictionaryNlNl deriving
+    ( Show
+    )
 
 type Paragraph = Text
 
-data ParagraphResult = ParagraphResult {
-    paragraphResultParagraph :: Paragraph,
-    paragraphResultResults   :: [Result]
-    } deriving (Show, Eq)
+data ParagraphResult = ParagraphResult
+                         { paragraphResultParagraph :: Paragraph
+                         , paragraphResultResults   :: [Result]
+                         }
+  deriving (Eq, Show)
 
-data Result =
-    ResultOk |
-    ResultRoot WordRoot |
-    ResultCompound |
-    ResultMiss WordOriginal WordOffset [WordMiss] |
-    ResultNone WordOriginal WordOffset |
-    ResultSeparator
-    deriving (Show, Eq)
+data Result = ResultOk
+            | ResultRoot WordRoot
+            | ResultCompound
+            | ResultMiss WordOriginal WordOffset [WordMiss]
+            | ResultNone WordOriginal WordOffset
+            | ResultSeparator
+  deriving (Eq, Show)
 
 type WordMiss = Text
 
@@ -105,11 +91,11 @@ parse texts results = zipWith ParagraphResult texts results'
             L.groupBy groupSep $ parseLine <$> results
         groupSep _ b = case b of
             ResultSeparator {} -> False
-            _ -> True
+            _                  -> True
         isMistake r = case r of
             ResultMiss {} -> True
             ResultNone {} -> True
-            _ -> False
+            _             -> False
 
 parseLine :: Text -> Result
 parseLine l = fromMaybe (error "invalid spellchecker output") $ case ctrl of

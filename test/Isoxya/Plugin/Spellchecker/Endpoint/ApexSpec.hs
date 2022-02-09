@@ -1,7 +1,7 @@
 module Isoxya.Plugin.Spellchecker.Endpoint.ApexSpec (spec) where
 
 
-import Isoxya.Plugin.Spellchecker.Test
+import           Isoxya.Plugin.Spellchecker.Test
 
 
 spec :: Spec

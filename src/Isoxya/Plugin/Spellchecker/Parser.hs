@@ -1,9 +1,9 @@
 module Isoxya.Plugin.Spellchecker.Parser (parse) where
 
 
+import qualified Data.Text                          as T
 import           Text.XML.HXT.Core
 import           TiredPixel.Common.Isoxya.Processor
-import qualified Data.Text                          as T
 
 
 parse :: ProcessorI -> [Text]

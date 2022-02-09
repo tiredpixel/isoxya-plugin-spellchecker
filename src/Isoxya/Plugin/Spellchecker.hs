@@ -4,5 +4,5 @@ module Isoxya.Plugin.Spellchecker (
     ) where
 
 
-import Isoxya.Plugin.Spellchecker.Init
-import Isoxya.Plugin.Spellchecker.Type
+import           Isoxya.Plugin.Spellchecker.Init
+import           Isoxya.Plugin.Spellchecker.Type
