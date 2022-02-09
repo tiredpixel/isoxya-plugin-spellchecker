@@ -131,6 +131,7 @@ test-suite test-isoxya-plugin-spellchecker
         Isoxya.Plugin.Spellchecker.Test
     build-depends:
         containers,
+        hlint,
         hspec                           ==  2.*,
         lib-common,
         lib-common-test,

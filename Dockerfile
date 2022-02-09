@@ -8,8 +8,6 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         curl \
         daemontools \
-        happy \
-        hlint \
         hunspell \
         hunspell-cs \
         hunspell-de-de \
