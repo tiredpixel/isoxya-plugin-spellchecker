@@ -1,6 +1,6 @@
 version: '2.4'
 services:
-  plugin_spellchecker:
+  plugin-spellchecker:
     image: docker.io/isoxya/isoxya-plugin-spellchecker:testing
     init: true
     networks:
