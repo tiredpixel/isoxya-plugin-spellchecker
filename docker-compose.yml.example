@@ -8,6 +8,7 @@ services:
     volumes:
       - ./.stylish-haskell.yaml:/home/x/repo/.stylish-haskell.yaml
       - ./bin:/home/x/repo/bin
+      - ./cabal.project.freeze:/home/x/repo/cabal.project.freeze
       - ./isoxya-plugin-spellchecker.cabal:/home/x/repo/isoxya-plugin-spellchecker.cabal
       - ./lib:/home/x/repo/lib
       - ./src:/home/x/repo/src
