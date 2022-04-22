@@ -6,8 +6,8 @@ services:
       target: builder
     init: true
     volumes:
-      - .:/home/x/plugin-spellchecker
-      - /home/x/plugin-spellchecker/dist-newstyle
+      - .:/home/x/r
+      - /home/x/r/dist-newstyle
     networks:
       processor:
         aliases:

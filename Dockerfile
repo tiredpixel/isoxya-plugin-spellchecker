@@ -2,17 +2,27 @@ FROM docker.io/library/haskell@sha256:aaa408ad7e7eff6cd76c39feae223db7ba3550b937
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+        hunspell \
+        hunspell-cs \
+        hunspell-de-de \
+        hunspell-en-gb \
+        hunspell-en-us \
+        hunspell-es \
+        hunspell-fr \
+        hunspell-nl \
         jq \
-        libpcre3-dev && \
+        libpcre3-dev \
+        myspell-et \
+        && \
     rm -rf /var/lib/apt/lists/*
 
 RUN useradd x -m && \
-    mkdir /home/x/plugin-spellchecker && \
+    mkdir /home/x/r && \
     chown -R x:x /home/x
 #-------------------------------------------------------------------------------
 USER x
 
-WORKDIR /home/x/plugin-spellchecker
+WORKDIR /home/x/r
 
 COPY --chown=x:x ["*.cabal", "cabal.project.freeze", "./"]
 
@@ -21,9 +31,13 @@ RUN cabal update && \
 
 COPY --chown=x:x . .
 
-RUN cabal install -O2
+ARG GIT_DESCRIBE
+
+RUN VERSION=$(echo "$GIT_DESCRIBE" | sed 's/-/./') && \
+    sed -i -E "s/(version: *)0.0.0/\1$VERSION/" ./*.cabal && \
+    cabal install -O2
 #-------------------------------------------------------------------------------
-ENV PATH=/home/x/plugin-spellchecker/bin:/home/x/.cabal/bin:$PATH \
+ENV PATH=/home/x/r/bin:/home/x/.cabal/bin:$PATH \
     LANG=C.UTF-8
 
 CMD ["cabal", "run", "isoxya-plugin-spellchecker", "--", \
@@ -46,7 +60,8 @@ RUN apt-get update && \
         hunspell-es \
         hunspell-fr \
         hunspell-nl \
-        myspell-et && \
+        myspell-et \
+        && \
     rm -rf /var/lib/apt/lists/*
 
 RUN useradd x -m && \
