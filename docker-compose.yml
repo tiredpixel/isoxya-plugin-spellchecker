@@ -1,0 +1,17 @@
+version: '2.4'
+services:
+  plugin-spellchecker:
+    build:
+      context: .
+      target: builder
+    init: true
+    volumes:
+      - .:/home/x/plugin-spellchecker
+      - /home/x/plugin-spellchecker/dist-newstyle
+    networks:
+      processor:
+        aliases:
+          - isoxya-plugin-spellchecker.localhost
+    restart: on-failure
+networks:
+  processor: {}

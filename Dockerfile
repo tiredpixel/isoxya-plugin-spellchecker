@@ -1,13 +1,43 @@
-# FROMFREEZE docker.io/library/haskell:8.10
-FROM docker.io/library/haskell@sha256:bc7488627b02c0593c561e37473b5e969ffd652ff52974dbf1183f665920b69a
+FROM docker.io/library/haskell@sha256:aaa408ad7e7eff6cd76c39feae223db7ba3550b937e833e78958478334fc9afe AS builder
 
-ARG USER=x
-ARG HOME=/home/x
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        jq \
+        libpcre3-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN useradd x -m && \
+    mkdir /home/x/plugin-spellchecker && \
+    chown -R x:x /home/x
 #-------------------------------------------------------------------------------
+USER x
+
+WORKDIR /home/x/plugin-spellchecker
+
+COPY --chown=x:x ["*.cabal", "cabal.project.freeze", "./"]
+
+RUN cabal update && \
+    cabal build --only-dependencies --enable-tests
+
+COPY --chown=x:x . .
+
+RUN cabal install -O2
+#-------------------------------------------------------------------------------
+ENV PATH=/home/x/plugin-spellchecker/bin:/home/x/.cabal/bin:$PATH \
+    LANG=C.UTF-8
+
+CMD ["cabal", "run", "isoxya-plugin-spellchecker", "--", \
+    "-b", "0.0.0.0", "-p", "80"]
+
+EXPOSE 80
+
+HEALTHCHECK CMD curl -fs http://localhost || false
+#===============================================================================
+FROM docker.io/library/debian@sha256:ebe4b9831fb22dfa778de4ffcb8ea0ad69b5d782d4e86cab14cc1fded5d8e761
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         curl \
-        daemontools \
         hunspell \
         hunspell-cs \
         hunspell-de-de \
@@ -16,32 +46,23 @@ RUN apt-get update && \
         hunspell-es \
         hunspell-fr \
         hunspell-nl \
-        jq \
-        libpcre3-dev \
         myspell-et && \
     rm -rf /var/lib/apt/lists/*
 
-RUN useradd ${USER} -d ${HOME} && \
-    mkdir -p ${HOME}/repo && \
-    chown -R ${USER}:${USER} ${HOME}
+RUN useradd x -m && \
+    mkdir /home/x/bin && \
+    chown -R x:x /home/x
 #-------------------------------------------------------------------------------
-USER ${USER}
-
-WORKDIR ${HOME}/repo
-
-COPY --chown=x:x [ \
-    "cabal.project.freeze", \
-    "*.cabal", \
-    "./"]
-
-RUN cabal update && \
-    cabal build --only-dependencies --enable-tests
+COPY --from=builder /home/x/.cabal/bin/* /home/x/bin/
 #-------------------------------------------------------------------------------
-ENV PATH=${HOME}/repo/bin:${HOME}/.cabal/bin:$PATH \
+USER x
+
+WORKDIR /home/x
+
+ENV PATH=/home/x/bin:$PATH \
     LANG=C.UTF-8
 
-CMD ["cabal", "run", "isoxya-plugin-spellchecker", "--", \
-    "-b", "0.0.0.0", "-p", "80"]
+CMD ["isoxya-plugin-spellchecker", "-b", "0.0.0.0", "-p", "80"]
 
 EXPOSE 80
 
