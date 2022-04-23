@@ -7,11 +7,13 @@ services:
     init: true
     volumes:
       - .:/home/x/r
-      - /home/x/r/dist-newstyle
+      - plugin-spellchecker_dist-newstyle:/home/x/r/dist-newstyle
     networks:
       processor:
         aliases:
           - isoxya-plugin-spellchecker.localhost
     restart: on-failure
+volumes:
+  plugin-spellchecker_dist-newstyle: {}
 networks:
   processor: {}
