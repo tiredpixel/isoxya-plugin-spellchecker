@@ -6,14 +6,16 @@ services:
       target: builder
     init: true
     volumes:
-      - .:/home/x/r
-      - plugin-spellchecker_dist-newstyle:/home/x/r/dist-newstyle
+      - ./bin:/home/x/r/bin
+      - ./cabal.project.freeze:/home/x/r/cabal.project.freeze
+      - ./isoxya-plugin-spellchecker.cabal:/home/x/r/isoxya-plugin-spellchecker.cabal
+      - ./lib:/home/x/r/lib
+      - ./src:/home/x/r/src
+      - ./test:/home/x/r/test
     networks:
       processor:
         aliases:
           - isoxya-plugin-spellchecker.localhost
     restart: on-failure
-volumes:
-  plugin-spellchecker_dist-newstyle: {}
 networks:
   processor: {}
