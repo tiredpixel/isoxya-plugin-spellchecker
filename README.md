@@ -62,24 +62,13 @@ Many other languages can be added easily, since both Hunspell and MySpell dictio
 
 ## Installation
 
-Choose a stream: `stable` (recommended), `testing`, or `unstable`:
-
-```sh
-cd misc/streams/stable/
-```
-
-Boot the stack:
+Compile and boot locally:
 
 ```sh
 docker compose up
 ```
 
-
-## Contact
-
-[tp@tiredpixel.com](mailto:tp@tiredpixel.com) · [www.tiredpixel.com](https://www.tiredpixel.com/) · [www.isoxya.com](https://www.isoxya.com/)
-
-LinkedIn: [in/nic-williams](https://www.linkedin.com/in/nic-williams/) · Twitter: [tiredpixel](https://twitter.com/tiredpixel/) · GitHub: [tiredpixel](https://github.com/tiredpixel)
+Images are also published using the `latest` tag (for development), and version-specific tags (for production). Do *not* use a `latest` tag in production!
 
 
 ## Licence
