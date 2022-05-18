@@ -64,7 +64,7 @@ hunspell dicts texts = do
         -- ^ disable prefix [SEC]
         -- replace inner newlines [SEC]
         texts' = ("^" <>) . T.replace "\n" " " <$> texts
-        dicts' = concat $ hunspellDictionaries <$> dicts
+        dicts' = concatMap hunspellDictionaries dicts
 
 hunspellDictionaries :: Dictionary -> [String]
 hunspellDictionaries d = case d of
