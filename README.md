@@ -2,7 +2,7 @@
 
 Isoxya plugin Spellchecker provides spellchecking capabilities to entire websites, even if they have millions of pages, and supports 7 languages. It is a plugin for [Isoxya](https://www.isoxya.com/) web crawler.
 
-https://hub.docker.com/r/isoxya/isoxya-plugin-spellchecker  
+https://hub.docker.com/r/tiredpixel/isoxya-plugin-spellchecker  
 https://github.com/tiredpixel/isoxya-plugin-spellchecker  
 
 
