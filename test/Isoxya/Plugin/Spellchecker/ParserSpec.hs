@@ -34,5 +34,5 @@ load :: MonadIO m => Text -> m (Text, Text)
 load url = do
     i <- genProcessorI url Nothing
     let textsA = parse i
-    textsE <- readFileText $ fixtureText url
-    return (unlines textsA, textsE)
+    textsE <- readFileBS $ fixtureText url
+    return (unlines textsA, decodeUtf8 textsE)

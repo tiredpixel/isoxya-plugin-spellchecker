@@ -79,8 +79,8 @@ pC = object [
 load :: MonadIO m => Text -> [Text] -> Text -> m (ProcessorI, [Value])
 load ns dicts url = do
     i <- genProcessorI url dicts'
-    t <- readFileText $ fixtureResult ns url
-    let Just dataE = decode $ encodeUtf8 t
+    t <- readFileLBS $ fixtureResult ns url
+    let Just dataE = decode t
     return (i, dataE)
     where
         dicts' = if null dicts
